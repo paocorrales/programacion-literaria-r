@@ -1,0 +1,30 @@
+---
+title: "Antes de comenzar"
+lang: es
+---
+
+## R y RStudio
+
+Para participar en el curso necesitaras una versión actualizada de R (\>4.0) y RStudio (2022.07.01). Versiones previas podrian no funcionar ya que entre otras cosas usaremos una nueva herramienta que viene incluida en las últimas versiones de RStudio.
+
+Si nunca trabajaste con `RMarkdown` es posible que necesites instalar algunos paquetes. La manera mas directa de hacer esto es:
+
+1.  Abre RStudio
+
+2.  Haz click en Archivo -\> Nuevo Archivo -\> R Markdown. Haz clic en \"Ok\" para crear un nuevo archivo.
+
+3.  RStudio te pedirá permiso para instalar varios paquetes. Adelante, hazlo.
+
+4.  Puedes eliminar el archivo que acabas de crear.
+
+5.  Listo!
+
+### RStudio Cloud
+
+Si por alguna razón no podés trabajar con una instalación local, una alternativa es usar RStudio Cloud. Si quieres usar RStudio Cloud necesitarás una cuenta gratuita. Ingresa a [rstudio.cloud/](https://rstudio.cloud/) y sigue las instrucciones para registrarte. Ten en cuenta que la cuenta gratuita tiene un límite de uso de 25 horas por mes, te recomendamos no usar todas las horas antes del taller.
+
+## Opcional 
+
+Durante el curso tendrás la posibilidad de hacer ejercicios y poner en práctica las herramientas. Para aprovechar aún más la experiencia, podés traer un script que realicé algún análisis de datos (mejor si no es muy largo y si el código no demora en correr) junto con los datos propiamente dichos.
+
+El desafío será convertir ese script en un proyecto y producir un documento con los resultados listos para compartir.

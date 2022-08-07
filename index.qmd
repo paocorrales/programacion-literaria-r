@@ -1,0 +1,59 @@
+---
+title: "¡Hola!"
+lang: es
+---
+
+## ¿De qué se trata este minicurso?
+
+Este curso está orientado tanto a personas con experiencia usando R como aquellas re recién comienzan. El foco no estará en correr modelos o utilizar una sintáxis específica para escribir código de R. El objetivo será transformar nuestros análisis usando R en trabajos reproducibles (o al menos desde el punto de vista de R).
+
+En particular en estos encuentros haremos foco en la programación literaría, en particular aplicando esta definición al análisis de datos. En otras palabras, la propuesta es escribir código y prosa en el mismo documento y gracias a las herramientras que provee R, generar en documento final en algún formato que necesitemos (por ejemplo pdf o .docx).
+
+También dedicaremos tiempo al cómo compartir nuestro trabajo en un sentido amplio. Por un lado veremos como compartir un proyecto con colegas para que puedan correr el código sin demasiados dolores de cabeza (aunque no entraremos en el uso de git y control de versiones). Por el otro lado, veremos como compartir trabajo terminado, por ejemplo en la forma de una página web (pero de nuevo no necesitaremos aprender nada de html o desarrollo web).
+
+Si bien "reproducibilidad" puede significar muchas cosas, luego de este curso podran dar los primer pasos para trabajar de manera más ordenada aprovechando el poder la programacion literaria y otras herramientas que ayudan al trabajo cotidiano.
+
+### Antes de comenzar
+
+Durante el curso usaremos R y Rstudio. Por favor lee las instrucciónes [que encontrarás aquí](preparacion.html) para poder participar.
+
+### Agenda
+
+El minicurso estará dividido en 3 encuentros de 90 minutos cada uno. **Fechas y horario a confirmar.**
+
++-----------+----------------------------------------------------------------------------+
+|           | Contenidos                                                                 |
++===========+============================================================================+
+| Día 1     | -   Introducción a la Programación literaria                               |
+|           |                                                                            |
+|           | -   Uso del paquete `RMarkdown` y `Quarto` para reportar anaĺisis de datos |
+|           |                                                                            |
+|           | -   Sintaxis para el manejo de código y prosa                              |
++-----------+----------------------------------------------------------------------------+
+| Día 2     | -   Herramientas hacia la reproducibilidad: projectos y el paquete `here`  |
+|           |                                                                            |
+|           | -   Flujo de trabajo para generar un informe o reporte reproducible        |
++-----------+----------------------------------------------------------------------------+
+| Día 3     | -   Automatización de informes y reportes                                  |
+|           |                                                                            |
+|           | -   Uso de plantillas y otras herramientas de formato                      |
+|           |                                                                            |
+|           | -   Publicación de reportes                                                |
++-----------+----------------------------------------------------------------------------+
+
+**Pao Corrales**
+
+<img src="img/pao_circle.png" alt="Foto de Pao" width="100" height="100" align="left" style="margin:10px"/> Paola Corrales. Es estudiante de doctorado en la Universidad de Buenos Aires. Estudia ciencias de la atmósfera aplicando técnicas de asimilación de datos para mejorar los pronósticos a corto plazo de eventos severos en Argentina. Es trainer e instructora de [The Carpentries](https://carpentries.org/) e instructora certificada de [RStudio](https://education.rstudio.com/trainers/people/corrales+paola/). También ha contribuido a proyectos de traducción de materiales de The Carpentries y al libro Teaching Tech Together. Forma parte de Expedición Ciencia, una organización sin ánimo de lucro con sede en Argentina, donde dirige proyectos educativos como campamentos y talleres de ciencia para estudiantes y profesores de ciencias de primaria y secundaria. Es profesora de la Licenciatura y la diplomatura en Ciencias de Datos de la Universidad Guillermo Brown. Es cofundadora de [MetaDocencia](http://metadocencia.org/). También desarrolla materiales de licencia abierta para enseñar y aprender R desde cero.
+
+[paobcorrales.github.io](https://github.com/paocorrales) \| [\@paobcorrales](https://twitter.com/PaobCorrales)
+
+
+#### Licencia
+
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+Todos los materiales de este curso en encuentra bajo la licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+Están inspirados y basados en los siguientes recursos:
+
+* [de Excel a R](https://paocorrales.github.io/deExcelaR/) por Paola Corrales y Elio Campitelli
+* [Quarto](https://quarto.org/)
