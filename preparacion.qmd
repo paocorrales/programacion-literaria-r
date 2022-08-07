@@ -25,6 +25,6 @@ Si por alguna razón no podés trabajar con una instalación local, una alternat
 
 ## Opcional 
 
-Durante el curso tendrás la posibilidad de hacer ejercicios y poner en práctica las herramientas. Para aprovechar aún más la experiencia, podés traer un script que realicé algún análisis de datos (mejor si no es muy largo y si el código no demora en correr) junto con los datos propiamente dichos.
+Durante el curso tendrás la posibilidad de hacer ejercicios y poner en práctica las herramientas. Para aprovechar aún más la experiencia, podés traer un script que realicé algún análisis de datos y genere alguna figura o tabla (mejor si no es muy largo y si el código no demora en correr) junto con los datos propiamente dichos.
 
 El desafío será convertir ese script en un proyecto y producir un documento con los resultados listos para compartir.
