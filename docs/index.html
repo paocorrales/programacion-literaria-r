@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Programación literaria con R - ¡Hola!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Programación literaria con R</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">Inicio</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./preparacion.html">Antes de comenzar</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#de-qué-se-trata-este-minicurso" id="toc-de-qué-se-trata-este-minicurso" class="nav-link active" data-scroll-target="#de-qué-se-trata-este-minicurso">¿De qué se trata este minicurso?</a>
+  <ul class="collapse">
+  <li><a href="#antes-de-comenzar" id="toc-antes-de-comenzar" class="nav-link" data-scroll-target="#antes-de-comenzar">Antes de comenzar</a></li>
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">¡Hola!</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="de-qué-se-trata-este-minicurso" class="level2">
+<h2 class="anchored" data-anchor-id="de-qué-se-trata-este-minicurso">¿De qué se trata este minicurso?</h2>
+<p>Este curso está orientado tanto a personas con experiencia usando R como aquellas re recién comienzan. El foco no estará en correr modelos o utilizar una sintáxis específica para escribir código de R. El objetivo será transformar nuestros análisis usando R en trabajos reproducibles (o al menos desde el punto de vista de R).</p>
+<p>En particular en estos encuentros haremos foco en la programación literaría, en particular aplicando esta definición al análisis de datos. En otras palabras, la propuesta es escribir código y prosa en el mismo documento y gracias a las herramientras que provee R, generar en documento final en algún formato que necesitemos (por ejemplo pdf o .docx).</p>
+<p>También dedicaremos tiempo al cómo compartir nuestro trabajo en un sentido amplio. Por un lado veremos como compartir un proyecto con colegas para que puedan correr el código sin demasiados dolores de cabeza (aunque no entraremos en el uso de git y control de versiones). Por el otro lado, veremos como compartir trabajo terminado, por ejemplo en la forma de una página web (pero de nuevo no necesitaremos aprender nada de html o desarrollo web).</p>
+<p>Si bien “reproducibilidad” puede significar muchas cosas, luego de este curso podran dar los primer pasos para trabajar de manera más ordenada aprovechando el poder la programacion literaria y otras herramientas que ayudan al trabajo cotidiano.</p>
+<section id="antes-de-comenzar" class="level3">
+<h3 class="anchored" data-anchor-id="antes-de-comenzar">Antes de comenzar</h3>
+<p>Durante el curso usaremos R y Rstudio. Por favor lee las instrucciónes <a href="preparacion.html">que encontrarás aquí</a> para poder participar.</p>
+</section>
+<section id="agenda" class="level3">
+<h3 class="anchored" data-anchor-id="agenda">Agenda</h3>
+<p>El minicurso estará dividido en 3 encuentros de 90 minutos cada uno. <strong>Fechas y horario a confirmar.</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Contenidos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Día 1</td>
+<td><ul>
+<li><p>Introducción a la Programación literaria</p></li>
+<li><p>Uso del paquete <code>RMarkdown</code> y <code>Quarto</code> para reportar anaĺisis de datos</p></li>
+<li><p>Sintaxis para el manejo de código y prosa</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Día 2</td>
+<td><ul>
+<li><p>Herramientas hacia la reproducibilidad: projectos y el paquete <code>here</code></p></li>
+<li><p>Flujo de trabajo para generar un informe o reporte reproducible</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Día 3</td>
+<td><ul>
+<li><p>Automatización de informes y reportes</p></li>
+<li><p>Uso de plantillas y otras herramientas de formato</p></li>
+<li><p>Publicación de reportes</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pao Corrales</strong></p>
+<p><img src="img/pao_circle.png" alt="Foto de Pao" width="100" height="100" align="left" style="margin:10px"> Paola Corrales. Es estudiante de doctorado en la Universidad de Buenos Aires. Estudia ciencias de la atmósfera aplicando técnicas de asimilación de datos para mejorar los pronósticos a corto plazo de eventos severos en Argentina. Es trainer e instructora de <a href="https://carpentries.org/">The Carpentries</a> e instructora certificada de <a href="https://education.rstudio.com/trainers/people/corrales+paola/">RStudio</a>. También ha contribuido a proyectos de traducción de materiales de The Carpentries y al libro Teaching Tech Together. Forma parte de Expedición Ciencia, una organización sin ánimo de lucro con sede en Argentina, donde dirige proyectos educativos como campamentos y talleres de ciencia para estudiantes y profesores de ciencias de primaria y secundaria. Es profesora de la Licenciatura y la diplomatura en Ciencias de Datos de la Universidad Guillermo Brown. Es cofundadora de <a href="http://metadocencia.org/">MetaDocencia</a>. También desarrolla materiales de licencia abierta para enseñar y aprender R desde cero.</p>
+<p><a href="https://github.com/paocorrales">paobcorrales.github.io</a> | <a href="https://twitter.com/PaobCorrales">@paobcorrales</a></p>
+<section id="licencia" class="level4">
+<h4 class="anchored" data-anchor-id="licencia">Licencia</h4>
+<p><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a><br> Todos los materiales de este curso en encuentra bajo la licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p>Están inspirados y basados en los siguientes recursos:</p>
+<ul>
+<li><a href="https://paocorrales.github.io/deExcelaR/">de Excel a R</a> por Paola Corrales y Elio Campitelli</li>
+<li><a href="https://quarto.org/">Quarto</a></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
