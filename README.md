@@ -6,7 +6,7 @@ En particular en estos encuentros haremos foco en la programación literaría, e
 
 También dedicaremos tiempo al cómo compartir nuestro trabajo en un sentido amplio. Por un lado veremos como compartir un proyecto con colegas para que puedan correr el código sin demasiados dolores de cabeza (aunque no entraremos en el uso de git y control de versiones). Por el otro lado, veremos como compartir trabajo terminado, por ejemplo en la forma de una página web (pero de nuevo no necesitaremos aprender nada de html o desarrollo web).
 
-[paocorrales.github.io/programacion-literaria-rr](https://paocorrales.github.io/programacion-literaria-r)
+[paocorrales.github.io/programacion-literaria-r](https://paocorrales.github.io/programacion-literaria-r)
 
 #### Licencia
 
