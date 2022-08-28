@@ -29,7 +29,9 @@ Participo en muchas comunidades de práctica:
 :::
 
 ::: {.column width="20%"}
-```{r echo=FALSE, out.width='120%'}
+```{r}
+#| echo: false
+
 knitr::include_graphics(here::here("img/pao_circle.png"))
 ```
 
@@ -92,3 +94,31 @@ Materiales abiertos (Licencia CCBY 4.0): [paocorrales.github.io/programacion-lit
 -   Automatizar informes para ahorrar tiempo y cometer menos errores
 -   Generar trabajos para revistas científicas
 -   Publicar informes o trabajos en una web para compartir
+
+---
+
+::: columns
+::: {.column width="50%"}
+
+### RMarkdown
+```{r}
+#| echo: false
+#| fig-width: 10
+
+knitr::include_graphics(here::here("img/ejemplo-rmarkdown.png"))
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+### Quarto
+```{r}
+#| echo: false
+#| fig-width: 10
+
+knitr::include_graphics(here::here("img/ejemplo-quarto.png"))
+```
+:::
+:::

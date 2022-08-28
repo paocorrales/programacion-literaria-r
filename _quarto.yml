@@ -10,6 +10,14 @@ website:
       - href: index.qmd
         text: Inicio
       - preparacion.qmd
+      - text: "Ejemplos"
+        menu:
+          - quarto_reporte_ejemplo.qmd
+          - rmarkdown_reporte_ejemplo.Rmd
+      - text: "Materiales"
+        menu:
+          - 01_presentacion.qmd
+          - 02_reportes.qmd
 
 format:
   html:

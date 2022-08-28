@@ -11,7 +11,7 @@ Si nunca trabajaste con `RMarkdown` es posible que necesites instalar algunos pa
 
 1.  Abre RStudio
 
-2.  Haz click en Archivo -\> Nuevo Archivo -\> R Markdown. Haz clic en \"Ok\" para crear un nuevo archivo.
+2.  Haz click en Archivo -\> Nuevo Archivo -\> R Markdown. Haz clic en "Ok" para crear un nuevo archivo.
 
 3.  RStudio te pedirá permiso para instalar varios paquetes. Adelante, hazlo.
 
@@ -23,7 +23,7 @@ Si nunca trabajaste con `RMarkdown` es posible que necesites instalar algunos pa
 
 Si por alguna razón no podés trabajar con una instalación local, una alternativa es usar RStudio Cloud. Si quieres usar RStudio Cloud necesitarás una cuenta gratuita. Ingresa a [rstudio.cloud/](https://rstudio.cloud/) y sigue las instrucciones para registrarte. Ten en cuenta que la cuenta gratuita tiene un límite de uso de 25 horas por mes, te recomendamos no usar todas las horas antes del taller.
 
-## Opcional 
+## Opcional
 
 Durante el curso tendrás la posibilidad de hacer ejercicios y poner en práctica las herramientas. Para aprovechar aún más la experiencia, podés traer un script que realicé algún análisis de datos y genere alguna figura o tabla (mejor si no es muy largo y si el código no demora en correr) junto con los datos propiamente dichos.
 
