@@ -1,0 +1,60 @@
+---
+title: "Publicando reportes"
+toc: true
+format:
+  html:
+    code-tools: true
+    self-contained: true
+execute:
+  message: false
+  warning: false
+---
+
+Querés compartir tus resultados y tenés un archivo RMarkdown o Quarto en el que estuviste trabajando. Podrías compartir la carpeta del proyecto o un link a un repositorio pero sería ideal que cualquier persona pueda ver esos hermosos resultados sin necesidad de correr código. La otra alternativa es knitear el documento para compartir un PDF o archivo de Word. Las opciones no terminan ahí, Rmarkdown/Quarto abre un mundo de posibilidades para trabajar con código de R, texto y además compartir los resultados (y cualquier otra cosa!).
+
+
+## Un único .Rmd o .qmd
+
+Podés publicar como web el contenido de un único archivo aprovechando las características y posibilidades que dan estos formatos. Un ejemplo de eso lo encontras en:
+
+[https://01-webs-rmarkdown.netlify.app/](https://01-webs-rmarkdown.netlify.app/)
+
+Y podés revisar el código fuente [acá](https://github.com/paocorrales/01_Webs-RMarkdown).
+
+![Ejemplo de web con un solo rmd en https://01-webs-rmarkdown.netlify.app/](images/01-web.png)
+
+
+
+## Muchos .Rmd
+
+Tal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. {rmarkdown} también permite generar una web con estructura compleja (una barra de navegación con botones y menues entre otras maravillas) a partir de un archivo de configuración y todos los .rmd que necesites. El ejemplo de una web de este estilo se encuenta en:
+
+[https://02-webs-rmarkdown.netlify.app/](https://02-webs-rmarkdown.netlify.app/)
+
+Y el código fuente [acá](https://github.com/paocorrales/02_Webs-RMarkdown).
+
+![Ejemplo de web con muchos rmd en https://02-webs-rmarkdown.netlify.app/](images/02-web.png)
+
+## Palabras finales sobre la publicación
+
+### Netlify
+
+La opción de arrastrar la carpeta que contiene la web en Netlify puede se útil al principio pero se vuelve trabajoso rápidamente, sería genial que fuera automático. Y se puede.
+
+Netlify tiene una habilidad muy útil, la primera es que se puede conectar con un repositorio en, por ejemplo, GitHub donde viva la página web.
+
+Luego de haber publicado algunas webs así me encontré con algunos problemas y sus soluciones:
+
+* Si la web está construida solo con R Markdown, Netlify necesita saber que la carpeta "_site" es la que contiene la web, de otra manera va a dar error. Alternativamente se puede cambiar la configuración de la web desde el "_site.yml" para que construya la web una carpeta que se llame "public". 
+* Quarto por su lado también genera una carpeta con nombre distinto al que necesitamos donde guarda los archivos html que le dan vida a la web. En cualquier caso, si vemos que la cosa no anda, puede que Netlify no esté encontrando los archivos y necesite que lo indiquemos explicitamente.
+
+
+### GitHub Pages
+
+Netlify no es el único servicio que permite hostear una web. Hay muchos otros, por ejemplo GitHub Pages. En este caso si o si necesitamos usar un repositorio donde esté, al menos, los htmls que generan la web. 
+
+Una de las diferencias importantes es que GitHub Pages *busca* la web enla carpeta raíz o alternativamente en una carpeta dentro del repositorio que debe llamarse "docs". La buena noticia es usando Quarto o RMarkdown se puede indicar en el archivo de configuración que nombre debe tener la carpeta que contenga el sitio construiido. 
+
+
+
+

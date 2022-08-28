@@ -1,0 +1,87 @@
+---
+title: "Usando plantillas"
+toc: true
+format:
+  html:
+    code-tools: true
+    self-contained: true
+execute:
+  message: false
+  warning: false
+---
+
+En este punto R Markdown y Quarto se separan un poquito. Si trabajamos con RMarkdwon podemos usar el paquete **rticles** que contiene una buena cantidad de de plantillas de revistas científicas (muchas de ellas contribuidas por la comunidad). Quarto es una herramienta nueva, tiene apenas unos meses de vida (al menos desde que fue presentada) y el paquete análogo apenas está creciendo. 
+
+Por esa razón si decidieras usar QUarto para escribir un paper científico, es posible que no encuentres la plantillas que necesitas. Podrías hacer el trabajo para adaptar la plantilla que provee la revista y contribuir al desarrollo del paquete pero lleva su trabajo. 
+
+::: panel-tabset
+### RMarkdown
+
+#### Usando rticles
+
+Si quisieras escribir un reporte, un documento para tu institución o tal vez un paper para una revista científic usando RMardown, es posible que necesites usar una plantilla que defina la apariencia del documento final.
+Dependiendo del formato de saluda, las plantillas serán distintas.
+En esta sección nos vamos a enfocar en documentos PDF.
+
+Para revistas científicas existe el paquete [**rticles**](https://pkgs.rstudio.com/rticles/index.html).
+Este paquete incliye muchas plantillas --la mayoría contribuida por personas de la comunidad de R -- que podés utilizar para crear PDF con la apariencia de la revista científica elegida, directo desde el archivo RMarkdown.
+Mi recomendación siempre es instalar la versión en desarrollo del paquete ya que muchas veces incluye nuevos formatos o plantillas de revistas que aún no fueron incluidos en la versión de CRAN.
+
+Una vez instalado el paquete, para poder utilizar rticles desde RStudio, podés acceder a las plantillas desde `File -> New File -> R Markdown`.
+Esto va a abrir una ventana de dialogo desde donde podés seleccionar alguna de las plantillas disponibles:
+
+![Cuadro de dialogo al iniciar un nuevo R Markdown con la lista de plantillas](img/rticles.png)
+
+Al hacer esto, se creará una nueva carpenta que contienen un archivo Rmd que usará el formato de salida correspondiente. Posiblemente también encuentres otros archivos necesarios para darle formato a esta plantilla.
+
+::: callout-tip
+## Ejercicio
+
+**Desafío: utilizá una plantilla**
+
+
+1. Crea un nuevo archivo R Markdown file usando alguna de las plantillas disposibles.
+2. revisá las opciones en el YAML y cambiá algunos de los valores. No necesita ser información real! 
+3. Renderizá el documento para ver el resultado.
+
+:::
+
+### Quarto
+
+Si quisieras escribir un reporte, un documento para tu institución o tal vez un paper para una revista científic usando RMardown, es posible que necesites usar una plantilla que defina la apariencia del documento final.
+Dependiendo del formato de saluda, las plantillas serán distintas.
+En esta sección nos vamos a enfocar en documentos PDF.
+
+Para revistas científicas existe el paquete...
+
+
+Una vez instalado el paquete, para poder utilizar rticles desde RStudio, podés acceder a las plantillas desde `File -> New File -> R Markdown`.
+Esto va a abrir una ventana de dialogo desde donde podés seleccionar alguna de las plantillas disponibles:
+
+![Cuadro de dialogo al iniciar un nuevo R Markdown con la lista de plantillas](img/rticles.png)
+
+
+Al hacer esto, se creará una nueva carpenta que contienen un archivo qmd que usará el formato de salida correspondiente. Posiblemente también encuentres otros archivos necesarios para darle formato a esta plantilla.
+
+::: callout-tip
+## Ejercicio
+
+**Desafío: utilizá una plantilla**
+
+
+1. Crea un nuevo archivo de Quarto file usando alguna de las plantillas disposibles.
+2. revisá las opciones en el YAML y cambiá algunos de los valores. No necesita ser información real! 
+3. Renderizá el documento para ver el resultado.
+
+:::
+
+:::
+
+## Más allá de rtlicles y ...
+
+Pero que pasa cuando estos paquetes no tienen la plantillas que necesitás?
+Normalmente, las revistas proveen una plantilla de LaTeX que podés usar y **adaptar** para trabajar con R Markdown o Quarto.
+Esto requiere cierto conocimiento de LaTeX y [Pandoc templates](https://pandoc.org/MANUAL.html#templates), mucha paciencia y café/té/mate para lidiar con todos los posibles errores.
+El resultado vale la pena por supuesto. Sobre todo si luego [contribuís](https://github.com/rstudio/rticles/pulls) esa plantilla para que otras personas se puedan beneficiar de ese esfuerzo.
+
+Si alguna vez te encontrás en esta situación podés probar realiza [este ejercicio]() y seguir [este video](https://www.youtube.com/watch?v=bk3mcRIJLqc) paso a paso (en inglés).

@@ -18,6 +18,7 @@ website:
         menu:
           - 01_presentacion.qmd
           - 02_reportes.qmd
+          - 03_sintaxis.qmd
 
 format:
   html:

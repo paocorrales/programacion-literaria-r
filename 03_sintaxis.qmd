@@ -1,95 +1,29 @@
 ---
-title: "Reportes reproducibles"
+title: "Sintaxis en un reporte"
 toc: true
 format:
   html:
     code-tools: true
     self-contained: true
 execute:
-  echo: false
   message: false
   warning: false
 ---
 
-Es posible que en tu trabajo tengas que presentar informes o resultados de tu análisis de datos. Tal vez te hayas encontrando guardando una y otra vez gráficos y tablas o copiando resultados de un archivo al otro hasta que el informe quedó como querías. Los archivos y el paquete **RMarkdown** o desde hace poco Quarto vienen al rescate.
+```{r, include=FALSE}
+chunk <- "```"
+```
 
-::: panel-tabset
-## RMarkdown
+Ahora vamos a ver como se trabaja en cada una de las secciones de un reporte. Cada una tiene una sintaxis distinta, parece mucho, pero veremos que no se aleja de lo que cada uno ya sabe.
 
-Un archivo de R Markdown (generalmente con la extensión `.Rmd`), a diferencia de un script `.R`, es un archivo de texto plano que combina código de R que genera resultados (gráficos, tablas, etc...) y el texto que lo describe. Al poder intercalar cálculos y gráficos con su análisis o explicación, se unifica el flujo de trabajo y deja de ser necesario guardar figuras o tablas para luego insertarlas en un documento de texto. Esto es muy importante si buscamos que nuestro trabajo sea reproducible, pero además ahorra tiempo.
-
-### Creando archivos .Rmd
-
-En RStudio podés crear un nuevo archivo de R Markdown con el menú desplegable:
-
-::: callout-note
-## Instrucciones
-
-File → New File → R Markdown
-:::
-
-Y se abrirá un menú donde podés agregar el título de tu informe y tu nombre. Por ahora vamos a usar el formato HTML como salida, pero hay muchos otros formatos de salida posibles.
-
-![](img/nuevo-rmd.png)
-
-Al aceptar, se abrirá un nuevo archivo con una plantilla de ejemplo (en inglés).
-
-## Quarto
-
-Un archivo de Quarto (generalmente con la extensión `.qmd`), a diferencia de un script `.R`, es un archivo de texto plano que combina código de R que genera resultados (gráficos, tablas, etc...) y el texto que lo describe. Al poder intercalar cálculos y gráficos con su análisis o explicación, se unifica el flujo de trabajo y deja de ser necesario guardar figuras o tablas para luego insertarlas en un documento de texto. Esto es muy importante si buscamos que nuestro trabajo sea reproducible, pero además ahorra tiempo. Una ventaja por sobre R Markdown es que Quarto es independiente del lenguaje de programación. En este caso estamos usando R y RStudio pero podríamos trabajar con python y notebooks de jupyter y aprovechar Quarto.
-
-### Creando archivos .qmd
-
-En RStudio podés crear un nuevo archivo de Quarto con el menú desplegable:
-
-::: callout-note
-## Instrucciones
-
-File → New File → Quarto Document
-:::
-
-Y se abrirá un menú donde podés agregar el título de tu informe y tu nombre. Por ahora vamos a usar el formato HTML como salida, pero hay muchos otros formatos de salida posibles.
-
-![](img/nuevo-qmd.png)
-
-Al aceptar, se abrirá un nuevo archivo con una plantilla de ejemplo (en inglés).
-:::
-
-::: callout-tip
-## Ejercicio
-
-**Primer desafío: Creá un nuevo archivo R Markdown**
-
-Revisá la plantilla que trae el documento. ¿Podés identificar los bloques de código?
-:::
-
-Para generar el archivo de salida, el paquete **knitr** (que viene de *tejer* en inglés) ejecutará el código en una sesión independiente de R e interpretará el texto, su formato y cualquier otra cosa que agreguemos (por ejemplo imágenes o links externos). Esto significa que nuestro archivo debe tener **todo** lo necesario para generar el análisis y si nos olvidamos de algo va a dar error.
-
-Por esta razón es recomendable *knitear* o *renderizar* el archivo seguido, para encontrarnos con los errores a tiempo y de paso asegurarnos que el análisis es reproducible.
-
-::: callout-tip
-## Ejercicio
-
-**Segundo desafío: renderizá tu documento de R Markdown**
-
-Aprovechando la plantilla de RStudio, obtené el archivo de salida en formato HTML haciendo click en el botón **Render** (el que tiene una flecha celeste que apunta a la derecha!).
-:::
-
-## Estructura de un .Rmd
-
-Cualquier archivo de este tipo tiene 3 partes principales:
-
--   El **encabezado o *yaml*** que determina que pinta tendrá el archivo de salida, por ejemplo en formato html. También se puede incluir información sobre el autor, la fecha, si queremos o no una tabla de contenidos y muchas cosas más. Hay pequeñas diferencias entre R Markdown y Quarto.
--   El **texto o prosa** ya que puede estar a lo largo de todo el documento. Para darle formato a los títulos o por ejemplo resaltar parte del texto usando negrita se usa Markdown, un lenguaje que a diferencia de html es legible aún si no está compilado o en su versión final.
--   El **código en bloques o *chuncks***. Dentro de un chunk el código de R puede ejecutarse al igual que en un script normal y cualquier comentario o explicación debe tener al principio un `#` para que R lo interprete correctamente.
-
-![](img/rmd-ejemplo-secciones.png)
-
-### Encabezado
+## Encabezado
 
 El encabezado es una serie de instrucciones organizadas entre tres guiones (`---`) que determinan las propiedades globales del documento, como el título, el formato de salida, información de autoría, etc... También ahí se pueden cambiar opciones asociadas al formato de salida, como el estilo de la tabla de contenidos o índice.
 
 Éstas propiedades se definen en un formato llamado [YAML](https://es.wikipedia.org/wiki/YAML), el cual permite definir listas jerarquizadas de una forma humanamente legible. Por ejemplo:
+
+::: panel-tabset
+### RMarkdown
 
 ``` yaml
 ---
@@ -104,13 +38,28 @@ output:
 
 define dos variables principales, "title" y "output". "Output" a su vez contiene un elemento "htm_document", el cual contiene tres elementos: "code_download", "toc" y "toc_float".
 
+### Quarto
+
+``` yaml
+---
+title: "Mi primer RMarkdown"
+format:
+  html:
+    code-tools: true
+toc: true
+---
+```
+
+define dos variables principales, "title" y "format". "format" a su vez contiene un elemento "html" que define el formato de salida y contiene una nueva opción: "code-tools: true". Esto permite visualizar el código fuente que genera la web cuando ya está publicada. "toc : true" generará una tabla de contenidos.
+:::
+
 ::: callout-important
 ## Importante
 
 Es muy importante mantener el escalonado, o *identación* de los elementos, ya que ésta define la jerarquía de cada elemento. Muchos de los errores a la hora de knitear ocurren porque el archivo tiene problemas en la identación del encabezado.
 :::
 
-### Bloques de código
+## Bloques de código
 
 El código de R que va a leer datos, analizarlos y generar figuras, tablas o números se organiza en bloques (o `chunks`) delimitados por tres acentos graves (```` ``` ````) y se diferencia del resto de archivo con un fondo gris. Todo lo que incluyas entre estos delimitadores será interpretado por R como código e intentará ejecutarlo al *knitear* el archivo. Cualquier resultado del código (gráficos, tablas, texto, etc...) será insertado en el documento final en el mismo orden que están en el archivo R Markdown.
 
@@ -193,13 +142,13 @@ y el resultado en el documento kniteado sería
 
 prueba: `` `r promedio` ``
 
-### El texto propio del documento.
+## El texto propio del documento.
 
 Este es el texto dirigido a las personas que van a leer el reporte. Incluirá una introducción, descripción de los datos y de los resultados; es lo que escribirías en el archivo de Word.
 
 A diferencia de Word, el formato del texto se define usando [markdown](https://es.wikipedia.org/wiki/Markdown), que es un lenguaje simple que permite indicar si un texto va en negrita, cursiva, es un título, etc...usando símbolos especiales dentro del texto.
 
-## Markdown
+### Markdown
 
 Markdown permite escribir en texto plano pero definiendo el formato usando símbolos. Por ejemplo podés resaltar con **negrita** usando dos asteriscos así: `**negrita**` o *italizada* con un asterisco de cada lado: `*itálicas*`.
 
@@ -279,3 +228,85 @@ Podés revisar la guía rápida de Markdown desde RStudio (en inglés):
 
 Help → Markdown Quick Reference
 :::
+
+## Control de chunks
+
+Previamente vimos que un chunk tiene una pinta como esta:
+
+    `r chunk`{r nombre-del-chunk}
+
+    `r chunk`
+
+Ponerle nombre al chunk no es obligatorio pero está bueno para tener una idea de qué hace cada uno, lo cual se vuelve más importante a medida que un reporte se vuelve más largo y complejo. Pero lo que no dijimos es que además del nombre, se pueden agregar un montón de opciones que cambian el comportamiento y la apariencia del resultado del chunk.
+
+::: panel-tabset
+### RMarkdown
+
+Para cambiar las opciones de un chunk, lo único que hay que hacer es listarlas dentro de los corchetes. Por ejemplo:
+
+    `r chunk`{r nombre-del-chunk, echo = FALSE, message = FALSE}
+
+    `r chunk`
+
+### Quarto
+
+Para cambiar las opciones de un chunk, lo único que hay que hacer es listarlas como comentarios de quarto. Por ejemplo:
+
+    `r chunk`{r nombre-del-chunk}
+    #| echo: false
+    #| message: false
+
+    `r chunk`
+:::
+
+Hay una serie de opciones particularmente importante es la que controla si el código se ejecuta y si el resultado del código se va a mostrar en el reporte o no:
+
+-   `eval = FALSE` evita que se ejecute el código del chunk, de manera que tampoco va a mostrar resultados. Es útil para mostrar códigos de ejemplo si estás escribiendo, por ejemplo un documento para enseñar R.
+
+-   `echo = FALSE` ejecuta el código del chunk y muestra los resultados, pero oculta el código en el reporte. Esto es útil para escribir reportes para personas que no necesitan ver el código de R que generó el gráfico o tabla que querés mostrar.
+
+-   `include = FALSE` corre el código pero oculta tanto el código como los resultados. Es útil para usar en chunks de configuración general donde, por ejemplo, cargas las librerías.
+
+-   `message = FALSE` el bloque de código no mostrará los posibles mensajes que genere.
+
+-   `warning = FALSE` el bloque de código no mostrará los posibles warnings que genere.
+
+Si estás escribiendo un informe en el que no querés que se muestre ningún código, agregarle `echo = FALSE` a cada chunk nuevo se vuelve tedioso. La solución es cambiar la opción de forma global de manera que aplique a todos los chunks. Esto se hace mediante la función `knitr::opts_chunk$set()`, que setea las opciones globales de los chunks que le siguen. Si querés que todos los chunks tengan `echo = TRUE` crearías un chunk así:
+
+    `r chunk`{r setup, include = FALSE}
+    knitr::opts_chunk$set(echo = TRUE)
+    `r chunk`
+
+Generalmente tiene sentido poner esto en el primer chunk de un documento, que como suele ser cuestiones de configuración del reporte, también conviene ponerle `include = FALSE`.
+
+::: callout-note
+## Información
+
+En quarto, las opciones globales se agregan en el YAML:
+
+``` yaml
+---
+title: "Mi primer RMarkdown"
+format:
+  html:
+    code-tools: true
+toc: true
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+```
+
+Pero por supuesto, el documento puede tener un primer chunk setup que cargue las librerías y código útil para nuestro trabajo
+:::
+
+Finalmente, una opción tan poderosa como peligrosa es `cache = TRUE`. Lo que hace es que en vez de correr el código de un chunk cada vez que *kniteás* el documento, guarda el resultado del chunk en el disco para reutilizar la próxima vez que crees el reporte. Esto es muy cómo si en chunk tiene un código que tarda mucho en correr. Por ejemplo el siguiente chunk va a tardar 10 minutos en correr la primera vez que knitees el reporte, pero luego va a ser mucho más rápido:
+
+    `r chunk`{r cache = FALSE}
+    datos <- funcion_que_tarda_10_minutos(x)
+    `r chunk`
+
+knitr es bastante inteligente y va a invalidar la cache si cambiás el código del chunk. Pero, ¿qué pasa si cambiás algo del código previo que cambia el valor de `x` o incluso el funcionamiento de `function_que_targa_10_minutos`? Es posible que knitr no se de cuenta y use la cache, con el resultado de que `datos` va a tener un valor incorrecto. Hay formas de decirle a knitr de qué depende cada chunk y así obtener una cache más "inteligente" pero es algo que se vuelve complicado muy rápido.
+
+En resumen, es bueno usar la cache pero sólo cuando es imprescindible.
