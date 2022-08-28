@@ -4,6 +4,7 @@ author: "Paola Corrales"
 format: 
   revealjs:
     theme: solarized
+    self-contained: true
 ---
 
 ## Hola!
@@ -64,7 +65,8 @@ Materiales abiertos (Licencia CCBY 4.0): [paocorrales.github.io/programacion-lit
 
 ## Programación literaria
 
--   1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.
+-   1970: Escribir programas en lenguaje humano.
+    Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.
 
 -   Desde hace algunos años:
 
@@ -95,25 +97,23 @@ Materiales abiertos (Licencia CCBY 4.0): [paocorrales.github.io/programacion-lit
 -   Generar trabajos para revistas científicas
 -   Publicar informes o trabajos en una web para compartir
 
----
+------------------------------------------------------------------------
 
 ::: columns
 ::: {.column width="50%"}
-
 ### RMarkdown
+
 ```{r}
 #| echo: false
 #| fig-width: 10
 
 knitr::include_graphics(here::here("img/ejemplo-rmarkdown.png"))
 ```
-
-
 :::
 
 ::: {.column width="50%"}
-
 ### Quarto
+
 ```{r}
 #| echo: false
 #| fig-width: 10
