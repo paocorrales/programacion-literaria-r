@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "01_presentacion.html#hola",
-    "href": "01_presentacion.html#hola",
-    "title": "Programación literaria con R",
-    "section": "Hola!",
-    "text": "Hola!\n\n\nVivo en Buenos Aires, Artentina\nInvestigo en el área de Ciencias de la Atmósfera\nSoy profesora de la carrera de Ciencias de Datos en UNAB\nParticipo en muchas comunidades de práctica:\n\nRLadies\nRForwards\nROpenSci\nThe Carpentries\n\n@paobcorrales\npaocorrales.github.io\n\n\n\n\n\n\n@paobcorrales\npaocorrales.github.io\n\n\n@paobcorrales\npaocorrales.github.io"
-  },
-  {
-    "objectID": "01_presentacion.html#logística",
-    "href": "01_presentacion.html#logística",
-    "title": "Programación literaria con R",
-    "section": "Logística",
-    "text": "Logística\n\n\nLunes, Martes y Jueves de 10:45 a 12:15\nSesiones prácticas y de demostración\nMiniproyecto transversal (optativo)\nSus preguntas y comentarios son bienvenidos!\n\n\n\nMateriales abiertos (Licencia CCBY 4.0): paocorrales.github.io/programacion-literaria-r/"
-  },
-  {
-    "objectID": "01_presentacion.html#programación-literaria",
-    "href": "01_presentacion.html#programación-literaria",
-    "title": "Programación literaria con R",
-    "section": "Programación literaria",
-    "text": "Programación literaria\n\n1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.\nDesde hace algunos años:\nAplicamos este concepto al análisis de datos.\nCódigo que lee, explora, visualiza, modela los datos y prosa (el analisis, hipótesis, conclusiones) se incluyen en el mismo archivo.\n\nEl código y prosa se tejen en el documento final."
-  },
-  {
-    "objectID": "01_presentacion.html#mi-invitación-para-ustedes",
-    "href": "01_presentacion.html#mi-invitación-para-ustedes",
-    "title": "Programación literaria con R",
-    "section": "Mi invitación para ustedes:",
-    "text": "Mi invitación para ustedes:\n\nUtilizar RMarkdown/Quarto para generar informes o documentos reproducibles\n\nExplorar los distintos formatos: pdf, html, docx\nGenerar proyectos para trabajar de manera ordenada\n\nAutomatizar informes para ahorrar tiempo y cometer menos errores\nGenerar trabajos para revistas científicas\nPublicar informes o trabajos en una web para compartir"
-  },
-  {
     "objectID": "02_reportes.html",
     "href": "02_reportes.html",
     "title": "Reportes reproducibles",
@@ -49,6 +21,7 @@
     "text": "Markdown\nMarkdown permite escribir en texto plano pero definiendo el formato usando símbolos. Por ejemplo podés resaltar con negrita usando dos asteriscos así: **negrita** o italizada con un asterisco de cada lado: *itálicas*.\nTambién podés hacer una lista de elementos utilizando asteriscos:\n* la negrita se consigue con dos asteriscos\n* la italizada con un asterisco\n* y para resaltar código se usa el acento grave `\no guiones medios:\n- la negrita se consigue con dos asteriscos\n- la italizada con un asterisco\n- y para resaltar código se usa el acento grave `\nAmbas listas se van a ver de esta manera:\n\nla negrita se consigue con dos asteriscos\nla italizada con un asterisco\ny para resaltar código se usa el acento grave `\n\nSi en realidad querés una lista numerada, simplemente comenzá el renglón un número y un punto. Podrías usar siempre el mismo número, markdown se encarga del resto:\n1. la negrita se consigue con dos asteriscos\n1. la italizada con un asterisco\n1. y para resaltar código se usa el acento grave `\nAhora la lista numerada se ve así:\n\nla negrita se consigue con dos asteriscos\nla italizada con un asterisco\ny para resaltar código se usa el acento grave `\n\nPodés agregar títulos con distinta jerarquía agregando # al comienzo. Esto además define secciones dentro del documento:\n# Título\n## El primer subtítulo\n### Otro subtítulo de menor jerarquía\n#### Otro más, y podría seguir!\nPodés escribir estos símbolos a mano o usando el Editor Visual de RStudio y cambiar de la versión código fuente a la versión visual según prefieras () . El Editor Visual permite dar formato al texto usando markdown sin saber usar markdown.\n\n\n\n\n\n\nEjercicio\n\n\n\nCuarto desafío: Agregale texto a tu archivo\nBorrá el contenido del archivo .Rmd que creaste (pero no el encabezado!) y probá escribir algo y darle formato. Luego volvé a apretar el botón knit para ver el resultado.\n\n\nMarkdown permite muchas otras cosas, por ejemplo:\n\nPodés agregar un link a una página externa: [texto que se muestra con el link](http://google.com). Resultado: texto que se muestra con el link\nPodés incluir una imagen: ![descripción de la figura](https://placekitten.com/200/100)\n\nResultado:\n\n\n\ndescripción de la figura\n\n\nY también podés agregar ecuaciones (usando LaTeX) en la misma línea (esto:$E = mc^2$ se ve así: \\(E = mc^2\\)) o en una línea propia. Esto:\n$$\ny = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon\n$$\nse ve así:\n\\[\ny = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon\n\\]\n\n\n\n\n\n\nInformación\n\n\n\nPodés revisar la guía rápida de Markdown desde RStudio (en inglés):\nHelp → Markdown Quick Reference"
   },
   {
+
     "objectID": "03_sintaxis.html",
     "href": "03_sintaxis.html",
     "title": "Sintaxis en un reporte",
@@ -166,6 +139,7 @@
     "title": "Publicando reportes",
     "section": "Palabras finales sobre la publicación",
     "text": "Palabras finales sobre la publicación\n\nNetlify\nLa opción de arrastrar la carpeta que contiene la web en Netlify puede se útil al principio pero se vuelve trabajoso rápidamente, sería genial que fuera automático. Y se puede.\nNetlify tiene una habilidad muy útil, la primera es que se puede conectar con un repositorio en, por ejemplo, GitHub donde viva la página web.\nLuego de haber publicado algunas webs así me encontré con algunos problemas y sus soluciones:\n\nSi la web está construida solo con R Markdown, Netlify necesita saber que la carpeta “_site” es la que contiene la web, de otra manera va a dar error. Alternativamente se puede cambiar la configuración de la web desde el “_site.yml” para que construya la web una carpeta que se llame “public”.\nQuarto por su lado también genera una carpeta con nombre distinto al que necesitamos donde guarda los archivos html que le dan vida a la web. En cualquier caso, si vemos que la cosa no anda, puede que Netlify no esté encontrando los archivos y necesite que lo indiquemos explicitamente.\n\n\n\nGitHub Pages\nNetlify no es el único servicio que permite hostear una web. Hay muchos otros, por ejemplo GitHub Pages. En este caso si o si necesitamos usar un repositorio donde esté, al menos, los htmls que generan la web.\nUna de las diferencias importantes es que GitHub Pages busca la web enla carpeta raíz o alternativamente en una carpeta dentro del repositorio que debe llamarse “docs”. La buena noticia es usando Quarto o RMarkdown se puede indicar en el archivo de configuración que nombre debe tener la carpeta que contenga el sitio construiido."
+
   },
   {
     "objectID": "index.html",
@@ -189,11 +163,32 @@
     "text": "Opcional\nDurante el curso tendrás la posibilidad de hacer ejercicios y poner en práctica las herramientas. Para aprovechar aún más la experiencia, podés traer un script que realicé algún análisis de datos y genere alguna figura o tabla (mejor si no es muy largo y si el código no demora en correr) junto con los datos propiamente dichos.\nEl desafío será convertir ese script en un proyecto y producir un documento con los resultados listos para compartir."
   },
   {
-    "objectID": "quarto_reporte_ejemplo.html",
-    "href": "quarto_reporte_ejemplo.html",
-    "title": "Pingüinos Papúa con Quarto",
-    "section": "",
-    "text": "Los datos de Pingüinos de Palmer fueron recogidos y puestos a disposición por la Dra. Kristen Gorman y la Estación Palmer en la Antártida, LTER, que es parte de la Red de Investigación Ecológica a Largo Plazo. El conjunto de datos incluye varias características de los pingüinos Adelia, Barbijo y Papúa.\n\n\n\nResumen de los pingüinos en el dataset por especie.\n\n\nEspecie\nCantidad\nMasa corporal media\n\n\n\n\nAdelia\n152\n3.70\n\n\nBarbijo\n68\n3.73\n\n\nPapúa\n124\n5.08\n\n\n\n\n\n\n\nEn esta sección centramos el análisis en la especie papúa. La longitud del pico está correlacionada positivamente con el alto del pico, los pingüinos con picos más largos suelen tener picos más altos también.\n\n\n\n\n\nLas hembras y los machos de los pingüinos tienen una masa corporal diferente. Los pingüinos macho suelen ser más grandes que las hembras."
+    "objectID": "01_presentacion.html#hola",
+    "href": "01_presentacion.html#hola",
+    "title": "Programación literaria con R",
+    "section": "Hola!",
+    "text": "Hola!\n\n\nVivo en Buenos Aires, Artentina\nInvestigo en el área de Ciencias de la Atmósfera\nSoy profesora de la carrera de Ciencias de Datos en UNAB\nParticipo en muchas comunidades de práctica:\n\nRLadies\nRForwards\nROpenSci\nThe Carpentries\n\n@paobcorrales\npaocorrales.github.io\n\n\n\n\n\n\n@paobcorrales\npaocorrales.github.io\n\n\n@paobcorrales\npaocorrales.github.io"
+  },
+  {
+    "objectID": "01_presentacion.html#logística",
+    "href": "01_presentacion.html#logística",
+    "title": "Programación literaria con R",
+    "section": "Logística",
+    "text": "Logística\n\n\nLunes, Martes y Jueves de 10:45 a 12:15\nSesiones prácticas y de demostración\nMiniproyecto transversal (optativo)\nSus preguntas y comentarios son bienvenidos!\n\n\n\nMateriales abiertos (Licencia CCBY 4.0): paocorrales.github.io/programacion-literaria-r/"
+  },
+  {
+    "objectID": "01_presentacion.html#programación-literaria",
+    "href": "01_presentacion.html#programación-literaria",
+    "title": "Programación literaria con R",
+    "section": "Programación literaria",
+    "text": "Programación literaria\n\n1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.\nDesde hace algunos años:\nAplicamos este concepto al análisis de datos.\nCódigo que lee, explora, visualiza, modela los datos y prosa (el analisis, hipótesis, conclusiones) se incluyen en el mismo archivo.\n\nEl código y prosa se tejen en el documento final."
+  },
+  {
+    "objectID": "01_presentacion.html#mi-invitación-para-ustedes",
+    "href": "01_presentacion.html#mi-invitación-para-ustedes",
+    "title": "Programación literaria con R",
+    "section": "Mi invitación para ustedes:",
+    "text": "Mi invitación para ustedes:\n\nUtilizar RMarkdown/Quarto para generar informes o documentos reproducibles\n\nExplorar los distintos formatos: pdf, html, docx\nGenerar proyectos para trabajar de manera ordenada\n\nAutomatizar informes para ahorrar tiempo y cometer menos errores\nGenerar trabajos para revistas científicas\nPublicar informes o trabajos en una web para compartir"
   },
   {
     "objectID": "rmarkdown_reporte_ejemplo.html",
