@@ -28,7 +28,7 @@ El minicurso estará dividido en 3 encuentros de 90 minutos cada uno. **Fechas y
 |            |                                                                                               |
 |            | -   [Uso del paquete `RMarkdown` y `Quarto` para reportar anaĺisis de datos](02_reportes.qmd) |
 |            |                                                                                               |
-|            | -   Sintaxis para el manejo de código y prosa                                                 |
+|            | -   [Sintaxis para el manejo de código y prosa](03_sintaxis.qmd)                              |
 +------------+-----------------------------------------------------------------------------------------------+
 | Día 2      | -   Herramientas hacia la reproducibilidad: projectos y el paquete `here`                     |
 |            |                                                                                               |
