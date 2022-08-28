@@ -1,0 +1,94 @@
+---
+title: "Programación literaria con R"
+author: "Paola Corrales"
+format: 
+  revealjs:
+    theme: solarized
+---
+
+## Hola!
+
+::: columns
+::: {.column width="80%"}
+Vivo en Buenos Aires, Artentina
+
+Investigo en el área de Ciencias de la Atmósfera
+
+Soy profesora de la carrera de Ciencias de Datos en UNAB
+
+Participo en muchas comunidades de práctica:
+
+-   RLadies
+-   RForwards
+-   ROpenSci
+-   The Carpentries
+
+@paobcorrales
+
+[paocorrales.github.io](https://paocorrales.github.io/)
+:::
+
+::: {.column width="20%"}
+```{r echo=FALSE, out.width='120%'}
+knitr::include_graphics(here::here("img/pao_circle.png"))
+```
+
+@paobcorrales
+
+[paocorrales.github.io](https://paocorrales.github.io/)
+:::
+:::
+
+@paobcorrales
+
+[paocorrales.github.io](https://paocorrales.github.io/)
+
+------------------------------------------------------------------------
+
+## Logística
+
+::: incremental
+-   Lunes, Martes y Jueves de 10:45 a 12:15
+-   Sesiones prácticas y de demostración
+-   Miniproyecto transversal (optativo)
+-   **Sus preguntas y comentarios son bienvenidos!**
+:::
+
+. . .
+
+Materiales abiertos (Licencia CCBY 4.0): [paocorrales.github.io/programacion-literaria-r/](https://paocorrales.github.io/programacion-literaria-r/)
+
+------------------------------------------------------------------------
+
+## Programación literaria
+
+-   1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.
+
+-   Desde hace algunos años:
+
+-   Aplicamos este concepto al análisis de datos.
+
+-   Código que lee, explora, visualiza, modela los datos y prosa (el analisis, hipótesis, conclusiones) se incluyen en el mismo archivo.
+
+    -   El código y prosa se *tejen* en el documento final.
+
+------------------------------------------------------------------------
+
+### Ventajas
+
+-   El trabajo queda perfectamente documentado
+-   Es un paso hacía la reproducibilidad
+-   Minimiza errores
+-   Las herramientas actuales (ej. RMarkdown, Quarto) permiten generar documentos en múltiples formatos, listos para compartir o publicar.
+
+------------------------------------------------------------------------
+
+## Mi invitación para ustedes:
+
+-   Utilizar RMarkdown/Quarto para generar informes o documentos reproducibles
+    -   Explorar los distintos formatos: pdf, html, docx
+
+    -   Generar proyectos para trabajar de manera ordenada
+-   Automatizar informes para ahorrar tiempo y cometer menos errores
+-   Generar trabajos para revistas científicas
+-   Publicar informes o trabajos en una web para compartir

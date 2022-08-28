@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "01_presentacion.html#hola",
+    "href": "01_presentacion.html#hola",
+    "title": "Programación literaria con R",
+    "section": "Hola!",
+    "text": "Hola!\n\n\nVivo en Buenos Aires, Artentina\nInvestigo en el área de Ciencias de la Atmósfera\nSoy profesora de la carrera de Ciencias de Datos en UNAB\nParticipo en muchas comunidades de práctica:\n\nRLadies\nRForwards\nROpenSci\nThe Carpentries\n\n@paobcorrales\npaocorrales.github.io\n\n\n\n\n\n\n@paobcorrales\npaocorrales.github.io\n\n\n@paobcorrales\npaocorrales.github.io"
+  },
+  {
+    "objectID": "01_presentacion.html#logística",
+    "href": "01_presentacion.html#logística",
+    "title": "Programación literaria con R",
+    "section": "Logística",
+    "text": "Logística\n\n\nLunes, Martes y Jueves de 10:45 a 12:15\nSesiones prácticas y de demostración\nMiniproyecto transversal (optativo)\nSus preguntas y comentarios son bienvenidos!\n\n\n\nMateriales abiertos (Licencia CCBY 4.0): paocorrales.github.io/programacion-literaria-r/"
+  },
+  {
+    "objectID": "01_presentacion.html#programación-literaria",
+    "href": "01_presentacion.html#programación-literaria",
+    "title": "Programación literaria con R",
+    "section": "Programación literaria",
+    "text": "Programación literaria\n\n1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.\nDesde hace algunos años:\nAplicamos este concepto al análisis de datos.\nCódigo que lee, explora, visualiza, modela los datos y prosa (el analisis, hipótesis, conclusiones) se incluyen en el mismo archivo.\n\nEl código y prosa se tejen en el documento final."
+  },
+  {
+    "objectID": "01_presentacion.html#mi-invitación-para-ustedes",
+    "href": "01_presentacion.html#mi-invitación-para-ustedes",
+    "title": "Programación literaria con R",
+    "section": "Mi invitación para ustedes:",
+    "text": "Mi invitación para ustedes:\n\nUtilizar RMarkdown/Quarto para generar informes o documentos reproducibles\n\nExplorar los distintos formatos: pdf, html, docx\nGenerar proyectos para trabajar de manera ordenada\n\nAutomatizar informes para ahorrar tiempo y cometer menos errores\nGenerar trabajos para revistas científicas\nPublicar informes o trabajos en una web para compartir"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "¡Hola!",
@@ -11,7 +39,7 @@
     "href": "preparacion.html",
     "title": "Antes de comenzar",
     "section": "",
-    "text": "Para participar en el curso necesitaras una versión actualizada de R (>4.0) y RStudio (2022.07.01). Versiones previas podrian no funcionar ya que entre otras cosas usaremos una nueva herramienta que viene incluida en las últimas versiones de RStudio.\nSi nunca trabajaste con RMarkdown es posible que necesites instalar algunos paquetes. La manera mas directa de hacer esto es:\n\nAbre RStudio\nHaz click en Archivo -> Nuevo Archivo -> R Markdown. Haz clic en \"Ok\" para crear un nuevo archivo.\nRStudio te pedirá permiso para instalar varios paquetes. Adelante, hazlo.\nPuedes eliminar el archivo que acabas de crear.\nListo!\n\n\n\nSi por alguna razón no podés trabajar con una instalación local, una alternativa es usar RStudio Cloud. Si quieres usar RStudio Cloud necesitarás una cuenta gratuita. Ingresa a rstudio.cloud/ y sigue las instrucciones para registrarte. Ten en cuenta que la cuenta gratuita tiene un límite de uso de 25 horas por mes, te recomendamos no usar todas las horas antes del taller."
+    "text": "Para participar en el curso necesitaras una versión actualizada de R (>4.0) y RStudio (2022.07.01). Versiones previas podrian no funcionar ya que entre otras cosas usaremos una nueva herramienta que viene incluida en las últimas versiones de RStudio.\nSi nunca trabajaste con RMarkdown es posible que necesites instalar algunos paquetes. La manera mas directa de hacer esto es:\n\nAbre RStudio\nHaz click en Archivo -> Nuevo Archivo -> R Markdown. Haz clic en “Ok” para crear un nuevo archivo.\nRStudio te pedirá permiso para instalar varios paquetes. Adelante, hazlo.\nPuedes eliminar el archivo que acabas de crear.\nListo!\n\n\n\nSi por alguna razón no podés trabajar con una instalación local, una alternativa es usar RStudio Cloud. Si quieres usar RStudio Cloud necesitarás una cuenta gratuita. Ingresa a rstudio.cloud/ y sigue las instrucciones para registrarte. Ten en cuenta que la cuenta gratuita tiene un límite de uso de 25 horas por mes, te recomendamos no usar todas las horas antes del taller."
   },
   {
     "objectID": "preparacion.html#opcional",
@@ -19,5 +47,19 @@
     "title": "Antes de comenzar",
     "section": "Opcional",
     "text": "Opcional\nDurante el curso tendrás la posibilidad de hacer ejercicios y poner en práctica las herramientas. Para aprovechar aún más la experiencia, podés traer un script que realicé algún análisis de datos y genere alguna figura o tabla (mejor si no es muy largo y si el código no demora en correr) junto con los datos propiamente dichos.\nEl desafío será convertir ese script en un proyecto y producir un documento con los resultados listos para compartir."
+  },
+  {
+    "objectID": "quarto_reporte_ejemplo.html",
+    "href": "quarto_reporte_ejemplo.html",
+    "title": "Pingüinos Papúa con Quarto",
+    "section": "",
+    "text": "Los datos de Pingüinos de Palmer fueron recogidos y puestos a disposición por la Dra. Kristen Gorman y la Estación Palmer en la Antártida, LTER, que es parte de la Red de Investigación Ecológica a Largo Plazo. El conjunto de datos incluye varias características de los pingüinos Adelia, Barbijo y Papúa.\n\n\n\nResumen de los pingüinos en el dataset por especie.\n\n\nEspecie\nCantidad\nMasa corporal media\n\n\n\n\nAdelia\n152\n3.70\n\n\nBarbijo\n68\n3.73\n\n\nPapúa\n124\n5.08\n\n\n\n\n\n\n\nEn esta sección centramos el análisis en la especie papúa. La longitud del pico está correlacionada positivamente con el alto del pico, los pingüinos con picos más largos suelen tener picos más altos también.\n\n\n\n\n\nLas hembras y los machos de los pingüinos tienen una masa corporal diferente. Los pingüinos macho suelen ser más grandes que las hembras."
+  },
+  {
+    "objectID": "rmarkdown_reporte_ejemplo.html",
+    "href": "rmarkdown_reporte_ejemplo.html",
+    "title": "Pingüinos Papúa con RMarkdown",
+    "section": "",
+    "text": "Los datos de Pingüinos de Palmer fueron recogidos y puestos a disposición por la Dra. Kristen Gorman y la Estación Palmer en la Antártida, LTER, que es parte de la Red de Investigación Ecológica a Largo Plazo. El conjunto de datos incluye varias características de los pingüinos Adelia, Barbijo y Papúa.\n\n\n\nResumen de los pingüinos en el dataset por especie.\n\n\nEspecie\nCantidad\nMasa corporal media\n\n\n\n\nAdelia\n152\n3.70\n\n\nBarbijo\n68\n3.73\n\n\nPapúa\n124\n5.08\n\n\n\n\n\n\n\nEn esta sección centramos el análisis en la especie papúa. La longitud del pico está correlacionada positivamente con el alto del pico, los pingüinos con picos más largos suelen tener picos más altos también.\n\n\n\n\n\nRelación entre el largo y el alto del pico en mm.\n\n\n\n\nLas hembras y los machos de los pingüinos tienen una masa corporal diferente. Los pingüinos macho suelen ser más grandes que las hembras.\n\n\n\n\n\nDistribución de la masa corporal de los pinggüinos según su sexo."
   }
 ]
