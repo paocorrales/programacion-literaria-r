@@ -5,17 +5,17 @@ lang: es
 
 ## ¿De qué se trata este minicurso?
 
-Este curso está orientado tanto a personas con experiencia usando R como aquellas re recién comienzan. El foco no estará en correr modelos o utilizar una sintáxis específica para escribir código de R. El objetivo será transformar nuestros análisis usando R en trabajos reproducibles (o al menos desde el punto de vista de R).
+Este curso está orientado tanto a personas con experiencia usando R como aquellas re recién comienzan. El foco no estará en correr modelos o utilizar una sintaxis específica para escribir código de R. El objetivo será transformar nuestros análisis usando R en trabajos reproducibles (o al menos desde el punto de vista de R).
 
-En particular en estos encuentros haremos foco en la programación literaría, en particular aplicando esta definición al análisis de datos. En otras palabras, la propuesta es escribir código y prosa en el mismo documento y gracias a las herramientras que provee R, generar en documento final en algún formato que necesitemos (por ejemplo pdf o .docx).
+En particular en estos encuentros haremos foco en la programación literaria, en particular aplicando esta definición al análisis de datos. En otras palabras, la propuesta es escribir código y prosa en el mismo documento y gracias a las herramientas que provee R, generar en documento final en algún formato que necesitemos (por ejemplo pdf o .docx).
 
 También dedicaremos tiempo al cómo compartir nuestro trabajo en un sentido amplio. Por un lado veremos como compartir un proyecto con colegas para que puedan correr el código sin demasiados dolores de cabeza (aunque no entraremos en el uso de git y control de versiones). Por el otro lado, veremos como compartir trabajo terminado, por ejemplo en la forma de una página web (pero de nuevo no necesitaremos aprender nada de html o desarrollo web).
 
-Si bien "reproducibilidad" puede significar muchas cosas, luego de este curso podran dar los primer pasos para trabajar de manera más ordenada aprovechando el poder la programacion literaria y otras herramientas que ayudan al trabajo cotidiano.
+Si bien "reproducibilidad" puede significar muchas cosas, luego de este curso podrán dar los primer pasos para trabajar de manera más ordenada aprovechando el poder la programación literaria y otras herramientas que ayudan al trabajo cotidiano.
 
 ### Antes de comenzar
 
-Durante el curso usaremos R y Rstudio. Por favor lee las instrucciónes [que encontrarás aquí](preparacion.html) para poder participar.
+Durante el curso usaremos R y Rstudio. Por favor lee las instrucciones [que encontrarás aquí](preparacion.html) para poder participar.
 
 ### Agenda
 
@@ -30,7 +30,7 @@ El minicurso estará dividido en 3 encuentros de 90 minutos cada uno. **Fechas y
 |       |                                                                                               |
 |       | -   [Sintaxis para el manejo de código y prosa](03_sintaxis.qmd)                              |
 +-------+-----------------------------------------------------------------------------------------------+
-| Día 2 | -   Herramientas hacia la reproducibilidad: projectos y el paquete `here`                     |
+| Día 2 | -   Herramientas hacia la reproducibilidad: proyectos y el paquete `here`                     |
 |       |                                                                                               |
 |       | -   Flujo de trabajo para generar un informe o reporte reproducible                           |
 +-------+-----------------------------------------------------------------------------------------------+
