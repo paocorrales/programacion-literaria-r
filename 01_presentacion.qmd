@@ -11,7 +11,7 @@ format:
 
 ::: columns
 ::: {.column width="80%"}
-Vivo en Buenos Aires, Artentina
+Vivo en Buenos Aires, Argentina
 
 Investigo en el área de Ciencias de la Atmósfera
 
@@ -65,8 +65,7 @@ Materiales abiertos (Licencia CCBY 4.0): [paocorrales.github.io/programacion-lit
 
 ## Programación literaria
 
--   1970: Escribir programas en lenguaje humano.
-    Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.
+-   1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.
 
 -   Desde hace algunos años:
 
