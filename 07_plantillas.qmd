@@ -52,16 +52,39 @@ Si quisieras escribir un reporte, un documento para tu institución o tal vez un
 Dependiendo del formato de saluda, las plantillas serán distintas.
 En esta sección nos vamos a enfocar en documentos PDF.
 
-Para revistas científicas existe el paquete...
+Para revistas científicas quarto permite utilizar [algunas plantillas](https://github.com/quarto-journals). No es necesario instalar nada pero viene con una trampa: requiere usar la Terminal. Para quienes no tienen experiencia con la terminal, esta es otra manera de comunicarse con la computadora y por suerte RStudio viene con una terminal incorporada. 
+
+Si quisieramos probar la plantilla de ElSevier tenemos que ejecutar el siguiente código en la terminal:
+
+```
+quarto use template quarto-journals/elsevier
+```
+
+![Terminal en RStudio que muestra el código a ejecutar para usar la plantilla de ElSevier](img/plantillas-quarto.png)
 
 
-Una vez instalado el paquete, para poder utilizar rticles desde RStudio, podés acceder a las plantillas desde `File -> New File -> R Markdown`.
-Esto va a abrir una ventana de dialogo desde donde podés seleccionar alguna de las plantillas disponibles:
+Al hacer esto, nos hará algunas preguntas y veremos el siguiente mensaje
 
-![Cuadro de dialogo al iniciar un nuevo R Markdown con la lista de plantillas](img/rticles.png)
+```
+Quarto templates may execute code when documents are rendered. If you do not
+trust the authors of the template, we recommend that you do not install or
+use the template.
+ ? Do you trust the authors of this template (Y/n) » Yes
+ ? Directory name: » Prueba
+[>] Downloading
+[>] Unzipping
+    Found 1 extension.
+[>] Copying files...
 
+Files created:
+ - bibliography.bib
+ - placeholder.png
+ - Prueba.qmd
+ - style-guide
+ - _extensions
+```
 
-Al hacer esto, se creará una nueva carpenta que contienen un archivo qmd que usará el formato de salida correspondiente. Posiblemente también encuentres otros archivos necesarios para darle formato a esta plantilla.
+Finalmente se creará creará una nueva carpenta que contienen un archivo qmd que usará el formato de salida correspondiente. Posiblemente también encuentres otros archivos necesarios para darle formato a esta plantilla.
 
 ::: callout-tip
 ## Ejercicio
@@ -71,7 +94,7 @@ Al hacer esto, se creará una nueva carpenta que contienen un archivo qmd que us
 
 1. Crea un nuevo archivo de Quarto file usando alguna de las plantillas disposibles.
 2. revisá las opciones en el YAML y cambiá algunos de los valores. No necesita ser información real! 
-3. Renderizá el documento para ver el resultado.
+3. Renderizá el documento para ver el resultado. Si es la primera vez, puede que demore algunos minutos para instalar cosas. 
 
 :::
 

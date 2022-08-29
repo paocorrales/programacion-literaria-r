@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "01_presentacion.html#hola",
+    "href": "01_presentacion.html#hola",
+    "title": "Programación literaria con R",
+    "section": "Hola!",
+    "text": "Hola!\n\n\nVivo en Buenos Aires, Artentina\nInvestigo en el área de Ciencias de la Atmósfera\nSoy profesora de la carrera de Ciencias de Datos en UNAB\nParticipo en muchas comunidades de práctica:\n\nRLadies\nRForwards\nROpenSci\nThe Carpentries\n\n@paobcorrales\npaocorrales.github.io\n\n\n\n\n\n\n@paobcorrales\npaocorrales.github.io\n\n\n@paobcorrales\npaocorrales.github.io"
+  },
+  {
+    "objectID": "01_presentacion.html#logística",
+    "href": "01_presentacion.html#logística",
+    "title": "Programación literaria con R",
+    "section": "Logística",
+    "text": "Logística\n\n\nLunes, Martes y Jueves de 10:45 a 12:15\nSesiones prácticas y de demostración\nMiniproyecto transversal (optativo)\nSus preguntas y comentarios son bienvenidos!\n\n\n\nMateriales abiertos (Licencia CCBY 4.0): paocorrales.github.io/programacion-literaria-r/"
+  },
+  {
+    "objectID": "01_presentacion.html#programación-literaria",
+    "href": "01_presentacion.html#programación-literaria",
+    "title": "Programación literaria con R",
+    "section": "Programación literaria",
+    "text": "Programación literaria\n\n1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.\nDesde hace algunos años:\nAplicamos este concepto al análisis de datos.\nCódigo que lee, explora, visualiza, modela los datos y prosa (el analisis, hipótesis, conclusiones) se incluyen en el mismo archivo.\n\nEl código y prosa se tejen en el documento final."
+  },
+  {
+    "objectID": "01_presentacion.html#mi-invitación-para-ustedes",
+    "href": "01_presentacion.html#mi-invitación-para-ustedes",
+    "title": "Programación literaria con R",
+    "section": "Mi invitación para ustedes:",
+    "text": "Mi invitación para ustedes:\n\nUtilizar RMarkdown/Quarto para generar informes o documentos reproducibles\n\nExplorar los distintos formatos: pdf, html, docx\nGenerar proyectos para trabajar de manera ordenada\n\nAutomatizar informes para ahorrar tiempo y cometer menos errores\nGenerar trabajos para revistas científicas\nPublicar informes o trabajos en una web para compartir"
+  },
+  {
     "objectID": "02_reportes.html",
     "href": "02_reportes.html",
     "title": "Reportes reproducibles",
@@ -11,17 +39,9 @@
     "href": "02_reportes.html#estructura-de-un-.rmd",
     "title": "Reportes reproducibles",
     "section": "Estructura de un .Rmd",
-    "text": "Estructura de un .Rmd\nCualquier archivo de este tipo tiene 3 partes principales:\n\nEl encabezado o yaml que determina que pinta tendrá el archivo de salida, por ejemplo en formato html. También se puede incluir información sobre el autor, la fecha, si queremos o no una tabla de contenidos y muchas cosas más. Hay pequeñas diferencias entre R Markdown y Quarto.\nEl texto o prosa ya que puede estar a lo largo de todo el documento. Para darle formato a los títulos o por ejemplo resaltar parte del texto usando negrita se usa Markdown, un lenguaje que a diferencia de html es legible aún si no está compilado o en su versión final.\nEl código en bloques o chuncks. Dentro de un chunk el código de R puede ejecutarse al igual que en un script normal y cualquier comentario o explicación debe tener al principio un # para que R lo interprete correctamente.\n\n\n\nEncabezado\nEl encabezado es una serie de instrucciones organizadas entre tres guiones (---) que determinan las propiedades globales del documento, como el título, el formato de salida, información de autoría, etc… También ahí se pueden cambiar opciones asociadas al formato de salida, como el estilo de la tabla de contenidos o índice.\nÉstas propiedades se definen en un formato llamado YAML, el cual permite definir listas jerarquizadas de una forma humanamente legible. Por ejemplo:\n---\ntitle: \"Mi primer RMarkdown\"\noutput: \n  html_document:\n    code_download: true\n    toc: true\n    toc_float: false\n---\ndefine dos variables principales, “title” y “output”. “Output” a su vez contiene un elemento “htm_document”, el cual contiene tres elementos: “code_download”, “toc” y “toc_float”.\n\n\n\n\n\n\nImportante\n\n\n\nEs muy importante mantener el escalonado, o identación de los elementos, ya que ésta define la jerarquía de cada elemento. Muchos de los errores a la hora de knitear ocurren porque el archivo tiene problemas en la identación del encabezado.\n\n\n\n\nBloques de código\nEl código de R que va a leer datos, analizarlos y generar figuras, tablas o números se organiza en bloques (o chunks) delimitados por tres acentos graves (```) y se diferencia del resto de archivo con un fondo gris. Todo lo que incluyas entre estos delimitadores será interpretado por R como código e intentará ejecutarlo al knitear el archivo. Cualquier resultado del código (gráficos, tablas, texto, etc…) será insertado en el documento final en el mismo orden que están en el archivo R Markdown.\n\n\n\n\n\n\nInstrucciones\n\n\n\nPara insertar un nuevo chunk podés:\n\nUsar el botón Insert\nEl atajo de teclado Ctrl+Alt+I\nEscribir a mano!\n\n\n\nEl código en cada bloque se ejecuta como si fuera ejecutado en la terminal y todo resultado se muestra en el documento (ya vamos a ver formas de controlar esto). Por ejemplo, este bloque de código\n```{r sumar}\n1 + 1\n```\nva a insertar esto en el documento de salida:\n[1] 2\n\n\n\n\n\n\nImportante\n\n\n\nEs muy importante no romper los límites de los bloques. Un problema común es accidentalmente eliminar un acento grave al final de un bloque de código y que luego el documento no knitee correctamente. Si al knitear te sale un error como “attempt to use zero-length variable name”, revisá bien que todos tus bloques de código estén correctamente definidos.\n\n\nLos bloques pueden tener nombre, lo cual es útil para identificar donde ocurren los errores al momento de knitear pero también para tener una pista de lo que hace el código que incluye.\nSi bien el código se corre cuando uno knitea, cuando estés escribiendo un informe es muy cómodo ir corriendo bloques individuales interactivamente como si fuera en la consola.\nPara correr una línea de código, tendrás que pararte sobre esa línea y apretar:\n\n\n\n\n\n\nInstrucciones\n\n\n\nCtrl+Enter\n\n\nPero también podés correr el código de todo el chunk con:\n\n\n\n\n\n\nInstrucciones\n\n\n\nCtrl+Shift+Enter\n\n\nLos resultados van a aparecer inmediatamente debajo del bloque.\n\n\n\n\n\n\nEjercicio\n\n\n\nTercer desafío: Sumá un chunk a tu archivo\nUsando el archivo con el que venís trabajando insertá un nuevo chunk y:\n\nCargá el paquete readr.\nCreá una variable que se llame variable_prueba y asignale un valor.\nMostrá ese valor.\nVolvé a knitear el archivo para ver el resultado\n\n\n\nFinalmente, es posible que te encuentres mencionando resultados en el texto, por ejemplo algo así como “el promedio de la variable estudiada es 3.45”. Y también es posible que ese valor cambie si utilizas una base de datos distinta o si luego generas un informe pero para un mes siguiente. Las chances de de que te olvides de actualizar ese “3.45” son super altas, por eso R Markdown también tiene la posibilidad de incorporar código en línea con el texto.\nSi tenés una una variable promedio que vale “3.45”:\n\n\n\nPara mencionarla en el texto entonces escribirías:\n\nel promedio de la variable estudiada es `r promedio`.\n\ny el resultado en el documento kniteado sería\n\nel promedio de la variable estudiada es 3.45.\n\nprueba: 3.45\n\n\nEl texto propio del documento.\nEste es el texto dirigido a las personas que van a leer el reporte. Incluirá una introducción, descripción de los datos y de los resultados; es lo que escribirías en el archivo de Word.\nA diferencia de Word, el formato del texto se define usando markdown, que es un lenguaje simple que permite indicar si un texto va en negrita, cursiva, es un título, etc…usando símbolos especiales dentro del texto."
+    "text": "Estructura de un .Rmd\nCualquier archivo de este tipo tiene 3 partes principales:\n\nEl encabezado o yaml que determina que pinta tendrá el archivo de salida, por ejemplo en formato html. También se puede incluir información sobre el autor, la fecha, si queremos o no una tabla de contenidos y muchas cosas más. Hay pequeñas diferencias entre R Markdown y Quarto.\nEl texto o prosa ya que puede estar a lo largo de todo el documento. Para darle formato a los títulos o por ejemplo resaltar parte del texto usando negrita se usa Markdown, un lenguaje que a diferencia de html es legible aún si no está compilado o en su versión final.\nEl código en bloques o chuncks. Dentro de un chunk el código de R puede ejecutarse al igual que en un script normal y cualquier comentario o explicación debe tener al principio un # para que R lo interprete correctamente."
   },
   {
-    "objectID": "02_reportes.html#markdown",
-    "href": "02_reportes.html#markdown",
-    "title": "Reportes reproducibles",
-    "section": "Markdown",
-    "text": "Markdown\nMarkdown permite escribir en texto plano pero definiendo el formato usando símbolos. Por ejemplo podés resaltar con negrita usando dos asteriscos así: **negrita** o italizada con un asterisco de cada lado: *itálicas*.\nTambién podés hacer una lista de elementos utilizando asteriscos:\n* la negrita se consigue con dos asteriscos\n* la italizada con un asterisco\n* y para resaltar código se usa el acento grave `\no guiones medios:\n- la negrita se consigue con dos asteriscos\n- la italizada con un asterisco\n- y para resaltar código se usa el acento grave `\nAmbas listas se van a ver de esta manera:\n\nla negrita se consigue con dos asteriscos\nla italizada con un asterisco\ny para resaltar código se usa el acento grave `\n\nSi en realidad querés una lista numerada, simplemente comenzá el renglón un número y un punto. Podrías usar siempre el mismo número, markdown se encarga del resto:\n1. la negrita se consigue con dos asteriscos\n1. la italizada con un asterisco\n1. y para resaltar código se usa el acento grave `\nAhora la lista numerada se ve así:\n\nla negrita se consigue con dos asteriscos\nla italizada con un asterisco\ny para resaltar código se usa el acento grave `\n\nPodés agregar títulos con distinta jerarquía agregando # al comienzo. Esto además define secciones dentro del documento:\n# Título\n## El primer subtítulo\n### Otro subtítulo de menor jerarquía\n#### Otro más, y podría seguir!\nPodés escribir estos símbolos a mano o usando el Editor Visual de RStudio y cambiar de la versión código fuente a la versión visual según prefieras () . El Editor Visual permite dar formato al texto usando markdown sin saber usar markdown.\n\n\n\n\n\n\nEjercicio\n\n\n\nCuarto desafío: Agregale texto a tu archivo\nBorrá el contenido del archivo .Rmd que creaste (pero no el encabezado!) y probá escribir algo y darle formato. Luego volvé a apretar el botón knit para ver el resultado.\n\n\nMarkdown permite muchas otras cosas, por ejemplo:\n\nPodés agregar un link a una página externa: [texto que se muestra con el link](http://google.com). Resultado: texto que se muestra con el link\nPodés incluir una imagen: ![descripción de la figura](https://placekitten.com/200/100)\n\nResultado:\n\n\n\ndescripción de la figura\n\n\nY también podés agregar ecuaciones (usando LaTeX) en la misma línea (esto:$E = mc^2$ se ve así: \\(E = mc^2\\)) o en una línea propia. Esto:\n$$\ny = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon\n$$\nse ve así:\n\\[\ny = \\mu + \\sum_{i=1}^p \\beta_i x_i + \\epsilon\n\\]\n\n\n\n\n\n\nInformación\n\n\n\nPodés revisar la guía rápida de Markdown desde RStudio (en inglés):\nHelp → Markdown Quick Reference"
-  },
-  {
-
     "objectID": "03_sintaxis.html",
     "href": "03_sintaxis.html",
     "title": "Sintaxis en un reporte",
@@ -120,18 +140,25 @@
     "text": "Querés compartir tus resultados y tenés un archivo RMarkdown o Quarto en el que estuviste trabajando. Podrías compartir la carpeta del proyecto o un link a un repositorio pero sería ideal que cualquier persona pueda ver esos hermosos resultados sin necesidad de correr código. La otra alternativa es knitear el documento para compartir un PDF o archivo de Word. Las opciones no terminan ahí, Rmarkdown/Quarto abre un mundo de posibilidades para trabajar con código de R, texto y además compartir los resultados (y cualquier otra cosa!)."
   },
   {
-    "objectID": "08_publicacion.html#un-único-.rmd-o-.qmd",
-    "href": "08_publicacion.html#un-único-.rmd-o-.qmd",
+    "objectID": "08_publicacion.html#sitio-web-de-una-sola-página",
+    "href": "08_publicacion.html#sitio-web-de-una-sola-página",
     "title": "Publicando reportes",
-    "section": "Un único .Rmd o .qmd",
-    "text": "Un único .Rmd o .qmd\nPodés publicar como web el contenido de un único archivo aprovechando las características y posibilidades que dan estos formatos. Un ejemplo de eso lo encontras en:\nhttps://01-webs-rmarkdown.netlify.app/\nY podés revisar el código fuente acá.\n\n\n\nEjemplo de web con un solo rmd en https://01-webs-rmarkdown.netlify.app/"
+    "section": "Sitio web de una sola página",
+    "text": "Sitio web de una sola página\nSi sabés cómo generar un reporte en formato html usando R Markdown, ya sabés todo lo que necesitás para publicar un sitio web simple! Lo único que hace falta es un servicio que hostee el archivo y lo muestre a los visitantes. Uno de ellos es Netlify, que permite crear un sitio web con sólo arrastrar una carpeta.\nPequeño detalle: seguramente tu reporte (tu archivo RMarkdown o de Quarto) tiene algún nombre descriptivo consistente con su contenido. Para que convertirlo en una página web el archivo tiene que tener un nombre especial: “index.html”. Adelante, nombrá a tu documento como index.Rmd y knitea a HTML como de costumbre.\nAhora deberías tener como resultado archivo llamado “index.html” en la carpeta de tu proyecto. ¡Felicitaciones! Creaste tu primer págna web.\n\nPublicación\nSolo falta publicar tu página web para no viva solo en tu computadora. Veamos como se hace en Netlify.\nEntrá a https://app.netlify.com/drop y arrastrar la carpeta en el recuadro. Netlify va a crear una página web con un nombre aleatorio y posiblemente imposible de deletrear, pero está publicada!\n\n\n\n\n\nTal vez notaste que Netlify borra los sitios web luego de 24 horas. Para que tu sitio sea permanente tenés que crearte una cuenta en Netlify. Eso además te va a permitir cambiarle el nombre a tu página, por ejemplo migranweb.netlify.app\n\n\n¿Qué pinta tiene?\nAhora que cubrimos los principios básicos de como publicar la página web, podemos concentrarnos en lo importante, el aspecto! (y por supuesto el contenido :) ).\nLa pinta de cualquier archivo RMarkdown se controla desde el encabezado o YAML y en este caso vamos a modificar algunas opciones del output.\nEl YAML de esta web tiene la siguiente pinta:\n\nRMarkdownQuarto\n\n\n---\ntitle: \"Webs con RMarkdown\"\noutput: \n  html_document:\n    code_download: true\n    toc: true\n    toc_float: true\n    theme: unite                                                     \n---\nDe todo esto, la única opción nueva es theme que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar en el paquete {rmarkdown}: default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, y yeti. Podés verlos en acción acá.\n\n\n\n---\ntitle: \"Mi primer RMarkdown\"\nformat:\n  html:\n    code-tools: true\n    theme: \n      - united\ntoc: true\n---\nDe todo esto, la única opción nueva es theme que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar con Quarto: default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti y zephyr. Podés verlos en acción acá.\n\n\n\nPodés revisar un ejemplo de una web a partir de un único archivo en https://01-webs-rmarkdown.netlify.app/\nY podés revisar el código fuente acá.\n\n\n\n\n\n\nEjercicio\n\n\n\nDesafío: Publicá un reporte\n\nElegí un archivo .Rmd, puede ser alguno de los que usamos durante el curso a modo de prueba o el reporte de ejemplo sobre Pinguinos.\nRenderizá el archivo a formato html.\nCambiale el nombre para que se llame index.html y publicalo usando Netlify.\nSi querés compartí el link para que otras personas puedan verlo (opcional)."
   },
   {
-    "objectID": "08_publicacion.html#muchos-.rmd",
-    "href": "08_publicacion.html#muchos-.rmd",
+    "objectID": "08_publicacion.html#muchos-.rmd-o-qmd",
+    "href": "08_publicacion.html#muchos-.rmd-o-qmd",
     "title": "Publicando reportes",
-    "section": "Muchos .Rmd",
-    "text": "Muchos .Rmd\nTal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. {rmarkdown} también permite generar una web con estructura compleja (una barra de navegación con botones y menues entre otras maravillas) a partir de un archivo de configuración y todos los .rmd que necesites. El ejemplo de una web de este estilo se encuenta en:\nhttps://02-webs-rmarkdown.netlify.app/\nY el código fuente acá.\n\n\n\nEjemplo de web con muchos rmd en https://02-webs-rmarkdown.netlify.app/"
+    "section": "Muchos .Rmd o qmd",
+    "text": "Muchos .Rmd o qmd\nTal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. RMarkdown y Quarto también permiten generar una web con estructura compleja (una barra de navegación con botones y menues entre otras maravillas) a partir de un archivo de configuración y todos los .rmd o .qmd que necesites. El ejemplo de una web de este estilo se encuenta en:\nEl archivo “_site.yml” controla la configuración y pinta de todo el sitio. Es archivo de texto plano con argumentos all estilo YAML. El contenido del archivo para esta web tiene la siguiente pinta:\nnavbar:\n  title: Una web con muchos .Rmd!\n  left:\n  - text: Configuración\n    href: archivo-site.html\n  - text: Contenido\n    menu:\n      - text: El index\n        href: archivo-index.html\n      - text: Un post\n        href: post.html\noutput:\n  html_document:\n    theme: united"
+  },
+  {
+    "objectID": "08_publicacion.html#qué-es-lo-que-hace-cada-parte",
+    "href": "08_publicacion.html#qué-es-lo-que-hace-cada-parte",
+    "title": "Publicando reportes",
+    "section": "¿Qué es lo que hace cada parte?",
+    "text": "¿Qué es lo que hace cada parte?\n\nnavbar:... define la barra de navegación que ves ahí arriba. Tiene varias partes, el título, un primer elemento que “Configuración” que lleva a esta misma página y otro elementos que es un menú desplegable desde donde podés acceder a más contenido. Estos elementos tienen un nombre o text y el archivo al que hacen referencia, siempre el html.\noutput:... define opciones globales de salida para no tener que definirlas dentro de cada archivo Rmd. Podés ver las opciones disponibles en la documentación con ?rmarkdown::html_document(). En este caso, define que la apariencia a a ser con el tema “united”.\n\nHay muchas más opciones, por ejemplo:\n\noutput_dir: docs define que el sitio web se va a generar en la carpeta “docs”, adentro de la carpeta del proyecto. Esto cambia el nombre por defecto de la carpeta “_site” que contiene los archivos html y demás archivos necesarios para que el sitio funcione. Esta opción es particularmente útil si se quiere utilizar GitHub Pages que requieren que la carpeta se llame “docs” en vez de “_site”.\n\n\n\n\nLas partes del navbar\n\n\nTener el archivo _site.yaml tiene otra gran ventaja. Ahora RStudio sabe que querés hacer un sitio web y podés generar todo el sitio web directamente yendo a la solapa “Build” y haciendo click en “Build Website” o con el atajo de teclado Ctrl + Shift + B. Esto va a renderizar todos los archivos .Rmd que estén en la raiz del proyecto y va a generar el sitio web en la carpeta especificada en output_dir.\nEl resto se parece mucho a lo que ya vimos. Necesitaremos un archivo index.html que será nuestra página de inicio y luego podremos agregar tantas secciones como querramos.\nPodés revisar un ejemplo de una web construida a partir de varios archivos en: https://02-webs-rmarkdown.netlify.app/\nY el código fuente se encuentra acá."
   },
   {
     "objectID": "08_publicacion.html#palabras-finales-sobre-la-publicación",
@@ -139,7 +166,6 @@
     "title": "Publicando reportes",
     "section": "Palabras finales sobre la publicación",
     "text": "Palabras finales sobre la publicación\n\nNetlify\nLa opción de arrastrar la carpeta que contiene la web en Netlify puede se útil al principio pero se vuelve trabajoso rápidamente, sería genial que fuera automático. Y se puede.\nNetlify tiene una habilidad muy útil, la primera es que se puede conectar con un repositorio en, por ejemplo, GitHub donde viva la página web.\nLuego de haber publicado algunas webs así me encontré con algunos problemas y sus soluciones:\n\nSi la web está construida solo con R Markdown, Netlify necesita saber que la carpeta “_site” es la que contiene la web, de otra manera va a dar error. Alternativamente se puede cambiar la configuración de la web desde el “_site.yml” para que construya la web una carpeta que se llame “public”.\nQuarto por su lado también genera una carpeta con nombre distinto al que necesitamos donde guarda los archivos html que le dan vida a la web. En cualquier caso, si vemos que la cosa no anda, puede que Netlify no esté encontrando los archivos y necesite que lo indiquemos explicitamente.\n\n\n\nGitHub Pages\nNetlify no es el único servicio que permite hostear una web. Hay muchos otros, por ejemplo GitHub Pages. En este caso si o si necesitamos usar un repositorio donde esté, al menos, los htmls que generan la web.\nUna de las diferencias importantes es que GitHub Pages busca la web enla carpeta raíz o alternativamente en una carpeta dentro del repositorio que debe llamarse “docs”. La buena noticia es usando Quarto o RMarkdown se puede indicar en el archivo de configuración que nombre debe tener la carpeta que contenga el sitio construiido."
-
   },
   {
     "objectID": "index.html",
@@ -163,32 +189,11 @@
     "text": "Opcional\nDurante el curso tendrás la posibilidad de hacer ejercicios y poner en práctica las herramientas. Para aprovechar aún más la experiencia, podés traer un script que realicé algún análisis de datos y genere alguna figura o tabla (mejor si no es muy largo y si el código no demora en correr) junto con los datos propiamente dichos.\nEl desafío será convertir ese script en un proyecto y producir un documento con los resultados listos para compartir."
   },
   {
-    "objectID": "01_presentacion.html#hola",
-    "href": "01_presentacion.html#hola",
-    "title": "Programación literaria con R",
-    "section": "Hola!",
-    "text": "Hola!\n\n\nVivo en Buenos Aires, Artentina\nInvestigo en el área de Ciencias de la Atmósfera\nSoy profesora de la carrera de Ciencias de Datos en UNAB\nParticipo en muchas comunidades de práctica:\n\nRLadies\nRForwards\nROpenSci\nThe Carpentries\n\n@paobcorrales\npaocorrales.github.io\n\n\n\n\n\n\n@paobcorrales\npaocorrales.github.io\n\n\n@paobcorrales\npaocorrales.github.io"
-  },
-  {
-    "objectID": "01_presentacion.html#logística",
-    "href": "01_presentacion.html#logística",
-    "title": "Programación literaria con R",
-    "section": "Logística",
-    "text": "Logística\n\n\nLunes, Martes y Jueves de 10:45 a 12:15\nSesiones prácticas y de demostración\nMiniproyecto transversal (optativo)\nSus preguntas y comentarios son bienvenidos!\n\n\n\nMateriales abiertos (Licencia CCBY 4.0): paocorrales.github.io/programacion-literaria-r/"
-  },
-  {
-    "objectID": "01_presentacion.html#programación-literaria",
-    "href": "01_presentacion.html#programación-literaria",
-    "title": "Programación literaria con R",
-    "section": "Programación literaria",
-    "text": "Programación literaria\n\n1970: Escribir programas en lenguaje humano. Las herramientas de programación se encargan de separar el programa (para compilar y ejecutar) de su documentación.\nDesde hace algunos años:\nAplicamos este concepto al análisis de datos.\nCódigo que lee, explora, visualiza, modela los datos y prosa (el analisis, hipótesis, conclusiones) se incluyen en el mismo archivo.\n\nEl código y prosa se tejen en el documento final."
-  },
-  {
-    "objectID": "01_presentacion.html#mi-invitación-para-ustedes",
-    "href": "01_presentacion.html#mi-invitación-para-ustedes",
-    "title": "Programación literaria con R",
-    "section": "Mi invitación para ustedes:",
-    "text": "Mi invitación para ustedes:\n\nUtilizar RMarkdown/Quarto para generar informes o documentos reproducibles\n\nExplorar los distintos formatos: pdf, html, docx\nGenerar proyectos para trabajar de manera ordenada\n\nAutomatizar informes para ahorrar tiempo y cometer menos errores\nGenerar trabajos para revistas científicas\nPublicar informes o trabajos en una web para compartir"
+    "objectID": "quarto_reporte_ejemplo.html",
+    "href": "quarto_reporte_ejemplo.html",
+    "title": "Pingüinos Papúa con Quarto",
+    "section": "",
+    "text": "Los datos de Pingüinos de Palmer fueron recogidos y puestos a disposición por la Dra. Kristen Gorman y la Estación Palmer en la Antártida, LTER, que es parte de la Red de Investigación Ecológica a Largo Plazo. El conjunto de datos incluye varias características de los pingüinos Adelia, Barbijo y Papúa.\n\n\n\nResumen de los pingüinos en el dataset por especie.\n\n\nEspecie\nCantidad\nMasa corporal media\n\n\n\n\nAdelia\n152\n3.70\n\n\nBarbijo\n68\n3.73\n\n\nPapúa\n124\n5.08\n\n\n\n\n\n\n\nEn esta sección centramos el análisis en la especie papúa. La longitud del pico está correlacionada positivamente con el alto del pico, los pingüinos con picos más largos suelen tener picos más altos también.\n\n\n\n\n\nLas hembras y los machos de los pingüinos tienen una masa corporal diferente. Los pingüinos macho suelen ser más grandes que las hembras."
   },
   {
     "objectID": "rmarkdown_reporte_ejemplo.html",

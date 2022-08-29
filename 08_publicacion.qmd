@@ -13,27 +13,138 @@ execute:
 Querés compartir tus resultados y tenés un archivo RMarkdown o Quarto en el que estuviste trabajando. Podrías compartir la carpeta del proyecto o un link a un repositorio pero sería ideal que cualquier persona pueda ver esos hermosos resultados sin necesidad de correr código. La otra alternativa es knitear el documento para compartir un PDF o archivo de Word. Las opciones no terminan ahí, Rmarkdown/Quarto abre un mundo de posibilidades para trabajar con código de R, texto y además compartir los resultados (y cualquier otra cosa!).
 
 
-## Un único .Rmd o .qmd
 
-Podés publicar como web el contenido de un único archivo aprovechando las características y posibilidades que dan estos formatos. Un ejemplo de eso lo encontras en:
+## Sitio web de una sola página
 
-[https://01-webs-rmarkdown.netlify.app/](https://01-webs-rmarkdown.netlify.app/)
+Si sabés cómo generar un reporte en formato html usando R Markdown, ya sabés todo lo que necesitás para publicar un sitio web simple! Lo único que hace falta es un servicio que *hostee* el archivo y lo muestre a los visitantes. Uno de ellos es [Netlify](https://www.netlify.com/), que permite crear un sitio web con sólo arrastrar una carpeta. 
+
+**Pequeño detalle:** seguramente tu reporte (tu archivo RMarkdown o de Quarto) tiene algún nombre descriptivo consistente con su contenido. Para que *convertirlo* en una página web el archivo tiene que tener un nombre especial: "index.html". Adelante, nombrá a tu documento como index.Rmd y knitea a HTML como de costumbre. 
+
+Ahora deberías tener como resultado archivo llamado "index.html" en la carpeta de tu proyecto. ¡Felicitaciones! Creaste tu primer págna web.
+
+### Publicación
+
+Solo falta publicar tu página web para no viva solo en tu computadora. Veamos como se hace en Netlify.
+
+Entrá a [https://app.netlify.com/drop](https://app.netlify.com/drop) y arrastrar la carpeta en el recuadro. Netlify va a crear una página web con un nombre aleatorio y posiblemente imposible de deletrear, pero está publicada!
+
+
+<figure>
+<video width=770px controls>
+  <source src="img/netlify_drop.webm" type="video/webm">
+</video>
+</figure>
+
+
+Tal vez notaste que Netlify borra los sitios web luego de 24 horas. Para que tu sitio sea permanente tenés que crearte una cuenta en Netlify. Eso además te va a permitir cambiarle el nombre a tu página, por ejemplo migranweb.netlify.app
+
+### ¿Qué pinta tiene?
+
+Ahora que cubrimos los principios básicos de como publicar la página web, podemos concentrarnos en lo importante, el aspecto! (y por supuesto el contenido :) ).
+
+La pinta de cualquier archivo RMarkdown se controla desde el encabezado o YAML y en este caso vamos a modificar algunas opciones del `output`. 
+
+El YAML de esta web tiene la siguiente pinta:
+
+::: panel-tabset
+### RMarkdown
+
+```
+---
+title: "Webs con RMarkdown"
+output: 
+  html_document:
+    code_download: true
+    toc: true
+    toc_float: true
+    theme: unite                                                     
+---
+```
+
+De todo esto, la única opción nueva es **theme** que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar en el paquete {rmarkdown}: default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, y yeti. Podés verlos en acción [acá](https://bootswatch.com/3/).
+
+![](img/yaml_1rmd.png)
+
+### Quarto
+
+``` yaml
+---
+title: "Mi primer RMarkdown"
+format:
+  html:
+    code-tools: true
+    theme: 
+      - united
+toc: true
+---
+```
+
+De todo esto, la única opción nueva es **theme** que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar con Quarto: default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti y zephyr. Podés verlos en acción [acá](https://bootswatch.com/).
+:::
+
+Podés revisar un ejemplo de una web a partir de un único archivo en [https://01-webs-rmarkdown.netlify.app/](https://01-webs-rmarkdown.netlify.app/)
 
 Y podés revisar el código fuente [acá](https://github.com/paocorrales/01_Webs-RMarkdown).
 
-![Ejemplo de web con un solo rmd en https://01-webs-rmarkdown.netlify.app/](images/01-web.png)
+::: callout-tip
+## Ejercicio
+
+**Desafío: Publicá un reporte**
+
+1. Elegí un archivo .Rmd, puede ser alguno de los que usamos durante el curso a modo de prueba o el reporte de ejemplo sobre Pinguinos.
+2. Renderizá el archivo a formato html.
+3. Cambiale el nombre para que se llame index.html y publicalo usando Netlify.
+4. Si querés compartí el link para que otras personas puedan verlo (opcional).
+:::
 
 
 
-## Muchos .Rmd
 
-Tal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. {rmarkdown} también permite generar una web con estructura compleja (una barra de navegación con botones y menues entre otras maravillas) a partir de un archivo de configuración y todos los .rmd que necesites. El ejemplo de una web de este estilo se encuenta en:
+## Muchos .Rmd o qmd
 
-[https://02-webs-rmarkdown.netlify.app/](https://02-webs-rmarkdown.netlify.app/)
+Tal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. RMarkdown y Quarto también permiten generar una web con estructura compleja (una barra de navegación con botones y menues entre otras maravillas) a partir de un archivo de configuración y todos los .rmd o .qmd que necesites. El ejemplo de una web de este estilo se encuenta en:
 
-Y el código fuente [acá](https://github.com/paocorrales/02_Webs-RMarkdown).
+El archivo "_site.yml" controla la configuración y pinta de todo el sitio. Es archivo de texto plano con argumentos all estilo YAML. El contenido del archivo para esta web tiene la siguiente pinta:
 
-![Ejemplo de web con muchos rmd en https://02-webs-rmarkdown.netlify.app/](images/02-web.png)
+```yaml
+navbar:
+  title: Una web con muchos .Rmd!
+  left:
+  - text: Configuración
+    href: archivo-site.html
+  - text: Contenido
+    menu:
+      - text: El index
+        href: archivo-index.html
+      - text: Un post
+        href: post.html
+output:
+  html_document:
+    theme: united
+```
+
+
+## ¿Qué es lo que hace cada parte?
+
+* `navbar:...` define la barra de navegación que ves ahí arriba. Tiene varias partes, el título, un primer elemento que "Configuración" que lleva a esta misma página y otro elementos que es un menú desplegable desde donde podés acceder a más contenido. Estos elementos tienen un nombre o `text` y el archivo al que hacen referencia, siempre el html. 
+
+* `output:...` define opciones globales de salida para no tener que definirlas dentro de cada archivo Rmd. Podés ver las opciones disponibles en la documentación con `?rmarkdown::html_document()`. En este caso, define que la apariencia a a ser con el tema "united". 
+
+Hay muchas más opciones, por ejemplo:
+
+* `output_dir: docs` define que el sitio web se va a generar en la carpeta "docs", adentro de la carpeta del proyecto. Esto cambia el nombre por defecto de la carpeta "_site" que contiene los archivos html y demás archivos necesarios para que el sitio funcione. Esta opción es particularmente útil si se quiere utilizar GitHub Pages que requieren que la carpeta se llame "docs" en vez de "_site".
+
+![Las partes del navbar](img/site.png)
+
+Tener el archivo _site.yaml tiene otra gran ventaja. Ahora RStudio sabe que querés hacer un sitio web y podés generar todo el sitio web directamente yendo a la solapa "Build" y haciendo click en "Build Website" o con el atajo de teclado Ctrl + Shift + B. Esto va a renderizar todos los archivos .Rmd que estén en la raiz del proyecto y va a generar el sitio web en la carpeta especificada en `output_dir`.
+
+El resto se parece mucho a lo que ya vimos. Necesitaremos un archivo index.html que será nuestra página de inicio y luego podremos agregar tantas secciones como querramos. 
+
+
+Podés revisar un ejemplo de una web construida a partir de varios archivos en: [https://02-webs-rmarkdown.netlify.app/](https://02-webs-rmarkdown.netlify.app/)
+
+Y el código fuente se encuentra [acá](https://github.com/paocorrales/02_Webs-RMarkdown).
+
 
 ## Palabras finales sobre la publicación
 

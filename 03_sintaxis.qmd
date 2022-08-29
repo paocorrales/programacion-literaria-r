@@ -207,7 +207,7 @@ Markdown permite muchas otras cosas, por ejemplo:
 
 Resultado:
 
-![descripción de la figura](img/kitty100.jpeg)
+![descripción de la figura](https://placekitten.com/200/100)
 
 Y también podés agregar ecuaciones (usando [LaTeX](https://es.wikipedia.org/wiki/LaTeX)) en la misma línea (esto:`$E = mc^2$` se ve así: $E = mc^2$) o en una línea propia. Esto:
 
