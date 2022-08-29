@@ -10,7 +10,6 @@ execute:
   warning: false
 ---
 
-
 Trabajar con proyectos de RStudio no solo hace tus análisis más ordenados y reproducibles, también hacen tu vida más simple.
 
 Al comienzo posiblemente tengas un script y uno o dos archivos con datos, pero es posible que rápidamente te encuentres con una docena de archivos con nombres parecidos pero que pertenecen a análisis totalmente distintos.
@@ -68,7 +67,6 @@ No existe una "mejor" forma de organizar un proyecto pero acá van algunos princ
 
 Teniendo esto en mente, la estructura interna de un proyecto podría ser la siguiente:
 
-
     mi_proyecto/
     │
     ├── informe/
@@ -83,9 +81,9 @@ Teniendo esto en mente, la estructura interna de un proyecto podría ser la sigu
     └── datos/
         ├── datos_crudps/   # Datos crudos (externos)
         └── datos_derivados/# Datos generados en el análisis o limpieza
- 
-Por supuesto, siempre dependerá del uso y necesidad de cada persona. Pero lo anterior es un buen punto de partida. 
 
+Por supuesto, siempre dependerá del uso y necesidad de cada persona.
+Pero lo anterior es un buen punto de partida.
 
 ## Ordenando aún más
 
@@ -98,11 +96,15 @@ rm(list = ls())
 
 ```
 
-La primera línea *setea* o le avisa a R cual será la carpeta donde va a trabajar. _Con el uso de proyectos esto está prácticamente solucionado_ porque al abrir el proyecto ya sea desde el explorador de archivos haciendo doble click en el archivo con extensión *Rproj* o desde RStudio, R sabrá que ese directorio será el de trabajo. 
+La primera línea *setea* o le avisa a R cual será la carpeta donde va a trabajar.
+*Con el uso de proyectos esto está prácticamente solucionado* porque al abrir el proyecto ya sea desde el explorador de archivos haciendo doble click en el archivo con extensión *Rproj* o desde RStudio, R sabrá que ese directorio será el de trabajo.
 
-Pero también te dijimos que era una buena práctica organizar las diferentes partes del proyecto en subcarpetas, como por ejemplo colocar los datos en una subcarpeta llamada "datos", los informes en otra y tal vez las figuras en una subcarpeta distinta dentro del proyecto. ¿Cómo hacemos para que R lea un archivo que no está en la carpeta de trabajo? Podríamos escribir el camino hacia ese archivo, por ejemplo `"datos/mi_archivo_de_datos.csv"` pero si queremos compartir el código a otra persona que tal vez tiene un sistema operativo distinto y usa la barra invertida `\` va a estar en problemas al intentar correr esa línea. 
+Pero también te dijimos que era una buena práctica organizar las diferentes partes del proyecto en subcarpetas, como por ejemplo colocar los datos en una subcarpeta llamada "datos", los informes en otra y tal vez las figuras en una subcarpeta distinta dentro del proyecto.
+¿Cómo hacemos para que R lea un archivo que no está en la carpeta de trabajo?
+Podríamos escribir el camino hacia ese archivo, por ejemplo `"datos/mi_archivo_de_datos.csv"` pero si queremos compartir el código a otra persona que tal vez tiene un sistema operativo distinto y usa la barra invertida `\` va a estar en problemas al intentar correr esa línea.
 
-Para solucionar estos problemas existe el paquete **here**, que funciona independientemente del sistema operativo. Su función principal `here()` recibe como argumentos el camino hacia el archivo que se quiere leer, siempre entre comillas y separados por comas, así:
+Para solucionar estos problemas existe el paquete **here**, que funciona independientemente del sistema operativo.
+Su función principal `here()` recibe como argumentos el camino hacia el archivo que se quiere leer, siempre entre comillas y separados por comas, así:
 
 ```{r eval=FALSE}
 
@@ -110,10 +112,11 @@ mis_datos <- read_csv(here("datos", "mi_archivo_de_datos.csv"))
 
 ```
 
-Internamente este paquete puede identificar cual es el directorio de trabajo (por ejemplo detectando que hay un archivo *.Rproj*) y busca a partir de ahí la subcarpeta "datos" y adentro de ella el archivo "mi_archivo_de_datos.csv". 
+Internamente este paquete puede identificar cual es el directorio de trabajo (por ejemplo detectando que hay un archivo *.Rproj*) y busca a partir de ahí la subcarpeta "datos" y adentro de ella el archivo "mi_archivo_de_datos.csv".
 
-La segunda línea del código inicial se usa para borrar los elementos que creamos en el análisis normalmente cuando cambiamos de tema o empezamos a trabajar con algo distinto. Esto está bien porque no queremos arrastrar análisis que hicimos en un proyecto a otro, necesitamos que sean autocontenidos y *reproducibles*. El problema es que este comando **no** *borra* los paquetes activados o las opciones usuario que hayamos seteado. 
-
+La segunda línea del código inicial se usa para borrar los elementos que creamos en el análisis normalmente cuando cambiamos de tema o empezamos a trabajar con algo distinto.
+Esto está bien porque no queremos arrastrar análisis que hicimos en un proyecto a otro, necesitamos que sean autocontenidos y *reproducibles*.
+El problema es que este comando **no** *borra* los paquetes activados o las opciones usuario que hayamos seteado.
 
 ### Borrón y cuenta nueva... todos los días!
 
