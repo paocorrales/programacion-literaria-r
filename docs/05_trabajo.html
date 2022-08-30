@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programación literaria con R - Sintaxis en un reporte</title>
+<title>Programación literaria con R - Flujo de trabajo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3875,16 +3875,6 @@ vertical-align: -.125em;
   }
 }</script>
 
-  
-  <script>
-    (function () {
-      var script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js";
-      document.getElementsByTagName("head")[0].appendChild(script);
-    })();
-  </script>
-
 
 <style type="text/css">
 </style>
@@ -3963,13 +3953,8 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#encabezado" id="toc-encabezado" class="nav-link active" data-scroll-target="#encabezado">Encabezado</a></li>
-  <li><a href="#bloques-de-código" id="toc-bloques-de-código" class="nav-link" data-scroll-target="#bloques-de-código">Bloques de código</a></li>
-  <li><a href="#el-texto-propio-del-documento." id="toc-el-texto-propio-del-documento." class="nav-link" data-scroll-target="#el-texto-propio-del-documento.">El texto propio del documento.</a>
-  <ul class="collapse">
-  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">Markdown</a></li>
-  </ul></li>
-  <li><a href="#control-de-chunks" id="toc-control-de-chunks" class="nav-link" data-scroll-target="#control-de-chunks">Control de chunks</a></li>
+  <li><a href="#trabajando-con-funciones-y-otro-código" id="toc-trabajando-con-funciones-y-otro-código" class="nav-link active" data-scroll-target="#trabajando-con-funciones-y-otro-código">Trabajando con funciones y otro código</a></li>
+  <li><a href="#trabajando-con-datos" id="toc-trabajando-con-datos" class="nav-link" data-scroll-target="#trabajando-con-datos">Trabajando con datos</a></li>
   </ul>
 </nav>
     </div>
@@ -3978,7 +3963,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Sintaxis en un reporte</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Flujo de trabajo</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -3992,194 +3977,25 @@ vertical-align: -.125em;
 
 </header>
 
-<p>Ahora vamos a ver como se trabaja en cada una de las secciones de un reporte. Cada una tiene una sintaxis distinta, parece mucho, pero veremos que no se aleja de lo que cada uno ya sabe.</p>
-<section id="encabezado" class="level2">
-<h2 class="anchored" data-anchor-id="encabezado">Encabezado</h2>
-<p>El encabezado es una serie de instrucciones organizadas entre tres guiones (<code>---</code>) que determinan las propiedades globales del documento, como el título, el formato de salida, información de autoría, etc… También ahí se pueden cambiar opciones asociadas al formato de salida, como el estilo de la tabla de contenidos o índice.</p>
-<p>Éstas propiedades se definen en un formato llamado <a href="https://es.wikipedia.org/wiki/YAML">YAML</a>, el cual permite definir listas jerarquizadas de una forma humanamente legible. Por ejemplo:</p>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">RMarkdown</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Quarto</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code_download</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_float</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>define dos variables principales, “title” y “output”. “Output” a su vez contiene un elemento “htm_document”, el cual contiene tres elementos: “code_download”, “toc” y “toc_float”.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-tools</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>define dos variables principales, “title” y “format”. “format” a su vez contiene un elemento “html” que define el formato de salida y contiene una nueva opción: “code-tools: true”. Esto permite visualizar el código fuente que genera la web cuando ya está publicada. “toc : true” generará una tabla de contenidos.</p>
-</div>
-</div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Importante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Es muy importante mantener el escalonado, o <em>identación</em> de los elementos, ya que ésta define la jerarquía de cada elemento. Muchos de los errores a la hora de knitear ocurren porque el archivo tiene problemas en la identación del encabezado.</p>
-</div>
-</div>
-</section>
-<section id="bloques-de-código" class="level2">
-<h2 class="anchored" data-anchor-id="bloques-de-código">Bloques de código</h2>
-<p>El código de R que va a leer datos, analizarlos y generar figuras, tablas o números se organiza en bloques (o <code>chunks</code>) delimitados por tres acentos graves (<code>```</code>) y se diferencia del resto de archivo con un fondo gris. Todo lo que incluyas entre estos delimitadores será interpretado por R como código e intentará ejecutarlo al <em>knitear</em> el archivo. Cualquier resultado del código (gráficos, tablas, texto, etc…) será insertado en el documento final en el mismo orden que están en el archivo R Markdown.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Instrucciones
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Para insertar un nuevo chunk podés:</p>
-<ul>
-<li>Usar el botón <strong>Insert</strong></li>
-<li>El atajo de teclado Ctrl+Alt+I</li>
-<li>Escribir a mano!</li>
-</ul>
-</div>
-</div>
-<p>El código en cada bloque se ejecuta como si fuera ejecutado en la terminal y todo resultado se muestra en el documento (ya vamos a ver formas de controlar esto). Por ejemplo, este bloque de código</p>
-<pre><code>```{r sumar}
-1 + 1
-```</code></pre>
-<p>va a insertar esto en el documento de salida:</p>
-<pre><code>[1] 2</code></pre>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Importante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Es muy importante no romper los límites de los bloques. Un problema común es accidentalmente eliminar un acento grave al final de un bloque de código y que luego el documento no knitee correctamente. Si al knitear te sale un error como “attempt to use zero-length variable name”, revisá bien que todos tus bloques de código estén correctamente definidos.</p>
-</div>
-</div>
-<p>Los bloques pueden tener nombre, lo cual es útil para identificar donde ocurren los errores al momento de <em>knitear</em> pero también para tener una pista de lo que hace el código que incluye.</p>
-<p>Si bien el código se corre cuando uno knitea, cuando estés escribiendo un informe es muy cómodo ir corriendo bloques individuales interactivamente como si fuera en la consola.</p>
-<p>Para correr una línea de código, tendrás que pararte sobre esa línea y apretar:</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Instrucciones
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ctrl+Enter</p>
-</div>
-</div>
-<p>Pero también podés correr el código de todo el chunk con:</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Instrucciones
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ctrl+Shift+Enter</p>
-</div>
-</div>
-<p>Los resultados van a aparecer inmediatamente debajo del bloque.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Ejercicio
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Tercer desafío: Sumá un chunk a tu archivo</strong></p>
-<p>Usando el archivo con el que venís trabajando insertá un nuevo chunk y:</p>
-<ol type="1">
-<li>Cargá el paquete readr.</li>
-<li>Creá una variable que se llame <code>variable_prueba</code> y asignale un valor.</li>
-<li>Mostrá ese valor.</li>
-<li>Volvé a <em>knitear</em> el archivo para ver el resultado</li>
-</ol>
-</div>
-</div>
-<p>Finalmente, es posible que te encuentres mencionando resultados en el texto, por ejemplo algo así como “el promedio de la variable estudiada es 3.45”. Y también es posible que ese valor cambie si utilizas una base de datos distinta o si luego generas un informe pero para un mes siguiente. Las chances de de que te olvides de actualizar ese “3.45” son super altas, por eso R Markdown también tiene la posibilidad de incorporar código en línea con el texto.</p>
-<p>Si tenés una una variable <code>promedio</code> que vale “3.45”:</p>
+<p>Esta temática podría ser tan larga y compleja como se quiera. Definir <em>manera de trabajar</em> es cuestión de práctica pero además del objetivo final que queremos alcanzar. En esta sección veremos algunas herramientras y discutiremos algunas ideas que buscan seguir avanzando en la generaciónde analísis y reportes reproducibles.</p>
+<section id="trabajando-con-funciones-y-otro-código" class="level2">
+<h2 class="anchored" data-anchor-id="trabajando-con-funciones-y-otro-código">Trabajando con funciones y otro código</h2>
+<p>Hasta ahora tenemos un proyecto con una determinada estructura de carpetas que nos permite ordenar nuestro trabajo. Además vimos en detalle como utilizar archivos .Rmd o .qmd <em>autocontenidos</em>, que incluyan el código y texto necesario para generar un análisis. Pero es posible que nuestro trabajo necesite funciones que generamos para hacer nuestro trabajo más simple. Si incluimos el código que define estas funciones en nuestro .Rmd, puede complejizar nuestro código y que sea más dificil de interpretar. Aquí podemos comenzar a incluir archivos secundarios que contengan estas funciones.</p>
+<p>En las situaciones donde nuestro código no produce resultados, más bien son definiciones de funciones secundarias u otras herramientras, no tiene tanto sentido usar archivos .Rmd. En estos casos podemos volver a los tradicionales scripts.</p>
+<p>Si hipotéticamente quisieramos definir una función que convierte la temperatura en kelvin (algo muy común entre meteorólogos) a la temperatura en grados centígrados tendriamos el siguiente código:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>promedio <span class="ot">&lt;-</span> <span class="st">&quot;3.45&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>kelvin_a_centigrados <span class="ot">&lt;-</span> <span class="cf">function</span>(temperatura) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(temperatura <span class="sc">-</span> <span class="fl">273.15</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para mencionarla en el texto entonces escribirías:</p>
-<blockquote class="blockquote">
-<p>el promedio de la variable estudiada es `<code>r</code> <code>promedio</code>`.</p>
-</blockquote>
-<p>y el resultado en el documento kniteado sería</p>
-<blockquote class="blockquote">
-<p>el promedio de la variable estudiada es 3.45.</p>
-</blockquote>
-<p>prueba: <code>3.45</code></p>
-</section>
-<section id="el-texto-propio-del-documento." class="level2">
-<h2 class="anchored" data-anchor-id="el-texto-propio-del-documento.">El texto propio del documento.</h2>
-<p>Este es el texto dirigido a las personas que van a leer el reporte. Incluirá una introducción, descripción de los datos y de los resultados; es lo que escribirías en el archivo de Word.</p>
-<p>A diferencia de Word, el formato del texto se define usando <a href="https://es.wikipedia.org/wiki/Markdown">markdown</a>, que es un lenguaje simple que permite indicar si un texto va en negrita, cursiva, es un título, etc…usando símbolos especiales dentro del texto.</p>
-<section id="markdown" class="level3">
-<h3 class="anchored" data-anchor-id="markdown">Markdown</h3>
-<p>Markdown permite escribir en texto plano pero definiendo el formato usando símbolos. Por ejemplo podés resaltar con <strong>negrita</strong> usando dos asteriscos así: <code>**negrita**</code> o <em>italizada</em> con un asterisco de cada lado: <code>*itálicas*</code>.</p>
-<p>También podés hacer una lista de elementos utilizando asteriscos:</p>
-<pre><code>* la negrita se consigue con dos asteriscos
-* la italizada con un asterisco
-* y para resaltar código se usa el acento grave `</code></pre>
-<p>o guiones medios:</p>
-<pre><code>- la negrita se consigue con dos asteriscos
-- la italizada con un asterisco
-- y para resaltar código se usa el acento grave `</code></pre>
-<p>Ambas listas se van a ver de esta manera:</p>
+<p>que podríamos guardar en un script de R que se llame <code>funciones_secundarias.R</code> que por supuesto guardaremos en la carpeta “scripts”. Aquí podemos hacer un paréntesis para mencionar la necesidad de documentar apropiadamente cualquier función o código que generemos. Para una función deberíamos incluir:</p>
 <ul>
-<li>la negrita se consigue con dos asteriscos</li>
-<li>la italizada con un asterisco</li>
-<li>y para resaltar código se usa el acento grave `</li>
+<li><p>Qué hace o cual es su propósito.</p></li>
+<li><p>Qué argumentos requiere y de que tipo de datos son.</p></li>
+<li><p>Qué genera cómo resultado.</p></li>
 </ul>
-<p>Si en realidad querés una lista numerada, simplemente comenzá el renglón un número y un punto. Podrías usar siempre el mismo número, markdown se encarga del resto:</p>
-<pre><code>1. la negrita se consigue con dos asteriscos
-1. la italizada con un asterisco
-1. y para resaltar código se usa el acento grave `</code></pre>
-<p>Ahora la lista numerada se ve así:</p>
-<ol type="1">
-<li>la negrita se consigue con dos asteriscos</li>
-<li>la italizada con un asterisco</li>
-<li>y para resaltar código se usa el acento grave `</li>
-</ol>
-<p>Podés agregar títulos con distinta jerarquía agregando <code>#</code> al comienzo. Esto además define secciones dentro del documento:</p>
-<pre><code># Título
-## El primer subtítulo
-### Otro subtítulo de menor jerarquía
-#### Otro más, y podría seguir!</code></pre>
-<p>Podés escribir estos símbolos a mano o usando el Editor Visual de RStudio y cambiar de la versión código fuente a la versión visual según prefieras (<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAAoCAYAAADHeqnFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPbSURBVHhe7ZrPSxtBFMf7b/lXWP8Cq3epRykeWjwWoUhPpa3SVvEgiFDBHop6KFFqJWD9FZNYpUHbGn9rtFJe/W55y8tkkt2dJNVdn/DBnXkzs9l5n7ydQ+6dly4JrGSydHpxWTf7xyf0/MVrevVm2BpvBNlv27S8vkHH5yVrPCw7v/a8z1v6fWWN3yRRP9vB6Tk9HUvRk8ktj6nl/eu5f/z2wdkVyb/NvZIfe/x+k15OzlvXtbGwuEj5fJ4aLk+cODw98wQ8s8RuGpfPliv8pI8LK9esRmL6yxrtFI+sa9rYvRZ7dnb2bstzUrqw9t8GbvNnAxDoTsuj1IfKozhTJo+iREErj+KMyqM4o/Iozqg8ijMqj+JMJHnSqzla+Jqh6bl04sFz4nlt+6D8I7Q82MiltRwVi8U7A55XBapOaHk+L61bNzjp4Llt+6FEkAel3La5SQfPbdsPReUJxFWe5fUMPezupu+7Pypin+bm6VFvL+W2tqmjs9Nrm2Mawd7hkXefZq3fNHlmZmaopaXFp7+/3zrutuMqDydubHy8IvZsYMDa32hiKc/o6Cj19PRQoVDw+yYmJsraccFVHgBBkDwkkftQiVCRUJnk2GYQS3lQZSCQLRY36pEHgjzo6CgThV9ZSKyZXIy739bmV2vuNyuVKSDGySrPYxNTeST4CWN7e7v/sLhGH2LpdJq6urr8NsB6/NrD6xBr9/X1eXPR5n5eT/ab94oqdT3ycPLMZNqSayYagqxkNrzrIHnejYz4ZyvMxzkK7VjKA5BsW7I4mbJfyhZGHikH95kCplIp/15SJKyNOM8Noh55AJKOBCKRSLY8RNvkkZIwQfJIZCy28gDIAClaW1v9hCGRZlWSSQ0jj5zP95AyMbZ7YS0pbhD1yiOTCQEgAsfM5HIbXw45Lkge/JevO1zHXh4GSeTKIEVgpABR5alVTTCPN1Ri3r8W9coDkPy3wyMViayVXMxhgWrJA3CNPjOWCHlkgm3VANc4wzSj8kQRxUYj5EHyIC2fRbhfJhf9OLtwTFYpXGMcxqONfq4umCtjaMe68gwNDZUlH0nkygNqnXk4zjJAJrz2qsnD83l9nmM787jQCHkgBsRhGRiZXL7m6iiFMGOTUx8qqoucF+vKY74uZGIBJ5XjpgxItowNDg7WlAfIe8ozFstni4WhEfIklf/y2oozKk91VJ4AVJ7qqDwBqDzVCS2P/p5HMQktT3o1S0trWesGJxU8L57bth9KBHkAfpKJbyJKedLR3zAHE0keRZGoPIozKo/iTJk8ihIFrTyKMyqP4ozKozij8iiOXNJfm90PiNC8xtkAAAAASUVORK5CYII=" class="img-fluid" alt="icono del editor visual">) . El Editor Visual permite dar formato al texto usando markdown sin saber usar markdown.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4190,116 +4006,89 @@ Ejercicio
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Cuarto desafío: Agregale texto a tu archivo</strong></p>
-<p>Borrá el contenido del archivo <code>.Rmd</code> que creaste (pero no el encabezado!) y probá escribir algo y darle formato. Luego volvé a apretar el botón <strong>knit</strong> para ver el resultado.</p>
+<p><strong>Primer desafío: Crea una función</strong></p>
+<ol type="1">
+<li>Creá un archivo .R con alguna función. Puede ser la que vimos como ejemplo o alguna otra que prefieras.</li>
+<li>Guardá el archivo en la carpeta scripts</li>
+</ol>
 </div>
 </div>
-<p>Markdown permite muchas otras cosas, por ejemplo:</p>
-<ul>
-<li><p>Podés agregar un link a una página externa: <code>[texto que se muestra con el link](http://google.com)</code>. Resultado: <a href="http://google.com">texto que se muestra con el link</a></p></li>
-<li><p>Podés incluir una imagen: <code>![descripción de la figura](https://placekitten.com/200/100)</code></p></li>
-</ul>
-<p>Resultado:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="data:text/html; charset=iso-8859-1;charset=utf-8,%3C%21DOCTYPE%20HTML%20PUBLIC%20%22%2D%2F%2FIETF%2F%2FDTD%20HTML%202%2E0%2F%2FEN%22%3E%0A%3Chtml%3E%3Chead%3E%0A%3Ctitle%3E404%20Not%20Found%3C%2Ftitle%3E%0A%3C%2Fhead%3E%3Cbody%3E%0A%3Ch1%3ENot%20Found%3C%2Fh1%3E%0A%3Cp%3EThe%20requested%20URL%20was%20not%20found%20on%20this%20server%2E%3C%2Fp%3E%0A%3Cp%3EAdditionally%2C%20a%20404%20Not%20Found%0Aerror%20was%20encountered%20while%20trying%20to%20use%20an%20ErrorDocument%20to%20handle%20the%20request%2E%3C%2Fp%3E%0A%3C%2Fbody%3E%3C%2Fhtml%3E%0A" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">descripción de la figura</figcaption><p></p>
-</figure>
-</div>
-<p>Y también podés agregar ecuaciones (usando <a href="https://es.wikipedia.org/wiki/LaTeX">LaTeX</a>) en la misma línea (esto:<code>$E = mc^2$</code> se ve así: <span class="math inline">\(E = mc^2\)</span>) o en una línea propia. Esto:</p>
-<pre><code>$$
-y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
-$$</code></pre>
-<p>se ve así:</p>
-<p><span class="math display">\[
-y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
-\]</span></p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<p>Ahora el desafío es lograr usar esa función que está en un archivo .R en el reporte .Rmd. Necesitamos <em>cargar</em> el script al comienzo de nuestro archivo para que la función quede disponible para ser utilizada más adelante.</p>
+<p>El mejor lugar para hacer esto es, en el caso de R Markdown, el bloque de código setup donde además cargamos las librerías que usaremos. Por ejemplo:</p>
+<pre><code>library(ggplo2)
+library(data.table)
+source(here::here(&quot;scripts/funciones_secundarias.R&quot;))</code></pre>
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Información
+Ejercicio
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Podés revisar la guía rápida de Markdown desde RStudio (en inglés):</p>
-<p>Help → Markdown Quick Reference</p>
+<p><strong>Segundo desafío: Carga la función</strong></p>
+<ol type="1">
+<li>Agrega <code>source(here::here(&quot;scripts/funciones_secundarias.R&quot;))</code> al comienzo del archivo .Rmd</li>
+<li>Usa la función en algún bloque de código</li>
+<li>Knitea el archivo para ver el resultado final</li>
+</ol>
 </div>
 </div>
 </section>
-</section>
-<section id="control-de-chunks" class="level2">
-<h2 class="anchored" data-anchor-id="control-de-chunks">Control de chunks</h2>
-<p>Previamente vimos que un chunk tiene una pinta como esta:</p>
-<pre><code>```{r nombre-del-chunk}
-
-```</code></pre>
-<p>Ponerle nombre al chunk no es obligatorio pero está bueno para tener una idea de qué hace cada uno, lo cual se vuelve más importante a medida que un reporte se vuelve más largo y complejo. Pero lo que no dijimos es que además del nombre, se pueden agregar un montón de opciones que cambian el comportamiento y la apariencia del resultado del chunk.</p>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">RMarkdown</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Quarto</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Para cambiar las opciones de un chunk, lo único que hay que hacer es listarlas dentro de los corchetes. Por ejemplo:</p>
-<pre><code>```{r nombre-del-chunk, echo = FALSE, message = FALSE}
-
-```</code></pre>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Para cambiar las opciones de un chunk, lo único que hay que hacer es listarlas como comentarios de quarto. Por ejemplo:</p>
-<pre><code>```{r nombre-del-chunk}
-#| echo: false
-#| message: false
-
-```</code></pre>
+<section id="trabajando-con-datos" class="level2">
+<h2 class="anchored" data-anchor-id="trabajando-con-datos">Trabajando con datos</h2>
+<p>Muchas veces los datos están disponibles en distintos servicios en páginas de internet. Muchos gobiernos por ejemplo, tienen portales de datos abiertos. Organizaciones generan APIs para poner a disposición sus datos o tal vez otras personas publicaron sus datos en servicios como Zenodo y queremos aprovecharlos. Es posible que se puedan decargar los datos visitando la web y haciendo click en un botón, sin embargo podríamos escribir el código necesario para hacer esto de manera programática. Esto hace que nuestro trabajo sea más reproducible y disminuye las chances de error.</p>
+<p>El código que genera la descarga de datos podría estar incluido en el archivo .Rmd si la descarga no demora. En general querremos incluir la opción de no descargar los datos si el código encuentra que ya fueron descargados previamente. También podríamos generar un script de descarga de datos que corra una sola vez. Esta es una buena idea cuando el código de descarga demora o es complejo.</p>
+<p>Veamos un ejemplo de descarga de datos desde Zenodo.</p>
+<p>Si revisamos la base de datos <a href="https://sandbox.zenodo.org/record/1029654">https://sandbox.zenodo.org/record/1029654</a> veremos que incluye un solo archivo en formato .csv.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data:image/png;base64,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" class="img-fluid"></p>
 </div>
 </div>
+<p>Vemos también el botón “Download” para la descarga del archivo. Podríamos usarlo para descargar el archivo haciendo click.</p>
+<p>Pero como mencionaba previamente, se puede escribir el código necesario para hacer la descarga de manera programática y asegurarnos que tenemos los datos correctos. Podríamos crear una función <code>descarga_pinguinos()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>descarga_pinguinos <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;datos/datos_crudos/penguins.csv&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span> <span class="st">&quot;https://sandbox.zenodo.org/record/1029654/files/penguins.csv?download=1&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(url, file)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Hay una serie de opciones particularmente importante es la que controla si el código se ejecuta y si el resultado del código se va a mostrar en el reporte o no:</p>
-<ul>
-<li><p><code>eval = FALSE</code> evita que se ejecute el código del chunk, de manera que tampoco va a mostrar resultados. Es útil para mostrar códigos de ejemplo si estás escribiendo, por ejemplo un documento para enseñar R.</p></li>
-<li><p><code>echo = FALSE</code> ejecuta el código del chunk y muestra los resultados, pero oculta el código en el reporte. Esto es útil para escribir reportes para personas que no necesitan ver el código de R que generó el gráfico o tabla que querés mostrar.</p></li>
-<li><p><code>include = FALSE</code> corre el código pero oculta tanto el código como los resultados. Es útil para usar en chunks de configuración general donde, por ejemplo, cargas las librerías.</p></li>
-<li><p><code>message = FALSE</code> el bloque de código no mostrará los posibles mensajes que genere.</p></li>
-<li><p><code>warning = FALSE</code> el bloque de código no mostrará los posibles warnings que genere.</p></li>
-</ul>
-<p>Si estás escribiendo un informe en el que no querés que se muestre ningún código, agregarle <code>echo = FALSE</code> a cada chunk nuevo se vuelve tedioso. La solución es cambiar la opción de forma global de manera que aplique a todos los chunks. Esto se hace mediante la función <code>knitr::opts_chunk$set()</code>, que setea las opciones globales de los chunks que le siguen. Si querés que todos los chunks tengan <code>echo = TRUE</code> crearías un chunk así:</p>
-<pre><code>```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```</code></pre>
-<p>Generalmente tiene sentido poner esto en el primer chunk de un documento, que como suele ser cuestiones de configuración del reporte, también conviene ponerle <code>include = FALSE</code>.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<p>Para obtener la dirección url del archivo, hay que hacer click derecho sobre el botón Download y copiar el link.</p>
+<p>Ahora si deseas descargar los datos solo hay que llamar a la función <code>descarga_pinguinos()</code> y los datos se guardaran en la carpeta correcta.</p>
+<p>Podríamos mejorar esto generando una función que solo descargue los datos en caso de que no estén presentes en el proyecto. Esta función podría escribirse de esta manera:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>datos_pinguinos <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;datos/datos_crudos/penguins.csv&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(file)) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">download_penguins</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">read.csv</span>(file))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Con esta última función en nuestro archivo .Rmd nos podemos olvidar de la descarga de datos, que se hará automáticamente.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">datos_pinguinos</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Información
+Ejercicio
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En quarto, las opciones globales se agregan en el YAML:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-tools</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pero por supuesto, el documento puede tener un primer chunk setup que cargue las librerías y código útil para nuestro trabajo</p>
+<p><strong>Tercer desafío: descarga de datos programática</strong></p>
+<ul>
+<li>Siguiendo los pasos anteriores, general las funciones necesarias para descargar los datos prográtiacamente en la carpeta correcta.</li>
+<li>Las funciones pueden estar al comienzo del archivo o puedes guardarlas en el script <code>funciones_secundarias.R</code> (o un nuevo script) y cargarlas al comienzo.</li>
+<li>Para revisar que todo funciona, knitea el archivo y chequea que los datos estén en la carpeta correcta.</li>
+</ul>
 </div>
 </div>
-<p>Finalmente, una opción tan poderosa como peligrosa es <code>cache = TRUE</code>. Lo que hace es que en vez de correr el código de un chunk cada vez que <em>kniteás</em> el documento, guarda el resultado del chunk en el disco para reutilizar la próxima vez que crees el reporte. Esto es muy cómo si en chunk tiene un código que tarda mucho en correr. Por ejemplo el siguiente chunk va a tardar 10 minutos en correr la primera vez que knitees el reporte, pero luego va a ser mucho más rápido:</p>
-<pre><code>```{r cache = FALSE}
-datos &lt;- funcion_que_tarda_10_minutos(x)
-```</code></pre>
-<p>knitr es bastante inteligente y va a invalidar la cache si cambiás el código del chunk. Pero, ¿qué pasa si cambiás algo del código previo que cambia el valor de <code>x</code> o incluso el funcionamiento de <code>function_que_targa_10_minutos</code>? Es posible que knitr no se de cuenta y use la cache, con el resultado de que <code>datos</code> va a tener un valor incorrecto. Hay formas de decirle a knitr de qué depende cada chunk y así obtener una cache más “inteligente” pero es algo que se vuelve complicado muy rápido.</p>
-<p>En resumen, es bueno usar la cache pero sólo cuando es imprescindible.</p>
 
 
 <!-- -->
@@ -4455,318 +4244,131 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb17" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Sintaxis en un reporte&quot;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include=FALSE}</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>chunk <span class="ot">&lt;-</span> <span class="st">&quot;```&quot;</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>Ahora vamos a ver como se trabaja en cada una de las secciones de un reporte. Cada una tiene una sintaxis distinta, parece mucho, pero veremos que no se aleja de lo que cada uno ya sabe.</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Encabezado</span></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>El encabezado es una serie de instrucciones organizadas entre tres guiones (<span class="in">`---`</span>) que determinan las propiedades globales del documento, como el título, el formato de salida, información de autoría, etc... También ahí se pueden cambiar opciones asociadas al formato de salida, como el estilo de la tabla de contenidos o índice.</span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>Éstas propiedades se definen en un formato llamado <span class="co">[</span><span class="ot">YAML</span><span class="co">](https://es.wikipedia.org/wiki/YAML)</span>, el cual permite definir listas jerarquizadas de una forma humanamente legible. Por ejemplo:</span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### RMarkdown</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code_download</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc_float</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>define dos variables principales, &quot;title&quot; y &quot;output&quot;. &quot;Output&quot; a su vez contiene un elemento &quot;htm_document&quot;, el cual contiene tres elementos: &quot;code_download&quot;, &quot;toc&quot; y &quot;toc_float&quot;.</span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quarto</span></span>
-<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
-<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
-<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-tools</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>define dos variables principales, &quot;title&quot; y &quot;format&quot;. &quot;format&quot; a su vez contiene un elemento &quot;html&quot; que define el formato de salida y contiene una nueva opción: &quot;code-tools: true&quot;. Esto permite visualizar el código fuente que genera la web cuando ya está publicada. &quot;toc : true&quot; generará una tabla de contenidos.</span>
-<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
-<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Importante</span></span>
-<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>Es muy importante mantener el escalonado, o *identación* de los elementos, ya que ésta define la jerarquía de cada elemento. Muchos de los errores a la hora de knitear ocurren porque el archivo tiene problemas en la identación del encabezado.</span>
-<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bloques de código</span></span>
-<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>El código de R que va a leer datos, analizarlos y generar figuras, tablas o números se organiza en bloques (o <span class="in">`chunks`</span>) delimitados por tres acentos graves (<span class="in">```` ``` ````</span>) y se diferencia del resto de archivo con un fondo gris. Todo lo que incluyas entre estos delimitadores será interpretado por R como código e intentará ejecutarlo al *knitear* el archivo. Cualquier resultado del código (gráficos, tablas, texto, etc...) será insertado en el documento final en el mismo orden que están en el archivo R Markdown.</span>
-<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instrucciones</span></span>
-<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a>Para insertar un nuevo chunk podés:</span>
-<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Usar el botón **Insert**</span>
-<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>El atajo de teclado Ctrl+Alt+I</span>
-<span id="cb17-73"><a href="#cb17-73" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Escribir a mano!</span>
-<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-76"><a href="#cb17-76" aria-hidden="true" tabindex="-1"></a>El código en cada bloque se ejecuta como si fuera ejecutado en la terminal y todo resultado se muestra en el documento (ya vamos a ver formas de controlar esto). Por ejemplo, este bloque de código</span>
-<span id="cb17-77"><a href="#cb17-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-78"><a href="#cb17-78" aria-hidden="true" tabindex="-1"></a><span class="in">    ```{r sumar}`r &#39;&#39;`</span></span>
-<span id="cb17-79"><a href="#cb17-79" aria-hidden="true" tabindex="-1"></a><span class="in">    1 + 1</span></span>
-<span id="cb17-80"><a href="#cb17-80" aria-hidden="true" tabindex="-1"></a><span class="in">    ```</span></span>
-<span id="cb17-81"><a href="#cb17-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-82"><a href="#cb17-82" aria-hidden="true" tabindex="-1"></a>va a insertar esto en el documento de salida:</span>
-<span id="cb17-83"><a href="#cb17-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a><span class="in">    [1] 2</span></span>
-<span id="cb17-85"><a href="#cb17-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-86"><a href="#cb17-86" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
-<span id="cb17-87"><a href="#cb17-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## Importante</span></span>
-<span id="cb17-88"><a href="#cb17-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-89"><a href="#cb17-89" aria-hidden="true" tabindex="-1"></a>Es muy importante no romper los límites de los bloques. Un problema común es accidentalmente eliminar un acento grave al final de un bloque de código y que luego el documento no knitee correctamente. Si al knitear te sale un error como &quot;attempt to use zero-length variable name&quot;, revisá bien que todos tus bloques de código estén correctamente definidos.</span>
-<span id="cb17-90"><a href="#cb17-90" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-91"><a href="#cb17-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a>Los bloques pueden tener nombre, lo cual es útil para identificar donde ocurren los errores al momento de *knitear* pero también para tener una pista de lo que hace el código que incluye.</span>
-<span id="cb17-93"><a href="#cb17-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-94"><a href="#cb17-94" aria-hidden="true" tabindex="-1"></a>Si bien el código se corre cuando uno knitea, cuando estés escribiendo un informe es muy cómodo ir corriendo bloques individuales interactivamente como si fuera en la consola.</span>
-<span id="cb17-95"><a href="#cb17-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-96"><a href="#cb17-96" aria-hidden="true" tabindex="-1"></a>Para correr una línea de código, tendrás que pararte sobre esa línea y apretar:</span>
-<span id="cb17-97"><a href="#cb17-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-98"><a href="#cb17-98" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb17-99"><a href="#cb17-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instrucciones</span></span>
-<span id="cb17-100"><a href="#cb17-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-101"><a href="#cb17-101" aria-hidden="true" tabindex="-1"></a>Ctrl+Enter</span>
-<span id="cb17-102"><a href="#cb17-102" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-103"><a href="#cb17-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-104"><a href="#cb17-104" aria-hidden="true" tabindex="-1"></a>Pero también podés correr el código de todo el chunk con:</span>
-<span id="cb17-105"><a href="#cb17-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-106"><a href="#cb17-106" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb17-107"><a href="#cb17-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instrucciones</span></span>
-<span id="cb17-108"><a href="#cb17-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-109"><a href="#cb17-109" aria-hidden="true" tabindex="-1"></a>Ctrl+Shift+Enter</span>
-<span id="cb17-110"><a href="#cb17-110" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-111"><a href="#cb17-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-112"><a href="#cb17-112" aria-hidden="true" tabindex="-1"></a>Los resultados van a aparecer inmediatamente debajo del bloque.</span>
-<span id="cb17-113"><a href="#cb17-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-114"><a href="#cb17-114" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb17-115"><a href="#cb17-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio</span></span>
-<span id="cb17-116"><a href="#cb17-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-117"><a href="#cb17-117" aria-hidden="true" tabindex="-1"></a>**Tercer desafío: Sumá un chunk a tu archivo**</span>
-<span id="cb17-118"><a href="#cb17-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-119"><a href="#cb17-119" aria-hidden="true" tabindex="-1"></a>Usando el archivo con el que venís trabajando insertá un nuevo chunk y:</span>
-<span id="cb17-120"><a href="#cb17-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-121"><a href="#cb17-121" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Cargá el paquete readr.</span>
-<span id="cb17-122"><a href="#cb17-122" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Creá una variable que se llame <span class="in">`variable_prueba`</span> y asignale un valor.</span>
-<span id="cb17-123"><a href="#cb17-123" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Mostrá ese valor.</span>
-<span id="cb17-124"><a href="#cb17-124" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Volvé a *knitear* el archivo para ver el resultado</span>
-<span id="cb17-125"><a href="#cb17-125" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-126"><a href="#cb17-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-127"><a href="#cb17-127" aria-hidden="true" tabindex="-1"></a>Finalmente, es posible que te encuentres mencionando resultados en el texto, por ejemplo algo así como &quot;el promedio de la variable estudiada es 3.45&quot;. Y también es posible que ese valor cambie si utilizas una base de datos distinta o si luego generas un informe pero para un mes siguiente. Las chances de de que te olvides de actualizar ese &quot;3.45&quot; son super altas, por eso R Markdown también tiene la posibilidad de incorporar código en línea con el texto.</span>
-<span id="cb17-128"><a href="#cb17-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-129"><a href="#cb17-129" aria-hidden="true" tabindex="-1"></a>Si tenés una una variable <span class="in">`promedio`</span> que vale &quot;3.45&quot;:</span>
-<span id="cb17-130"><a href="#cb17-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-133"><a href="#cb17-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-134"><a href="#cb17-134" aria-hidden="true" tabindex="-1"></a>promedio <span class="ot">&lt;-</span> <span class="st">&quot;3.45&quot;</span></span>
-<span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a>Para mencionarla en el texto entonces escribirías:</span>
-<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; el promedio de la variable estudiada es </span><span class="sc">\`</span><span class="in">`r`</span><span class="at"> </span><span class="in">`promedio`</span><span class="sc">\`</span><span class="at">.</span></span>
-<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a>y el resultado en el documento kniteado sería</span>
-<span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; el promedio de la variable estudiada es </span><span class="in">`r promedio`</span><span class="at">.</span></span>
-<span id="cb17-144"><a href="#cb17-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a>prueba: `<span class="in">` `</span>r promedio` ``</span>
-<span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-147"><a href="#cb17-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## El texto propio del documento.</span></span>
-<span id="cb17-148"><a href="#cb17-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-149"><a href="#cb17-149" aria-hidden="true" tabindex="-1"></a>Este es el texto dirigido a las personas que van a leer el reporte. Incluirá una introducción, descripción de los datos y de los resultados; es lo que escribirías en el archivo de Word.</span>
-<span id="cb17-150"><a href="#cb17-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-151"><a href="#cb17-151" aria-hidden="true" tabindex="-1"></a>A diferencia de Word, el formato del texto se define usando <span class="co">[</span><span class="ot">markdown</span><span class="co">](https://es.wikipedia.org/wiki/Markdown)</span>, que es un lenguaje simple que permite indicar si un texto va en negrita, cursiva, es un título, etc...usando símbolos especiales dentro del texto.</span>
-<span id="cb17-152"><a href="#cb17-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-153"><a href="#cb17-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Markdown</span></span>
-<span id="cb17-154"><a href="#cb17-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-155"><a href="#cb17-155" aria-hidden="true" tabindex="-1"></a>Markdown permite escribir en texto plano pero definiendo el formato usando símbolos. Por ejemplo podés resaltar con **negrita** usando dos asteriscos así: `**negrita**<span class="in">` o *italizada* con un asterisco de cada lado: `</span>*itálicas*`.</span>
-<span id="cb17-156"><a href="#cb17-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-157"><a href="#cb17-157" aria-hidden="true" tabindex="-1"></a>También podés hacer una lista de elementos utilizando asteriscos:</span>
-<span id="cb17-158"><a href="#cb17-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-159"><a href="#cb17-159" aria-hidden="true" tabindex="-1"></a><span class="in">    * la negrita se consigue con dos asteriscos</span></span>
-<span id="cb17-160"><a href="#cb17-160" aria-hidden="true" tabindex="-1"></a><span class="in">    * la italizada con un asterisco</span></span>
-<span id="cb17-161"><a href="#cb17-161" aria-hidden="true" tabindex="-1"></a><span class="in">    * y para resaltar código se usa el acento grave `</span></span>
-<span id="cb17-162"><a href="#cb17-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-163"><a href="#cb17-163" aria-hidden="true" tabindex="-1"></a>o guiones medios:</span>
-<span id="cb17-164"><a href="#cb17-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-165"><a href="#cb17-165" aria-hidden="true" tabindex="-1"></a><span class="in">    - la negrita se consigue con dos asteriscos</span></span>
-<span id="cb17-166"><a href="#cb17-166" aria-hidden="true" tabindex="-1"></a><span class="in">    - la italizada con un asterisco</span></span>
-<span id="cb17-167"><a href="#cb17-167" aria-hidden="true" tabindex="-1"></a><span class="in">    - y para resaltar código se usa el acento grave `</span></span>
-<span id="cb17-168"><a href="#cb17-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-169"><a href="#cb17-169" aria-hidden="true" tabindex="-1"></a>Ambas listas se van a ver de esta manera:</span>
-<span id="cb17-170"><a href="#cb17-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-171"><a href="#cb17-171" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>la negrita se consigue con dos asteriscos</span>
-<span id="cb17-172"><a href="#cb17-172" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>la italizada con un asterisco</span>
-<span id="cb17-173"><a href="#cb17-173" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>y para resaltar código se usa el acento grave <span class="sc">\`</span></span>
-<span id="cb17-174"><a href="#cb17-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-175"><a href="#cb17-175" aria-hidden="true" tabindex="-1"></a>Si en realidad querés una lista numerada, simplemente comenzá el renglón un número y un punto. Podrías usar siempre el mismo número, markdown se encarga del resto:</span>
-<span id="cb17-176"><a href="#cb17-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-177"><a href="#cb17-177" aria-hidden="true" tabindex="-1"></a><span class="in">    1. la negrita se consigue con dos asteriscos</span></span>
-<span id="cb17-178"><a href="#cb17-178" aria-hidden="true" tabindex="-1"></a><span class="in">    1. la italizada con un asterisco</span></span>
-<span id="cb17-179"><a href="#cb17-179" aria-hidden="true" tabindex="-1"></a><span class="in">    1. y para resaltar código se usa el acento grave `</span></span>
-<span id="cb17-180"><a href="#cb17-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-181"><a href="#cb17-181" aria-hidden="true" tabindex="-1"></a>Ahora la lista numerada se ve así:</span>
-<span id="cb17-182"><a href="#cb17-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-183"><a href="#cb17-183" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>la negrita se consigue con dos asteriscos</span>
-<span id="cb17-184"><a href="#cb17-184" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>la italizada con un asterisco</span>
-<span id="cb17-185"><a href="#cb17-185" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>y para resaltar código se usa el acento grave <span class="sc">\`</span></span>
-<span id="cb17-186"><a href="#cb17-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-187"><a href="#cb17-187" aria-hidden="true" tabindex="-1"></a>Podés agregar títulos con distinta jerarquía agregando <span class="in">`#`</span> al comienzo. Esto además define secciones dentro del documento:</span>
-<span id="cb17-188"><a href="#cb17-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-189"><a href="#cb17-189" aria-hidden="true" tabindex="-1"></a><span class="in">    # Título</span></span>
-<span id="cb17-190"><a href="#cb17-190" aria-hidden="true" tabindex="-1"></a><span class="in">    ## El primer subtítulo</span></span>
-<span id="cb17-191"><a href="#cb17-191" aria-hidden="true" tabindex="-1"></a><span class="in">    ### Otro subtítulo de menor jerarquía</span></span>
-<span id="cb17-192"><a href="#cb17-192" aria-hidden="true" tabindex="-1"></a><span class="in">    #### Otro más, y podría seguir!</span></span>
-<span id="cb17-193"><a href="#cb17-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-194"><a href="#cb17-194" aria-hidden="true" tabindex="-1"></a>Podés escribir estos símbolos a mano o usando el Editor Visual de RStudio y cambiar de la versión código fuente a la versión visual según prefieras (<span class="al">![icono del editor visual](img/icono-editor-visual.png)</span>) . El Editor Visual permite dar formato al texto usando markdown sin saber usar markdown.</span>
-<span id="cb17-195"><a href="#cb17-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-196"><a href="#cb17-196" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb17-197"><a href="#cb17-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio</span></span>
-<span id="cb17-198"><a href="#cb17-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-199"><a href="#cb17-199" aria-hidden="true" tabindex="-1"></a>**Cuarto desafío: Agregale texto a tu archivo**</span>
-<span id="cb17-200"><a href="#cb17-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-201"><a href="#cb17-201" aria-hidden="true" tabindex="-1"></a>Borrá el contenido del archivo <span class="in">`.Rmd`</span> que creaste (pero no el encabezado!) y probá escribir algo y darle formato. Luego volvé a apretar el botón **knit** para ver el resultado.</span>
-<span id="cb17-202"><a href="#cb17-202" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-203"><a href="#cb17-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-204"><a href="#cb17-204" aria-hidden="true" tabindex="-1"></a>Markdown permite muchas otras cosas, por ejemplo:</span>
-<span id="cb17-205"><a href="#cb17-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-206"><a href="#cb17-206" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Podés agregar un link a una página externa: <span class="in">`[texto que se muestra con el link](http://google.com)`</span>. Resultado: <span class="co">[</span><span class="ot">texto que se muestra con el link</span><span class="co">](http://google.com)</span></span>
-<span id="cb17-207"><a href="#cb17-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-208"><a href="#cb17-208" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Podés incluir una imagen: <span class="in">`![descripción de la figura](https://placekitten.com/200/100)`</span></span>
-<span id="cb17-209"><a href="#cb17-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-210"><a href="#cb17-210" aria-hidden="true" tabindex="-1"></a>Resultado:</span>
-<span id="cb17-211"><a href="#cb17-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-212"><a href="#cb17-212" aria-hidden="true" tabindex="-1"></a><span class="al">![descripción de la figura](https://placekitten.com/200/100)</span></span>
-<span id="cb17-213"><a href="#cb17-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-214"><a href="#cb17-214" aria-hidden="true" tabindex="-1"></a>Y también podés agregar ecuaciones (usando <span class="co">[</span><span class="ot">LaTeX</span><span class="co">](https://es.wikipedia.org/wiki/LaTeX)</span>) en la misma línea (esto:<span class="in">`$E = mc^2$`</span> se ve así: $E = mc^2$) o en una línea propia. Esto:</span>
-<span id="cb17-215"><a href="#cb17-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-216"><a href="#cb17-216" aria-hidden="true" tabindex="-1"></a><span class="in">    $$</span></span>
-<span id="cb17-217"><a href="#cb17-217" aria-hidden="true" tabindex="-1"></a><span class="in">    y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon</span></span>
-<span id="cb17-218"><a href="#cb17-218" aria-hidden="true" tabindex="-1"></a><span class="in">    $$</span></span>
-<span id="cb17-219"><a href="#cb17-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-220"><a href="#cb17-220" aria-hidden="true" tabindex="-1"></a>se ve así:</span>
-<span id="cb17-221"><a href="#cb17-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-222"><a href="#cb17-222" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-223"><a href="#cb17-223" aria-hidden="true" tabindex="-1"></a>y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon</span>
-<span id="cb17-224"><a href="#cb17-224" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-225"><a href="#cb17-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-226"><a href="#cb17-226" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb17-227"><a href="#cb17-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Información</span></span>
-<span id="cb17-228"><a href="#cb17-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-229"><a href="#cb17-229" aria-hidden="true" tabindex="-1"></a>Podés revisar la guía rápida de Markdown desde RStudio (en inglés):</span>
-<span id="cb17-230"><a href="#cb17-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-231"><a href="#cb17-231" aria-hidden="true" tabindex="-1"></a>Help → Markdown Quick Reference</span>
-<span id="cb17-232"><a href="#cb17-232" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-233"><a href="#cb17-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-234"><a href="#cb17-234" aria-hidden="true" tabindex="-1"></a><span class="fu">## Control de chunks</span></span>
-<span id="cb17-235"><a href="#cb17-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-236"><a href="#cb17-236" aria-hidden="true" tabindex="-1"></a>Previamente vimos que un chunk tiene una pinta como esta:</span>
-<span id="cb17-237"><a href="#cb17-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-238"><a href="#cb17-238" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`{r nombre-del-chunk}</span></span>
-<span id="cb17-239"><a href="#cb17-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-240"><a href="#cb17-240" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`</span></span>
-<span id="cb17-241"><a href="#cb17-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-242"><a href="#cb17-242" aria-hidden="true" tabindex="-1"></a>Ponerle nombre al chunk no es obligatorio pero está bueno para tener una idea de qué hace cada uno, lo cual se vuelve más importante a medida que un reporte se vuelve más largo y complejo. Pero lo que no dijimos es que además del nombre, se pueden agregar un montón de opciones que cambian el comportamiento y la apariencia del resultado del chunk.</span>
-<span id="cb17-243"><a href="#cb17-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-244"><a href="#cb17-244" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb17-245"><a href="#cb17-245" aria-hidden="true" tabindex="-1"></a><span class="fu">### RMarkdown</span></span>
-<span id="cb17-246"><a href="#cb17-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-247"><a href="#cb17-247" aria-hidden="true" tabindex="-1"></a>Para cambiar las opciones de un chunk, lo único que hay que hacer es listarlas dentro de los corchetes. Por ejemplo:</span>
-<span id="cb17-248"><a href="#cb17-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-249"><a href="#cb17-249" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`{r nombre-del-chunk, echo = FALSE, message = FALSE}</span></span>
-<span id="cb17-250"><a href="#cb17-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-251"><a href="#cb17-251" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`</span></span>
-<span id="cb17-252"><a href="#cb17-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-253"><a href="#cb17-253" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quarto</span></span>
-<span id="cb17-254"><a href="#cb17-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-255"><a href="#cb17-255" aria-hidden="true" tabindex="-1"></a>Para cambiar las opciones de un chunk, lo único que hay que hacer es listarlas como comentarios de quarto. Por ejemplo:</span>
-<span id="cb17-256"><a href="#cb17-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-257"><a href="#cb17-257" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`{r nombre-del-chunk}</span></span>
-<span id="cb17-258"><a href="#cb17-258" aria-hidden="true" tabindex="-1"></a><span class="in">    #| echo: false</span></span>
-<span id="cb17-259"><a href="#cb17-259" aria-hidden="true" tabindex="-1"></a><span class="in">    #| message: false</span></span>
-<span id="cb17-260"><a href="#cb17-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-261"><a href="#cb17-261" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`</span></span>
-<span id="cb17-262"><a href="#cb17-262" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-263"><a href="#cb17-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-264"><a href="#cb17-264" aria-hidden="true" tabindex="-1"></a>Hay una serie de opciones particularmente importante es la que controla si el código se ejecuta y si el resultado del código se va a mostrar en el reporte o no:</span>
-<span id="cb17-265"><a href="#cb17-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-266"><a href="#cb17-266" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`eval = FALSE`</span> evita que se ejecute el código del chunk, de manera que tampoco va a mostrar resultados. Es útil para mostrar códigos de ejemplo si estás escribiendo, por ejemplo un documento para enseñar R.</span>
-<span id="cb17-267"><a href="#cb17-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-268"><a href="#cb17-268" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`echo = FALSE`</span> ejecuta el código del chunk y muestra los resultados, pero oculta el código en el reporte. Esto es útil para escribir reportes para personas que no necesitan ver el código de R que generó el gráfico o tabla que querés mostrar.</span>
-<span id="cb17-269"><a href="#cb17-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-270"><a href="#cb17-270" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`include = FALSE`</span> corre el código pero oculta tanto el código como los resultados. Es útil para usar en chunks de configuración general donde, por ejemplo, cargas las librerías.</span>
-<span id="cb17-271"><a href="#cb17-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-272"><a href="#cb17-272" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`message = FALSE`</span> el bloque de código no mostrará los posibles mensajes que genere.</span>
-<span id="cb17-273"><a href="#cb17-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-274"><a href="#cb17-274" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`warning = FALSE`</span> el bloque de código no mostrará los posibles warnings que genere.</span>
-<span id="cb17-275"><a href="#cb17-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-276"><a href="#cb17-276" aria-hidden="true" tabindex="-1"></a>Si estás escribiendo un informe en el que no querés que se muestre ningún código, agregarle <span class="in">`echo = FALSE`</span> a cada chunk nuevo se vuelve tedioso. La solución es cambiar la opción de forma global de manera que aplique a todos los chunks. Esto se hace mediante la función <span class="in">`knitr::opts_chunk$set()`</span>, que setea las opciones globales de los chunks que le siguen. Si querés que todos los chunks tengan <span class="in">`echo = TRUE`</span> crearías un chunk así:</span>
-<span id="cb17-277"><a href="#cb17-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-278"><a href="#cb17-278" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`{r setup, include = FALSE}</span></span>
-<span id="cb17-279"><a href="#cb17-279" aria-hidden="true" tabindex="-1"></a><span class="in">    knitr::opts_chunk$set(echo = TRUE)</span></span>
-<span id="cb17-280"><a href="#cb17-280" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`</span></span>
-<span id="cb17-281"><a href="#cb17-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-282"><a href="#cb17-282" aria-hidden="true" tabindex="-1"></a>Generalmente tiene sentido poner esto en el primer chunk de un documento, que como suele ser cuestiones de configuración del reporte, también conviene ponerle <span class="in">`include = FALSE`</span>.</span>
-<span id="cb17-283"><a href="#cb17-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-284"><a href="#cb17-284" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb17-285"><a href="#cb17-285" aria-hidden="true" tabindex="-1"></a><span class="fu">## Información</span></span>
-<span id="cb17-286"><a href="#cb17-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-287"><a href="#cb17-287" aria-hidden="true" tabindex="-1"></a>En quarto, las opciones globales se agregan en el YAML:</span>
-<span id="cb17-288"><a href="#cb17-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-289"><a href="#cb17-289" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
-<span id="cb17-290"><a href="#cb17-290" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb17-291"><a href="#cb17-291" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
-<span id="cb17-292"><a href="#cb17-292" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb17-293"><a href="#cb17-293" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb17-294"><a href="#cb17-294" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-tools</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb17-295"><a href="#cb17-295" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb17-296"><a href="#cb17-296" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb17-297"><a href="#cb17-297" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb17-298"><a href="#cb17-298" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb17-299"><a href="#cb17-299" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb17-300"><a href="#cb17-300" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb17-301"><a href="#cb17-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-302"><a href="#cb17-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-303"><a href="#cb17-303" aria-hidden="true" tabindex="-1"></a>Pero por supuesto, el documento puede tener un primer chunk setup que cargue las librerías y código útil para nuestro trabajo</span>
-<span id="cb17-304"><a href="#cb17-304" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-305"><a href="#cb17-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-306"><a href="#cb17-306" aria-hidden="true" tabindex="-1"></a>Finalmente, una opción tan poderosa como peligrosa es <span class="in">`cache = TRUE`</span>. Lo que hace es que en vez de correr el código de un chunk cada vez que *kniteás* el documento, guarda el resultado del chunk en el disco para reutilizar la próxima vez que crees el reporte. Esto es muy cómo si en chunk tiene un código que tarda mucho en correr. Por ejemplo el siguiente chunk va a tardar 10 minutos en correr la primera vez que knitees el reporte, pero luego va a ser mucho más rápido:</span>
-<span id="cb17-307"><a href="#cb17-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-308"><a href="#cb17-308" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`{r cache = FALSE}</span></span>
-<span id="cb17-309"><a href="#cb17-309" aria-hidden="true" tabindex="-1"></a><span class="in">    datos &lt;- funcion_que_tarda_10_minutos(x)</span></span>
-<span id="cb17-310"><a href="#cb17-310" aria-hidden="true" tabindex="-1"></a><span class="in">    `r chunk`</span></span>
-<span id="cb17-311"><a href="#cb17-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-312"><a href="#cb17-312" aria-hidden="true" tabindex="-1"></a>knitr es bastante inteligente y va a invalidar la cache si cambiás el código del chunk. Pero, ¿qué pasa si cambiás algo del código previo que cambia el valor de <span class="in">`x`</span> o incluso el funcionamiento de <span class="in">`function_que_targa_10_minutos`</span>? Es posible que knitr no se de cuenta y use la cache, con el resultado de que <span class="in">`datos`</span> va a tener un valor incorrecto. Hay formas de decirle a knitr de qué depende cada chunk y así obtener una cache más &quot;inteligente&quot; pero es algo que se vuelve complicado muy rápido.</span>
-<span id="cb17-313"><a href="#cb17-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-314"><a href="#cb17-314" aria-hidden="true" tabindex="-1"></a>En resumen, es bueno usar la cache pero sólo cuando es imprescindible.</span>
+<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Flujo de trabajo&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>Esta temática podría ser tan larga y compleja como se quiera. Definir *manera de trabajar* es cuestión de práctica pero además del objetivo final que queremos alcanzar. En esta sección veremos algunas herramientras y discutiremos algunas ideas que buscan seguir avanzando en la generaciónde analísis y reportes reproducibles.</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trabajando con funciones y otro código</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>Hasta ahora tenemos un proyecto con una determinada estructura de carpetas que nos permite ordenar nuestro trabajo. Además vimos en detalle como utilizar archivos .Rmd o .qmd *autocontenidos*, que incluyan el código y texto necesario para generar un análisis. Pero es posible que nuestro trabajo necesite funciones que generamos para hacer nuestro trabajo más simple. Si incluimos el código que define estas funciones en nuestro .Rmd, puede complejizar nuestro código y que sea más dificil de interpretar. Aquí podemos comenzar a incluir archivos secundarios que contengan estas funciones.</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>En las situaciones donde nuestro código no produce resultados, más bien son definiciones de funciones secundarias u otras herramientras, no tiene tanto sentido usar archivos .Rmd. En estos casos podemos volver a los tradicionales scripts.</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>Si hipotéticamente quisieramos definir una función que convierte la temperatura en kelvin (algo muy común entre meteorólogos) a la temperatura en grados centígrados tendriamos el siguiente código:</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>kelvin_a_centigrados <span class="ot">&lt;-</span> <span class="cf">function</span>(temperatura) {</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(temperatura <span class="sc">-</span> <span class="fl">273.15</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>que podríamos guardar en un script de R que se llame <span class="in">`funciones_secundarias.R`</span> que por supuesto guardaremos en la carpeta &quot;scripts&quot;. Aquí podemos hacer un paréntesis para mencionar la necesidad de documentar apropiadamente cualquier función o código que generemos. Para una función deberíamos incluir:</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Qué hace o cual es su propósito.</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Qué argumentos requiere y de que tipo de datos son.</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Qué genera cómo resultado.</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>**Primer desafío: Crea una función**</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Creá un archivo .R con alguna función. Puede ser la que vimos como ejemplo o alguna otra que prefieras.</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Guardá el archivo en la carpeta scripts</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>Ahora el desafío es lograr usar esa función que está en un archivo .R en el reporte .Rmd. Necesitamos *cargar* el script al comienzo de nuestro archivo para que la función quede disponible para ser utilizada más adelante.</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>El mejor lugar para hacer esto es, en el caso de R Markdown, el bloque de código setup donde además cargamos las librerías que usaremos. Por ejemplo:</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="in">    library(ggplo2)</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="in">    library(data.table)</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="in">    source(here::here(&quot;scripts/funciones_secundarias.R&quot;))</span></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio</span></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>**Segundo desafío: Carga la función**</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Agrega <span class="in">`source(here::here(&quot;scripts/funciones_secundarias.R&quot;))`</span> al comienzo del archivo .Rmd</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Usa la función en algún bloque de código</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Knitea el archivo para ver el resultado final</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trabajando con datos</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>Muchas veces los datos están disponibles en distintos servicios en páginas de internet. Muchos gobiernos por ejemplo, tienen portales de datos abiertos. Organizaciones generan APIs para poner a disposición sus datos o tal vez otras personas publicaron sus datos en servicios como Zenodo y queremos aprovecharlos. Es posible que se puedan decargar los datos visitando la web y haciendo click en un botón, sin embargo podríamos escribir el código necesario para hacer esto de manera programática. Esto hace que nuestro trabajo sea más reproducible y disminuye las chances de error.</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>El código que genera la descarga de datos podría estar incluido en el archivo .Rmd si la descarga no demora. En general querremos incluir la opción de no descargar los datos si el código encuentra que ya fueron descargados previamente. También podríamos generar un script de descarga de datos que corra una sola vez. Esta es una buena idea cuando el código de descarga demora o es complejo. </span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>Veamos un ejemplo de descarga de datos desde Zenodo. </span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>Si revisamos la base de datos <span class="co">[</span><span class="ot">https://sandbox.zenodo.org/record/1029654</span><span class="co">](https://sandbox.zenodo.org/record/1029654)</span> veremos que incluye un solo archivo en formato .csv.</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r file-list, echo=FALSE}</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;img/file_list.png&quot;</span>)</span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>Vemos también el botón &quot;Download&quot; para la descarga del archivo. </span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>Podríamos usarlo para descargar el archivo haciendo click. </span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>Pero como mencionaba previamente, se puede escribir el código necesario para hacer la descarga de manera programática y asegurarnos que tenemos los datos correctos. </span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>Podríamos crear una función <span class="in">`descarga_pinguinos()`</span>:</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>descarga_pinguinos <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>  file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;datos/datos_crudos/penguins.csv&quot;</span>)</span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span> <span class="st">&quot;https://sandbox.zenodo.org/record/1029654/files/penguins.csv?download=1&quot;</span></span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(url, file)</span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>Para obtener la dirección url del archivo, hay que hacer click derecho sobre el botón Download y copiar el link. </span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>Ahora si deseas descargar los datos solo hay que llamar a la función <span class="in">`descarga_pinguinos()`</span> y los datos se guardaran en la carpeta correcta.</span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>Podríamos mejorar esto generando una función que solo descargue los datos en caso de que no estén presentes en el proyecto. Esta función podría escribirse de esta manera: </span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>datos_pinguinos <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>  file <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;datos/datos_crudos/penguins.csv&quot;</span>)</span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(file)) {</span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>    <span class="fu">download_penguins</span>()</span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">read.csv</span>(file))</span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>Con esta última función en nuestro archivo .Rmd nos podemos olvidar de la descarga de datos, que se hará automáticamente. </span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">datos_pinguinos</span>()</span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio</span></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>**Tercer desafío: descarga de datos programática**</span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Siguiendo los pasos anteriores, general las funciones necesarias para descargar los datos prográtiacamente en la carpeta correcta. </span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Las funciones pueden estar al comienzo del archivo o puedes guardarlas en el script <span class="in">`funciones_secundarias.R`</span> (o un nuevo script) y cargarlas al comienzo.</span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Para revisar que todo funciona, knitea el archivo y chequea que los datos estén en la carpeta correcta.</span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
