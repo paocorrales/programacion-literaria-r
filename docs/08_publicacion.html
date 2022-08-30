@@ -3990,13 +3990,13 @@ vertical-align: -.125em;
 <p>Querés compartir tus resultados y tenés un archivo RMarkdown o Quarto en el que estuviste trabajando. Podrías compartir la carpeta del proyecto o un link a un repositorio pero sería ideal que cualquier persona pueda ver esos hermosos resultados sin necesidad de correr código. La otra alternativa es knitear el documento para compartir un PDF o archivo de Word. Las opciones no terminan ahí, Rmarkdown/Quarto abre un mundo de posibilidades para trabajar con código de R, texto y además compartir los resultados (y cualquier otra cosa!).</p>
 <section id="sitio-web-de-una-sola-página" class="level2">
 <h2 class="anchored" data-anchor-id="sitio-web-de-una-sola-página">Sitio web de una sola página</h2>
-<p>Si sabés cómo generar un reporte en formato html usando R Markdown, ya sabés todo lo que necesitás para publicar un sitio web simple! Lo único que hace falta es un servicio que <em>hostee</em> el archivo y lo muestre a los visitantes. Uno de ellos es <a href="https://www.netlify.com/">Netlify</a>, que permite crear un sitio web con sólo arrastrar una carpeta.</p>
+<p>Si sabés cómo generar un reporte en formato html usando R Markdown, ¡ya sabés todo lo que necesitás para publicar un sitio web simple! Lo único que hace falta es un servicio que <em>hostee</em> el archivo y lo muestre a los visitantes. Uno de ellos es <a href="https://www.netlify.com/">Netlify</a>, que permite crear un sitio web con sólo arrastrar una carpeta.</p>
 <p><strong>Pequeño detalle:</strong> seguramente tu reporte (tu archivo RMarkdown o de Quarto) tiene algún nombre descriptivo consistente con su contenido. Para que <em>convertirlo</em> en una página web el archivo tiene que tener un nombre especial: “index.html”. Adelante, nombrá a tu documento como index.Rmd y knitea a HTML como de costumbre.</p>
 <p>Ahora deberías tener como resultado archivo llamado “index.html” en la carpeta de tu proyecto. ¡Felicitaciones! Creaste tu primer págna web.</p>
 <section id="publicación" class="level3">
 <h3 class="anchored" data-anchor-id="publicación">Publicación</h3>
 <p>Solo falta publicar tu página web para no viva solo en tu computadora. Veamos como se hace en Netlify.</p>
-<p>Entrá a <a href="https://app.netlify.com/drop">https://app.netlify.com/drop</a> y arrastrar la carpeta en el recuadro. Netlify va a crear una página web con un nombre aleatorio y posiblemente imposible de deletrear, pero está publicada!</p>
+<p>Entrá a <a href="https://app.netlify.com/drop" class="uri">https://app.netlify.com/drop</a> y arrastrar la carpeta en el recuadro. Netlify va a crear una página web con un nombre aleatorio y posiblemente imposible de deletrear, pero está publicada!</p>
 <figure class="figure">
 <video width="770px" controls>
 <source src="img/netlify_drop.webm" type="video/webm">
@@ -4039,7 +4039,7 @@ output:
 </div>
 </div>
 </div>
-<p>Podés revisar un ejemplo de una web a partir de un único archivo en <a href="https://01-webs-rmarkdown.netlify.app/">https://01-webs-rmarkdown.netlify.app/</a></p>
+<p>Podés revisar un ejemplo de una web a partir de un único archivo en <a href="https://01-webs-rmarkdown.netlify.app/" class="uri">https://01-webs-rmarkdown.netlify.app/</a></p>
 <p>Y podés revisar el código fuente <a href="https://github.com/paocorrales/01_Webs-RMarkdown">acá</a>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -4064,8 +4064,8 @@ Ejercicio
 </section>
 <section id="muchos-.rmd-o-qmd" class="level2">
 <h2 class="anchored" data-anchor-id="muchos-.rmd-o-qmd">Muchos .Rmd o qmd</h2>
-<p>Tal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. RMarkdown y Quarto también permiten generar una web con estructura compleja (una barra de navegación con botones y menues entre otras maravillas) a partir de un archivo de configuración y todos los .rmd o .qmd que necesites. El ejemplo de una web de este estilo se encuenta en:</p>
-<p>El archivo “_site.yml” controla la configuración y pinta de todo el sitio. Es archivo de texto plano con argumentos all estilo YAML. El contenido del archivo para esta web tiene la siguiente pinta:</p>
+<p>Tal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. RMarkdown y Quarto también permiten generar una web con estructura compleja (una barra de navegación con botones y menúes entre otras maravillas) a partir de un archivo de configuración y todos los .rmd o .qmd que necesites. El ejemplo de una web de este estilo se encuentra en:</p>
+<p>El archivo “_site.yml” controla la configuración y pinta de todo el sitio. Es archivo de texto plano con argumentos al estilo YAML. El contenido del archivo para esta web tiene la siguiente pinta:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Una web con muchos .Rmd!</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">left</span><span class="kw">:</span></span>
@@ -4098,8 +4098,8 @@ Ejercicio
 </figure>
 </div>
 <p>Tener el archivo _site.yaml tiene otra gran ventaja. Ahora RStudio sabe que querés hacer un sitio web y podés generar todo el sitio web directamente yendo a la solapa “Build” y haciendo click en “Build Website” o con el atajo de teclado Ctrl + Shift + B. Esto va a renderizar todos los archivos .Rmd que estén en la raiz del proyecto y va a generar el sitio web en la carpeta especificada en <code>output_dir</code>.</p>
-<p>El resto se parece mucho a lo que ya vimos. Necesitaremos un archivo index.html que será nuestra página de inicio y luego podremos agregar tantas secciones como querramos.</p>
-<p>Podés revisar un ejemplo de una web construida a partir de varios archivos en: <a href="https://02-webs-rmarkdown.netlify.app/">https://02-webs-rmarkdown.netlify.app/</a></p>
+<p>El resto se parece mucho a lo que ya vimos. Necesitaremos un archivo index.html que será nuestra página de inicio y luego podremos agregar tantas secciones como queramos.</p>
+<p>Podés revisar un ejemplo de una web construida a partir de varios archivos en: <a href="https://02-webs-rmarkdown.netlify.app/" class="uri">https://02-webs-rmarkdown.netlify.app/</a></p>
 <p>Y el código fuente se encuentra <a href="https://github.com/paocorrales/02_Webs-RMarkdown">acá</a>.</p>
 </section>
 <section id="palabras-finales-sobre-la-publicación" class="level2">
@@ -4111,13 +4111,13 @@ Ejercicio
 <p>Luego de haber publicado algunas webs así me encontré con algunos problemas y sus soluciones:</p>
 <ul>
 <li>Si la web está construida solo con R Markdown, Netlify necesita saber que la carpeta “_site” es la que contiene la web, de otra manera va a dar error. Alternativamente se puede cambiar la configuración de la web desde el “_site.yml” para que construya la web una carpeta que se llame “public”.</li>
-<li>Quarto por su lado también genera una carpeta con nombre distinto al que necesitamos donde guarda los archivos html que le dan vida a la web. En cualquier caso, si vemos que la cosa no anda, puede que Netlify no esté encontrando los archivos y necesite que lo indiquemos explicitamente.</li>
+<li>Quarto por su lado también genera una carpeta con nombre distinto al que necesitamos donde guarda los archivos html que le dan vida a la web. En cualquier caso, si vemos que la cosa no anda, puede que Netlify no esté encontrando los archivos y necesite que lo indiquemos explícitamente.</li>
 </ul>
 </section>
 <section id="github-pages" class="level3">
 <h3 class="anchored" data-anchor-id="github-pages">GitHub Pages</h3>
 <p>Netlify no es el único servicio que permite hostear una web. Hay muchos otros, por ejemplo GitHub Pages. En este caso si o si necesitamos usar un repositorio donde esté, al menos, los htmls que generan la web.</p>
-<p>Una de las diferencias importantes es que GitHub Pages <em>busca</em> la web enla carpeta raíz o alternativamente en una carpeta dentro del repositorio que debe llamarse “docs”. La buena noticia es usando Quarto o RMarkdown se puede indicar en el archivo de configuración que nombre debe tener la carpeta que contenga el sitio construiido.</p>
+<p>Una de las diferencias importantes es que GitHub Pages <em>busca</em> la web en la carpeta raíz o alternativamente en una carpeta dentro del repositorio que debe llamarse “docs”. La buena noticia es usando Quarto o RMarkdown se puede indicar en el archivo de configuración que nombre debe tener la carpeta que contenga el sitio construiido.</p>
 
 
 <!-- -->
@@ -4286,164 +4286,183 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Querés compartir tus resultados y tenés un archivo RMarkdown o Quarto en el que estuviste trabajando. Podrías compartir la carpeta del proyecto o un link a un repositorio pero sería ideal que cualquier persona pueda ver esos hermosos resultados sin necesidad de correr código. La otra alternativa es knitear el documento para compartir un PDF o archivo de Word. Las opciones no terminan ahí, Rmarkdown/Quarto abre un mundo de posibilidades para trabajar con código de R, texto y además compartir los resultados (y cualquier otra cosa!).</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sitio web de una sola página</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Si sabés cómo generar un reporte en formato html usando R Markdown, ya sabés todo lo que necesitás para publicar un sitio web simple! Lo único que hace falta es un servicio que *hostee* el archivo y lo muestre a los visitantes. Uno de ellos es <span class="co">[</span><span class="ot">Netlify</span><span class="co">](https://www.netlify.com/)</span>, que permite crear un sitio web con sólo arrastrar una carpeta. </span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>**Pequeño detalle:** seguramente tu reporte (tu archivo RMarkdown o de Quarto) tiene algún nombre descriptivo consistente con su contenido. Para que *convertirlo* en una página web el archivo tiene que tener un nombre especial: &quot;index.html&quot;. Adelante, nombrá a tu documento como index.Rmd y knitea a HTML como de costumbre. </span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Ahora deberías tener como resultado archivo llamado &quot;index.html&quot; en la carpeta de tu proyecto. ¡Felicitaciones! Creaste tu primer págna web.</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Publicación</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>Solo falta publicar tu página web para no viva solo en tu computadora. Veamos como se hace en Netlify.</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>Entrá a <span class="co">[</span><span class="ot">https://app.netlify.com/drop</span><span class="co">](https://app.netlify.com/drop)</span> y arrastrar la carpeta en el recuadro. Netlify va a crear una página web con un nombre aleatorio y posiblemente imposible de deletrear, pero está publicada!</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Querés compartir tus resultados y tenés un archivo RMarkdown o Quarto en el que estuviste trabajando.</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>Podrías compartir la carpeta del proyecto o un link a un repositorio pero sería ideal que cualquier persona pueda ver esos hermosos resultados sin necesidad de correr código.</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>La otra alternativa es knitear el documento para compartir un PDF o archivo de Word.</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Las opciones no terminan ahí, Rmarkdown/Quarto abre un mundo de posibilidades para trabajar con código de R, texto y además compartir los resultados (y cualquier otra cosa!).</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sitio web de una sola página</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Si sabés cómo generar un reporte en formato html usando R Markdown, ¡ya sabés todo lo que necesitás para publicar un sitio web simple!</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>Lo único que hace falta es un servicio que *hostee* el archivo y lo muestre a los visitantes.</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>Uno de ellos es <span class="co">[</span><span class="ot">Netlify</span><span class="co">](https://www.netlify.com/)</span>, que permite crear un sitio web con sólo arrastrar una carpeta.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>**Pequeño detalle:** seguramente tu reporte (tu archivo RMarkdown o de Quarto) tiene algún nombre descriptivo consistente con su contenido.</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>Para que *convertirlo* en una página web el archivo tiene que tener un nombre especial: &quot;index.html&quot;.</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>Adelante, nombrá a tu documento como index.Rmd y knitea a HTML como de costumbre.</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>Ahora deberías tener como resultado archivo llamado &quot;index.html&quot; en la carpeta de tu proyecto.</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>¡Felicitaciones!</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>Creaste tu primer págna web.</span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;figure&gt;</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;video</span> <span class="er">width</span><span class="ot">=</span><span class="st">770px</span> <span class="er">controls</span><span class="kw">&gt;</span></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;source</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;img/netlify_drop.webm&quot;</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;video/webm&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/video&gt;</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/figure&gt;</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>Tal vez notaste que Netlify borra los sitios web luego de 24 horas. Para que tu sitio sea permanente tenés que crearte una cuenta en Netlify. Eso además te va a permitir cambiarle el nombre a tu página, por ejemplo migranweb.netlify.app</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### ¿Qué pinta tiene?</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>Ahora que cubrimos los principios básicos de como publicar la página web, podemos concentrarnos en lo importante, el aspecto! (y por supuesto el contenido :) ).</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>La pinta de cualquier archivo RMarkdown se controla desde el encabezado o YAML y en este caso vamos a modificar algunas opciones del <span class="in">`output`</span>. </span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>El YAML de esta web tiene la siguiente pinta:</span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### RMarkdown</span></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="in">title: &quot;Webs con RMarkdown&quot;</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">output: </span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="in">  html_document:</span></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">    code_download: true</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="in">    toc: true</span></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="in">    toc_float: true</span></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="in">    theme: unite                                                     </span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>De todo esto, la única opción nueva es **theme** que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar en el paquete {rmarkdown}: default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, y yeti. Podés verlos en acción <span class="co">[</span><span class="ot">acá</span><span class="co">](https://bootswatch.com/3/)</span>.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### Publicación</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>Solo falta publicar tu página web para no viva solo en tu computadora.</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>Veamos como se hace en Netlify.</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>Entrá a <span class="ot">&lt;https://app.netlify.com/drop&gt;</span> y arrastrar la carpeta en el recuadro.</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>Netlify va a crear una página web con un nombre aleatorio y posiblemente imposible de deletrear, pero está publicada!</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;figure&gt;</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;video</span> <span class="er">width</span><span class="ot">=</span><span class="st">770px</span> <span class="er">controls</span><span class="kw">&gt;</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;source</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;img/netlify_drop.webm&quot;</span> <span class="er">type</span><span class="ot">=</span><span class="st">&quot;video/webm&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/video&gt;</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/figure&gt;</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>Tal vez notaste que Netlify borra los sitios web luego de 24 horas.</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>Para que tu sitio sea permanente tenés que crearte una cuenta en Netlify.</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>Eso además te va a permitir cambiarle el nombre a tu página, por ejemplo migranweb.netlify.app</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### ¿Qué pinta tiene?</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>Ahora que cubrimos los principios básicos de como publicar la página web, podemos concentrarnos en lo importante, el aspecto!</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>(y por supuesto el contenido :) ).</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>La pinta de cualquier archivo RMarkdown se controla desde el encabezado o YAML y en este caso vamos a modificar algunas opciones del <span class="in">`output`</span>.</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>El YAML de esta web tiene la siguiente pinta:</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### RMarkdown</span></span>
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/yaml_1rmd.png)</span></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quarto</span></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-tools</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>united</span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>De todo esto, la única opción nueva es **theme** que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar con Quarto: default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti y zephyr. Podés verlos en acción <span class="co">[</span><span class="ot">acá</span><span class="co">](https://bootswatch.com/)</span>.</span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>Podés revisar un ejemplo de una web a partir de un único archivo en <span class="co">[</span><span class="ot">https://01-webs-rmarkdown.netlify.app/</span><span class="co">](https://01-webs-rmarkdown.netlify.app/)</span></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>Y podés revisar el código fuente <span class="co">[</span><span class="ot">acá</span><span class="co">](https://github.com/paocorrales/01_Webs-RMarkdown)</span>.</span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio</span></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>**Desafío: Publicá un reporte**</span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Elegí un archivo .Rmd, puede ser alguno de los que usamos durante el curso a modo de prueba o el reporte de ejemplo sobre Pinguinos.</span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Renderizá el archivo a formato html.</span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Cambiale el nombre para que se llame index.html y publicalo usando Netlify.</span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Si querés compartí el link para que otras personas puedan verlo (opcional).</span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">    ---</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in">    title: &quot;Webs con RMarkdown&quot;</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="in">    output: </span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">      html_document:</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="in">        code_download: true</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="in">        toc: true</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="in">        toc_float: true</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="in">        theme: unite                                                     </span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="in">    ---</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>De todo esto, la única opción nueva es **theme** que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar en el paquete {rmarkdown}: default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, y yeti.</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>Podés verlos en acción <span class="co">[</span><span class="ot">acá</span><span class="co">](https://bootswatch.com/3/)</span>.</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/yaml_1rmd.png)</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quarto</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Mi primer RMarkdown&quot;</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-tools</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span>united</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>De todo esto, la única opción nueva es **theme** que permite cambiar el aspecto general de la página (por ejemplo el color de los links y el tipo de letra) y hay varios que viene listos para usar con Quarto: default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti y zephyr.</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>Podés verlos en acción <span class="co">[</span><span class="ot">acá</span><span class="co">](https://bootswatch.com/)</span>.</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>Podés revisar un ejemplo de una web a partir de un único archivo en <span class="ot">&lt;https://01-webs-rmarkdown.netlify.app/&gt;</span></span>
 <span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>Y podés revisar el código fuente <span class="co">[</span><span class="ot">acá</span><span class="co">](https://github.com/paocorrales/01_Webs-RMarkdown)</span>.</span>
 <span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## Muchos .Rmd o qmd</span></span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>Tal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar. RMarkdown y Quarto también permiten generar una web con estructura compleja (una barra de navegación con botones y menues entre otras maravillas) a partir de un archivo de configuración y todos los .rmd o .qmd que necesites. El ejemplo de una web de este estilo se encuenta en:</span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>El archivo &quot;_site.yml&quot; controla la configuración y pinta de todo el sitio. Es archivo de texto plano con argumentos all estilo YAML. El contenido del archivo para esta web tiene la siguiente pinta:</span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Una web con muchos .Rmd!</span></span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Configuración</span></span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">href</span><span class="kw">:</span><span class="at"> archivo-site.html</span></span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Contenido</span></span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">menu</span><span class="kw">:</span></span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> El index</span></span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> archivo-index.html</span></span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Un post</span></span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> post.html</span></span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Qué es lo que hace cada parte?</span></span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`navbar:...`</span> define la barra de navegación que ves ahí arriba. Tiene varias partes, el título, un primer elemento que &quot;Configuración&quot; que lleva a esta misma página y otro elementos que es un menú desplegable desde donde podés acceder a más contenido. Estos elementos tienen un nombre o <span class="in">`text`</span> y el archivo al que hacen referencia, siempre el html. </span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`output:...`</span> define opciones globales de salida para no tener que definirlas dentro de cada archivo Rmd. Podés ver las opciones disponibles en la documentación con <span class="in">`?rmarkdown::html_document()`</span>. En este caso, define que la apariencia a a ser con el tema &quot;united&quot;. </span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>Hay muchas más opciones, por ejemplo:</span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`output_dir: docs`</span> define que el sitio web se va a generar en la carpeta &quot;docs&quot;, adentro de la carpeta del proyecto. Esto cambia el nombre por defecto de la carpeta &quot;_site&quot; que contiene los archivos html y demás archivos necesarios para que el sitio funcione. Esta opción es particularmente útil si se quiere utilizar GitHub Pages que requieren que la carpeta se llame &quot;docs&quot; en vez de &quot;_site&quot;.</span>
-<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a><span class="al">![Las partes del navbar](img/site.png)</span></span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>Tener el archivo _site.yaml tiene otra gran ventaja. Ahora RStudio sabe que querés hacer un sitio web y podés generar todo el sitio web directamente yendo a la solapa &quot;Build&quot; y haciendo click en &quot;Build Website&quot; o con el atajo de teclado Ctrl + Shift + B. Esto va a renderizar todos los archivos .Rmd que estén en la raiz del proyecto y va a generar el sitio web en la carpeta especificada en <span class="in">`output_dir`</span>.</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio</span></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>**Desafío: Publicá un reporte**</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Elegí un archivo .Rmd, puede ser alguno de los que usamos durante el curso a modo de prueba o el reporte de ejemplo sobre Pinguinos.</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Renderizá el archivo a formato html.</span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Cambiale el nombre para que se llame index.html y publicalo usando Netlify.</span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Si querés compartí el link para que otras personas puedan verlo (opcional).</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="fu">## Muchos .Rmd o qmd</span></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>Tal vez el contenido que querés mostrar es más complejo y poner todo en un único .Rmd no termina de funcionar.</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>RMarkdown y Quarto también permiten generar una web con estructura compleja (una barra de navegación con botones y menúes entre otras maravillas) a partir de un archivo de configuración y todos los .rmd o .qmd que necesites.</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>El ejemplo de una web de este estilo se encuentra en:</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>El archivo &quot;<span class="sc">\_</span>site.yml&quot; controla la configuración y pinta de todo el sitio.</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>Es archivo de texto plano con argumentos al estilo YAML.</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>El contenido del archivo para esta web tiene la siguiente pinta:</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Una web con muchos .Rmd!</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Configuración</span></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">href</span><span class="kw">:</span><span class="at"> archivo-site.html</span></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Contenido</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> El index</span></span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> archivo-index.html</span></span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Un post</span></span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> post.html</span></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> united</span></span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>El resto se parece mucho a lo que ya vimos. Necesitaremos un archivo index.html que será nuestra página de inicio y luego podremos agregar tantas secciones como querramos. </span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Qué es lo que hace cada parte?</span></span>
 <span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>Podés revisar un ejemplo de una web construida a partir de varios archivos en: <span class="co">[</span><span class="ot">https://02-webs-rmarkdown.netlify.app/</span><span class="co">](https://02-webs-rmarkdown.netlify.app/)</span></span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>Y el código fuente se encuentra <span class="co">[</span><span class="ot">acá</span><span class="co">](https://github.com/paocorrales/02_Webs-RMarkdown)</span>.</span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## Palabras finales sobre la publicación</span></span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`navbar:...`</span> define la barra de navegación que ves ahí arriba.</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>    Tiene varias partes, el título, un primer elemento que &quot;Configuración&quot; que lleva a esta misma página y otro elementos que es un menú desplegable desde donde podés acceder a más contenido.</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>    Estos elementos tienen un nombre o <span class="in">`text`</span> y el archivo al que hacen referencia, siempre el html.</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`output:...`</span> define opciones globales de salida para no tener que definirlas dentro de cada archivo Rmd.</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>    Podés ver las opciones disponibles en la documentación con <span class="in">`?rmarkdown::html_document()`</span>.</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>    En este caso, define que la apariencia a a ser con el tema &quot;united&quot;.</span>
 <span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a><span class="fu">### Netlify</span></span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>Hay muchas más opciones, por ejemplo:</span>
 <span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>La opción de arrastrar la carpeta que contiene la web en Netlify puede se útil al principio pero se vuelve trabajoso rápidamente, sería genial que fuera automático. Y se puede.</span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`output_dir: docs`</span> define que el sitio web se va a generar en la carpeta &quot;docs&quot;, adentro de la carpeta del proyecto. Esto cambia el nombre por defecto de la carpeta &quot;<span class="sc">\_</span>site&quot; que contiene los archivos html y demás archivos necesarios para que el sitio funcione. Esta opción es particularmente útil si se quiere utilizar GitHub Pages que requieren que la carpeta se llame &quot;docs&quot; en vez de &quot;<span class="sc">\_</span>site&quot;.</span>
 <span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>Netlify tiene una habilidad muy útil, la primera es que se puede conectar con un repositorio en, por ejemplo, GitHub donde viva la página web.</span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a><span class="al">![Las partes del navbar](img/site.png)</span></span>
 <span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>Luego de haber publicado algunas webs así me encontré con algunos problemas y sus soluciones:</span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Si la web está construida solo con R Markdown, Netlify necesita saber que la carpeta &quot;_site&quot; es la que contiene la web, de otra manera va a dar error. Alternativamente se puede cambiar la configuración de la web desde el &quot;_site.yml&quot; para que construya la web una carpeta que se llame &quot;public&quot;. </span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Quarto por su lado también genera una carpeta con nombre distinto al que necesitamos donde guarda los archivos html que le dan vida a la web. En cualquier caso, si vemos que la cosa no anda, puede que Netlify no esté encontrando los archivos y necesite que lo indiquemos explicitamente.</span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### GitHub Pages</span></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>Netlify no es el único servicio que permite hostear una web. Hay muchos otros, por ejemplo GitHub Pages. En este caso si o si necesitamos usar un repositorio donde esté, al menos, los htmls que generan la web. </span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>Una de las diferencias importantes es que GitHub Pages *busca* la web enla carpeta raíz o alternativamente en una carpeta dentro del repositorio que debe llamarse &quot;docs&quot;. La buena noticia es usando Quarto o RMarkdown se puede indicar en el archivo de configuración que nombre debe tener la carpeta que contenga el sitio construiido. </span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>Tener el archivo <span class="sc">\_</span>site.yaml tiene otra gran ventaja.</span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>Ahora RStudio sabe que querés hacer un sitio web y podés generar todo el sitio web directamente yendo a la solapa &quot;Build&quot; y haciendo click en &quot;Build Website&quot; o con el atajo de teclado Ctrl + Shift + B.</span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>Esto va a renderizar todos los archivos .Rmd que estén en la raiz del proyecto y va a generar el sitio web en la carpeta especificada en <span class="in">`output_dir`</span>.</span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>El resto se parece mucho a lo que ya vimos.</span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>Necesitaremos un archivo index.html que será nuestra página de inicio y luego podremos agregar tantas secciones como queramos.</span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>Podés revisar un ejemplo de una web construida a partir de varios archivos en: <span class="ot">&lt;https://02-webs-rmarkdown.netlify.app/&gt;</span></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>Y el código fuente se encuentra <span class="co">[</span><span class="ot">acá</span><span class="co">](https://github.com/paocorrales/02_Webs-RMarkdown)</span>.</span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Palabras finales sobre la publicación</span></span>
 <span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a><span class="fu">### Netlify</span></span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a>La opción de arrastrar la carpeta que contiene la web en Netlify puede se útil al principio pero se vuelve trabajoso rápidamente, sería genial que fuera automático.</span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>Y se puede.</span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>Netlify tiene una habilidad muy útil, la primera es que se puede conectar con un repositorio en, por ejemplo, GitHub donde viva la página web.</span>
+<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>Luego de haber publicado algunas webs así me encontré con algunos problemas y sus soluciones:</span>
+<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Si la web está construida solo con R Markdown, Netlify necesita saber que la carpeta &quot;<span class="sc">\_</span>site&quot; es la que contiene la web, de otra manera va a dar error. Alternativamente se puede cambiar la configuración de la web desde el &quot;<span class="sc">\_</span>site.yml&quot; para que construya la web una carpeta que se llame &quot;public&quot;.</span>
+<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Quarto por su lado también genera una carpeta con nombre distinto al que necesitamos donde guarda los archivos html que le dan vida a la web. En cualquier caso, si vemos que la cosa no anda, puede que Netlify no esté encontrando los archivos y necesite que lo indiquemos explícitamente.</span>
+<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a><span class="fu">### GitHub Pages</span></span>
+<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a>Netlify no es el único servicio que permite hostear una web.</span>
+<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>Hay muchos otros, por ejemplo GitHub Pages.</span>
+<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a>En este caso si o si necesitamos usar un repositorio donde esté, al menos, los htmls que generan la web.</span>
+<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a>Una de las diferencias importantes es que GitHub Pages *busca* la web en la carpeta raíz o alternativamente en una carpeta dentro del repositorio que debe llamarse &quot;docs&quot;.</span>
+<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a>La buena noticia es usando Quarto o RMarkdown se puede indicar en el archivo de configuración que nombre debe tener la carpeta que contenga el sitio construiido.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
