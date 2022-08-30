@@ -10,11 +10,9 @@ execute:
   warning: false
 ---
 
-
 Trabajar con proyectos de RStudio no solo hace tus análisis más ordenados y reproducibles, también hacen tu vida más simple.
 
-Al comienzo posiblemente tengas un script y uno o dos archivos con datos, pero es posible que rápidamente te encuentres con una docena de archivos con nombres parecidos pero que pertenecen a análisis totalmente distintos.
-Antes de que la cosa comience a complicarse te proponemos trabajar con proyectos.
+Al comienzo posiblemente tengas un script y uno o dos archivos con datos, pero es posible que rápidamente te encuentres con una docena de archivos con nombres parecidos pero que pertenecen a análisis totalmente distintos. Antes de que la cosa comience a complicarse te proponemos trabajar con proyectos.
 
 ## ¿Qué ventajas tiene?
 
@@ -36,17 +34,13 @@ Antes de que la cosa comience a complicarse te proponemos trabajar con proyectos
 6.  Hacé click en "Crear Proyecto" ("Create Project").
 :::
 
-Si todo salió bien, ahora deberías tener una nueva carpeta que se llama *mi_proyecto*.
-Pero si bien es una carpeta común y corriente, le llamamos proyecto porque además contiene un archivo con el mismo nombre *mi_proyecto.Rproj* (o solo *mi_proyecto* si en tu computadora no ves la extensión de los archivos).
+Si todo salió bien, ahora deberías tener una nueva carpeta que se llama *mi_proyecto*. Pero si bien es una carpeta común y corriente, le llamamos proyecto porque además contiene un archivo con el mismo nombre *mi_proyecto.Rproj* (o solo *mi_proyecto* si en tu computadora no ves la extensión de los archivos).
 
 ## Abrir un proyecto
 
-La manera más simple de abrir un proyecto es abriendo la carpeta que lo contiene y haciendo doble click sobre el archivo *mi_proyecto.Rproj*.
-Al hacer esto se abrirá RStudio y la sesión de R en la misma carpeta y, por defecto, cualquier archivo que quieras abrir o guardar lo hará en esa misma ubicación.
-Esto ayuda a mantener tu trabajo ordenado y que luego sea simple retomar o compartir lo que hiciste.
+La manera más simple de abrir un proyecto es abriendo la carpeta que lo contiene y haciendo doble click sobre el archivo *mi_proyecto.Rproj*. Al hacer esto se abrirá RStudio y la sesión de R en la misma carpeta y, por defecto, cualquier archivo que quieras abrir o guardar lo hará en esa misma ubicación. Esto ayuda a mantener tu trabajo ordenado y que luego sea simple retomar o compartir lo que hiciste.
 
-RStudio permite tener varios proyectos abiertos, y esto es posible porque justamente cada proyecto tiene su propia carpeta.
-Si en algún momento trabajas con proyectos en paralelo vas a poder hacerlo sin que el código o los resultados de un análisis interfieran con otro.
+RStudio permite tener varios proyectos abiertos, y esto es posible porque justamente cada proyecto tiene su propia carpeta. Si en algún momento trabajas con proyectos en paralelo vas a poder hacerlo sin que el código o los resultados de un análisis interfieran con otro.
 
 ::: callout-tip
 ## Ejercicio
@@ -68,7 +62,6 @@ No existe una "mejor" forma de organizar un proyecto pero acá van algunos princ
 
 Teniendo esto en mente, la estructura interna de un proyecto podría ser la siguiente:
 
-
     mi_proyecto/
     │
     ├── informe/
@@ -81,11 +74,19 @@ Teniendo esto en mente, la estructura interna de un proyecto podría ser la sigu
     ├── figuras/            # Ubicación de las figuras generadas
     │
     └── datos/
-        ├── datos_crudps/   # Datos crudos (externos)
+        ├── datos_crudos/   # Datos crudos (externos)
         └── datos_derivados/# Datos generados en el análisis o limpieza
- 
-Por supuesto, siempre dependerá del uso y necesidad de cada persona. Pero lo anterior es un buen punto de partida. 
 
+Por supuesto, siempre dependerá del uso y necesidad de cada persona. Pero lo anterior es un buen punto de partida.
+
+::: callout-tip
+## Ejercicio
+
+**Tercer desafío: Crea la estructura de carpetas**
+
+1. Crea las carpetas utilizando el explorador de archivos o desde la pestaña Files de RStudio. 
+2. Si tenés un reporte de prueba, podés ubicarlo en la carpeta informe.
+:::
 
 ## Ordenando aún más
 
@@ -98,9 +99,9 @@ rm(list = ls())
 
 ```
 
-La primera línea *setea* o le avisa a R cual será la carpeta donde va a trabajar. _Con el uso de proyectos esto está prácticamente solucionado_ porque al abrir el proyecto ya sea desde el explorador de archivos haciendo doble click en el archivo con extensión *Rproj* o desde RStudio, R sabrá que ese directorio será el de trabajo. 
+La primera línea *setea* o le avisa a R cual será la carpeta donde va a trabajar. *Con el uso de proyectos esto está prácticamente solucionado* porque al abrir el proyecto ya sea desde el explorador de archivos haciendo doble click en el archivo con extensión *Rproj* o desde RStudio, R sabrá que ese directorio será el de trabajo.
 
-Pero también te dijimos que era una buena práctica organizar las diferentes partes del proyecto en subcarpetas, como por ejemplo colocar los datos en una subcarpeta llamada "datos", los informes en otra y tal vez las figuras en una subcarpeta distinta dentro del proyecto. ¿Cómo hacemos para que R lea un archivo que no está en la carpeta de trabajo? Podríamos escribir el camino hacia ese archivo, por ejemplo `"datos/mi_archivo_de_datos.csv"` pero si queremos compartir el código a otra persona que tal vez tiene un sistema operativo distinto y usa la barra invertida `\` va a estar en problemas al intentar correr esa línea. 
+Pero también te dijimos que era una buena práctica organizar las diferentes partes del proyecto en subcarpetas, como por ejemplo colocar los datos en una subcarpeta llamada "datos", los informes en otra y tal vez las figuras en una subcarpeta distinta dentro del proyecto. ¿Cómo hacemos para que R lea un archivo que no está en la carpeta de trabajo? Podríamos escribir el camino hacia ese archivo, por ejemplo `"datos/mi_archivo_de_datos.csv"` pero si queremos compartir el código a otra persona que tal vez tiene un sistema operativo distinto y usa la barra invertida `\` va a estar en problemas al intentar correr esa línea.
 
 Para solucionar estos problemas existe el paquete **here**, que funciona independientemente del sistema operativo. Su función principal `here()` recibe como argumentos el camino hacia el archivo que se quiere leer, siempre entre comillas y separados por comas, así:
 
@@ -110,18 +111,13 @@ mis_datos <- read_csv(here("datos", "mi_archivo_de_datos.csv"))
 
 ```
 
-Internamente este paquete puede identificar cual es el directorio de trabajo (por ejemplo detectando que hay un archivo *.Rproj*) y busca a partir de ahí la subcarpeta "datos" y adentro de ella el archivo "mi_archivo_de_datos.csv". 
+Internamente este paquete puede identificar cual es el directorio de trabajo (por ejemplo detectando que hay un archivo *.Rproj*) y busca a partir de ahí la subcarpeta "datos" y adentro de ella el archivo "mi_archivo_de_datos.csv".
 
-La segunda línea del código inicial se usa para borrar los elementos que creamos en el análisis normalmente cuando cambiamos de tema o empezamos a trabajar con algo distinto. Esto está bien porque no queremos arrastrar análisis que hicimos en un proyecto a otro, necesitamos que sean autocontenidos y *reproducibles*. El problema es que este comando **no** *borra* los paquetes activados o las opciones usuario que hayamos seteado. 
-
+La segunda línea del código inicial se usa para borrar los elementos que creamos en el análisis normalmente cuando cambiamos de tema o empezamos a trabajar con algo distinto. Esto está bien porque no queremos arrastrar análisis que hicimos en un proyecto a otro, necesitamos que sean autocontenidos y *reproducibles*. El problema es que este comando **no** *borra* los paquetes activados o las opciones usuario que hayamos seteado.
 
 ### Borrón y cuenta nueva... todos los días!
 
-¿Cómo nos aseguramos de que el análisis sea realmente reproducible?
-Esta es una pregunta bastante amplia y hay muchas herramientas para resolver este problema.
-Por ahora nos vamos a concentrar en que al menos en tu computadora puedas repetir los cálculos o el análisis desde cero.
-Y además de organizar proyectos y no modificar los datos originales, ¿cómo podés asegurarte de que guardaste todo el código que estuviste escribiendo y usaste?
-La manera más directa es reiniciar la sesión de R y correr el código de nuevo, si da error o no devuelve lo que esperabas significa que te faltó guardar algún paso.
+¿Cómo nos aseguramos de que el análisis sea realmente reproducible? Esta es una pregunta bastante amplia y hay muchas herramientas para resolver este problema. Por ahora nos vamos a concentrar en que al menos en tu computadora puedas repetir los cálculos o el análisis desde cero. Y además de organizar proyectos y no modificar los datos originales, ¿cómo podés asegurarte de que guardaste todo el código que estuviste escribiendo y usaste? La manera más directa es reiniciar la sesión de R y correr el código de nuevo, si da error o no devuelve lo que esperabas significa que te faltó guardar algún paso.
 
 ::: callout-note
 ## Instrucciones
@@ -129,15 +125,12 @@ La manera más directa es reiniciar la sesión de R y correr el código de nuevo
 Tip: Podés reiniciar la sesión de R con el atajo `Ctrl+Shif+F10`
 :::
 
-Esto puede pasar si por ejemplo leés una base de datos en memoria pero no guardás el código que lo hace.
-Mientras estemos trabajando, R tendrá esa base de datos en memoria y podremos hacer cálculos y gráficos.
-Por defecto además RStudio va a recordar las variables que estés usando mañana o pasado en un archivo oculto (.RData) a menos que le indiques lo contrario.
-Y si bien suena práctico volver a R al otro día y tener el análisis tal cual lo dejamos, esto puede significar que nunca nos demos cuenta que nos faltó guardar una línea de código clave en nuestro análisis.
+Esto puede pasar si por ejemplo leés una base de datos en memoria pero no guardás el código que lo hace. Mientras estemos trabajando, R tendrá esa base de datos en memoria y podremos hacer cálculos y gráficos. Por defecto además RStudio va a recordar las variables que estés usando mañana o pasado en un archivo oculto (.RData) a menos que le indiques lo contrario. Y si bien suena práctico volver a R al otro día y tener el análisis tal cual lo dejamos, esto puede significar que nunca nos demos cuenta que nos faltó guardar una línea de código clave en nuestro análisis.
 
 ::: callout-tip
 ## Ejercicio
 
-**Tercer desafío: Configurá RStudio**
+**Cuarto desafío: Configurá RStudio**
 
 1.  Hacé click en el menú "Herramientas ("Tools") y luego "Opciones globales" ("Global Options").
 2.  Destildá la opción "Recuperar .RData al inicio de la sesión" ("Restore .RData into workspace at startup").

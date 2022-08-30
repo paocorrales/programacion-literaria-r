@@ -21,25 +21,25 @@ Durante el curso usaremos R y Rstudio. Por favor lee las instrucciónes [que enc
 
 El minicurso estará dividido en 3 encuentros de 90 minutos cada uno. **Fechas y horario a confirmar.**
 
-+-------+-----------------------------------------------------------------------------------------------+
-|       | Contenidos                                                                                    |
-+=======+===============================================================================================+
-| Día 1 | -   [Introducción a la Programación literaria](01_presentacion.html)                          |
-|       |                                                                                               |
-|       | -   [Uso del paquete `RMarkdown` y `Quarto` para reportar anaĺisis de datos](02_reportes.qmd) |
-|       |                                                                                               |
-|       | -   [Sintaxis para el manejo de código y prosa](03_sintaxis.qmd)                              |
-+-------+-----------------------------------------------------------------------------------------------+
-| Día 2 | -   Herramientas hacia la reproducibilidad: projectos y el paquete `here`                     |
-|       |                                                                                               |
-|       | -   Flujo de trabajo para generar un informe o reporte reproducible                           |
-+-------+-----------------------------------------------------------------------------------------------+
-| Día 3 | -   Automatización de informes y reportes                                                     |
-|       |                                                                                               |
-|       | -   Uso de plantillas y otras herramientas de formato                                         |
-|       |                                                                                               |
-|       | -   Publicación de reportes                                                                   |
-+-------+-----------------------------------------------------------------------------------------------+
++----------+-----------------------------------------------------------------------------------------------+
+|          | Contenidos                                                                                    |
++==========+===============================================================================================+
+| Día 1    | -   [Introducción a la Programación literaria](01_presentacion.html)                          |
+|          |                                                                                               |
+|          | -   [Uso del paquete `RMarkdown` y `Quarto` para reportar anaĺisis de datos](02_reportes.qmd) |
+|          |                                                                                               |
+|          | -   [Sintaxis para el manejo de código y prosa](03_sintaxis.qmd)                              |
++----------+-----------------------------------------------------------------------------------------------+
+| Día 2    | -   [Herramientas hacia la reproducibilidad: projectos y el paquete `here`](04_proyectos.qmd) |
+|          |                                                                                               |
+|          | -   [Flujo de trabajo para generar un informe o reporte reproducible](05_trabajo.qmd)         |
++----------+-----------------------------------------------------------------------------------------------+
+| Día 3    | -   Automatización de informes y reportes                                                     |
+|          |                                                                                               |
+|          | -   Uso de plantillas y otras herramientas de formato                                         |
+|          |                                                                                               |
+|          | -   Publicación de reportes                                                                   |
++----------+-----------------------------------------------------------------------------------------------+
 
 **Pao Corrales**
 
