@@ -19,6 +19,8 @@ website:
           - 01_presentacion.qmd
           - 02_reportes.qmd
           - 03_sintaxis.qmd
+          - 04_proyectos.qmd
+          - 05_trabajo.qmd
 
 format:
   html:
