@@ -21,6 +21,9 @@ website:
           - 03_sintaxis.qmd
           - 04_proyectos.qmd
           - 05_trabajo.qmd
+          - 06_parametrizacion.qmd
+          - 07_plantillas.qmd
+          - 08_publicacion.qmd
 
 format:
   html:
