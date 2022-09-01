@@ -10,10 +10,7 @@ execute:
   warning: false
 ---
 
-Al principio de este taller vimos un reporte de ejemplo donde se analizaban algunas características de la especie de pingüino Papúa.
-Si quisiéramos replicar el mismo informe pero para alguna de las otras 2 especies de pingüinos que incluye la base de datos, tendríamos que cambiar la palabra "Papua" que aparece varias veces en el código y también en el texto.
-Esto puede traer problemas porque es fácil equivocarse u olvidarse de hacer un cambio.
-Parametrizar un informe nos permite definir ese tipo de parámetros en un solo lugar y obtener diferentes análisis a partir del mismo archivo.
+Al principio de este taller vimos un reporte de ejemplo donde se analizaban algunas características de la especie de pingüino Papúa. Si quisiéramos replicar el mismo informe pero para alguna de las otras 2 especies de pingüinos que incluye la base de datos, tendríamos que cambiar la palabra "Papua" que aparece varias veces en el código y también en el texto. Esto puede traer problemas porque es fácil equivocarse u olvidarse de hacer un cambio. Parametrizar un informe nos permite definir ese tipo de parámetros en un solo lugar y obtener diferentes análisis a partir del mismo archivo.
 
 Para generar un informe parametrizado hay que añadir un elemento llamado `params` a la cabecera con la lista de parámetros y sus valores por defecto.
 
@@ -26,8 +23,7 @@ params:
 params <- list(especie = "Papúa")
 ```
 
-A partir de ahora, tendrás acceso a una variable llamada `params` que es una lista que contiene los parámetros y su valor.
-Para acceder al valor de cada parámetro se utiliza el operador `$` de la siguiente manera:
+A partir de ahora, tendrás acceso a una variable llamada `params` que es una lista que contiene los parámetros y su valor. Para acceder al valor de cada parámetro se utiliza el operador `$` de la siguiente manera:
 
 ```{r}
 params$especie
@@ -60,8 +56,7 @@ Aquí cambiamos el subtítulo para concatenar palabras con el valor almacenado e
 
 1.  Agregá la opcion `params` en el yaml y asignale `"Papúa"`.
 
-2.  Revisá el código y modificalo para que ahora use `params$especie` en vez de la mención explicita a la especie.
-    En algunos casos necesitaras utilizar la función `paste0()` para concatenar texto.
+2.  Revisá el código y modificalo para que ahora use `params$especie` en vez de la mención explicita a la especie. En algunos casos necesitaras utilizar la función `paste0()` para concatenar texto.
 
 3.  Ahora revisá el texto, podés reemplazar la mención de la especie con `r params$especie` entre acentos para que al renderizar aparezca el nombre de la especie.
 
@@ -75,6 +70,28 @@ Ahora el informe está listo para funcionar como un informe parametrizado.
 
 **Segundo desafío: parametrizá el reporte de ejemplo**
 
-Cambia "Papúa" en el yaml para generar un nuevo informe para una de las otras especies.
-Renderizá el documento para ver el resultado
+Cambia "Papúa" en el yaml para generar un nuevo informe para una de las otras especies. Renderizá el documento para ver el resultado
 :::
+
+También sería posible renderizar el archivo desde la consola, sumando el parámetro deseado, sin tener que modificar encabezado cada vez.
+
+``` r
+    rmarkdown::render("rmarkdown_reporte_ejemplo.Rmd", params = list(
+      especie = "Adelia"
+    ))
+```
+
+Mejor aún si necesitas renderizar el mismo reporte con distintos parámetros, es crear una función:
+
+``` r
+renderiza reporte <- function(especie) {
+  rmarkdown::render(
+    "rmarkdown_reporte_ejemplo", params = list(
+      especie = "Adelia"
+    ),
+    output_file = paste0("reporte-", especie, ".pdf")
+  )
+}
+```
+
+Generar una función como esta luego permitirá iterar sobre distintos parámetro usando un loop o el paquete **purrr.**
