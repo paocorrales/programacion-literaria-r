@@ -28,6 +28,7 @@ Entrá a <https://app.netlify.com/drop> y arrastrar la carpeta en el recuadro. N
 
 {{< video src="img/img_netlify_drop.webm" >}}
 
+Nota: el video puedo verse también en [youtube.com/watch?v=hZ8TpfcL1l8](https://www.youtube.com/watch?v=hZ8TpfcL1l8)
 
 Tal vez notaste que Netlify borra los sitios web luego de 24 horas. Para que tu sitio sea permanente tenés que crearte una cuenta en Netlify. Eso además te va a permitir cambiarle el nombre a tu página, por ejemplo migranweb.netlify.app
 

@@ -67,22 +67,19 @@ El mejor lugar para hacer esto es, en el caso de R Markdown, el bloque de códig
 
 Muchas veces los datos están disponibles en distintos servicios en páginas de internet. Muchos gobiernos por ejemplo, tienen portales de datos abiertos. Organizaciones generan APIs para poner a disposición sus datos o tal vez otras personas publicaron sus datos en servicios como Zenodo y queremos aprovecharlos. Es posible que se puedan decargar los datos visitando la web y haciendo click en un botón, sin embargo podríamos escribir el código necesario para hacer esto de manera programática. Esto hace que nuestro trabajo sea más reproducible y disminuye las chances de error.
 
-El código que genera la descarga de datos podría estar incluido en el archivo .Rmd si la descarga no demora. En general querremos incluir la opción de no descargar los datos si el código encuentra que ya fueron descargados previamente. También podríamos generar un script de descarga de datos que corra una sola vez. Esta es una buena idea cuando el código de descarga demora o es complejo. 
+El código que genera la descarga de datos podría estar incluido en el archivo .Rmd si la descarga no demora. En general querremos incluir la opción de no descargar los datos si el código encuentra que ya fueron descargados previamente. También podríamos generar un script de descarga de datos que corra una sola vez. Esta es una buena idea cuando el código de descarga demora o es complejo.
 
-Veamos un ejemplo de descarga de datos desde Zenodo. 
+Veamos un ejemplo de descarga de datos desde Zenodo.
 
-Si revisamos la base de datos [https://sandbox.zenodo.org/record/1029654](https://sandbox.zenodo.org/record/1029654) veremos que incluye un solo archivo en formato .csv.
-
+Si revisamos la base de datos <https://sandbox.zenodo.org/record/1029654> veremos que incluye un solo archivo en formato .csv.
 
 ```{r file-list, echo=FALSE}
 knitr::include_graphics("img/file_list.png")
 ```
 
-Vemos también el botón "Download" para la descarga del archivo. 
-Podríamos usarlo para descargar el archivo haciendo click. 
+Vemos también el botón "Download" para la descarga del archivo. Podríamos usarlo para descargar el archivo haciendo click.
 
-Pero como mencionaba previamente, se puede escribir el código necesario para hacer la descarga de manera programática y asegurarnos que tenemos los datos correctos. 
-Podríamos crear una función `descarga_pinguinos()`:
+Pero como mencionaba previamente, se puede escribir el código necesario para hacer la descarga de manera programática y asegurarnos que tenemos los datos correctos. Podríamos crear una función `descarga_pinguinos()`:
 
 ```{r}
 descarga_pinguinos <- function() {
@@ -92,23 +89,23 @@ descarga_pinguinos <- function() {
 }
 ```
 
-Para obtener la dirección url del archivo, hay que hacer click derecho sobre el botón Download y copiar el link. 
+Para obtener la dirección url del archivo, hay que hacer click derecho sobre el botón Download y copiar el link.
 
 Ahora si deseas descargar los datos solo hay que llamar a la función `descarga_pinguinos()` y los datos se guardaran en la carpeta correcta.
 
-Podríamos mejorar esto generando una función que solo descargue los datos en caso de que no estén presentes en el proyecto. Esta función podría escribirse de esta manera: 
+Podríamos mejorar esto generando una función que solo descargue los datos en caso de que no estén presentes en el proyecto. Esta función podría escribirse de esta manera:
 
 ```{r}
 datos_pinguinos <- function() {
   file <- here::here("datos/datos_crudos/penguins.csv")
   if (!file.exists(file)) {
-    download_penguins()
+    descarga_pinguinos()
   } 
   return(read.csv(file))
 }
 ```
 
-Con esta última función en nuestro archivo .Rmd nos podemos olvidar de la descarga de datos, que se hará automáticamente. 
+Con esta última función en nuestro archivo .Rmd nos podemos olvidar de la descarga de datos, que se hará automáticamente.
 
 ``` r
 penguins <- datos_pinguinos()
@@ -119,7 +116,7 @@ penguins <- datos_pinguinos()
 
 **Tercer desafío: descarga de datos programática**
 
-* Siguiendo los pasos anteriores, general las funciones necesarias para descargar los datos prográtiacamente en la carpeta correcta. 
-* Las funciones pueden estar al comienzo del archivo o puedes guardarlas en el script `funciones_secundarias.R` (o un nuevo script) y cargarlas al comienzo.
-* Para revisar que todo funciona, knitea el archivo y chequea que los datos estén en la carpeta correcta.
+-   Siguiendo los pasos anteriores, general las funciones necesarias para descargar los datos prográtiacamente en la carpeta correcta.
+-   Las funciones pueden estar al comienzo del archivo o puedes guardarlas en el script `funciones_secundarias.R` (o un nuevo script) y cargarlas al comienzo.
+-   Para revisar que todo funciona, knitea el archivo y chequea que los datos estén en la carpeta correcta.
 :::

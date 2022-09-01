@@ -76,20 +76,20 @@ Cambia "Papúa" en el yaml para generar un nuevo informe para una de las otras e
 También sería posible renderizar el archivo desde la consola, sumando el parámetro deseado, sin tener que modificar encabezado cada vez.
 
 ``` r
-    rmarkdown::render("rmarkdown_reporte_ejemplo.Rmd", params = list(
+rmarkdown::render("rmarkdown_reporte_ejemplo.Rmd", params = list(
       especie = "Adelia"
-    ))
+))
 ```
 
 Mejor aún si necesitas renderizar el mismo reporte con distintos parámetros, es crear una función:
 
 ``` r
-renderiza reporte <- function(especie) {
+renderiza_reporte <- function(especie) {
   rmarkdown::render(
-    "rmarkdown_reporte_ejemplo", params = list(
-      especie = "Adelia"
+    "informe/rmarkdown_reporte_ejemplo.Rmd", params = list(
+      especie = especie
     ),
-    output_file = paste0("reporte-", especie, ".pdf")
+    output_file = paste0("reporte-", especie, ".html")
   )
 }
 ```
